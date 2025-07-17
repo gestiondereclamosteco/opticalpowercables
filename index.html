@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_efdb15e224015be8b7f91ef3249eda7b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+        <script>
+          console.log("Iniciando script de control...");
+
+          function waitForFirebase(callback, maxAttempts = 50, attempts = 0) {
+            if (typeof firebase !== 'undefined' && firebase.app) {
+              console.log("Firebase está disponible, ejecutando callback...");
+              callback();
+            } else if (attempts >= maxAttempts) {
+              console.error("No se pudo cargar Firebase después de", maxAttempts, "intentos. Verifica tu conexión a internet.");
+              alert("No se pudo conectar con la base de datos. Por favor, verifica tu conexión a internet y recarga la página.");
+              document.getElementById('loading-overlay').style.display = 'none';
+            } else {
+              console.log("Esperando a que Firebase se cargue... Intento", attempts + 1);
+              setTimeout(() => waitForFirebase(callback, maxAttempts, attempts + 1), 100);
+            }
+          }
+
+          const firebaseConfig = {
+            apiKey: "AIzaSyDeNZyU0kM4fbmgljtxHggfu8LSD9sTdO8",
+            authDomain: "mapareclamos-65d2a.firebaseapp.com",
+            databaseURL: "https://mapareclamos-65d2a-default-rtdb.firebaseio.com",
+            projectId: "mapareclamos-65d2a",
+            storageBucket: "mapareclamos-65d2a.firebasestorage.app",
+            messagingSenderId: "381859152917",
+            appId: "1:381859152917:web:d452973d364da596bc3a1c",
+            measurementId: "G-PPNRM8D0ET"
+          };
+
+          let database = null;
+          let map = null;
+          let tempMarker = null;
+          let pendingActions = [];
+          let markerCluster = null;
+          let currentPopup = null;
+          let isClosingPopup = false;
+          let isPendingListExpanded = false;
+          let isNoMapeadasListExpanded = false;
+          let isFiltersExpanded = false;
+          let fotosPorCaso = {"5862": {"images": ["https://drive.google.com/thumbnail?id=1vmtBB44hw-8KDVj2mC4r0MOJt29H0m-W", "https://drive.google.com/thumbnail?id=1YjoMXHvviQmcsWWgFRg3U4ylmAi-9ocj", "https://drive.google.com/thumbnail?id=1LEP3RGeXQwWPx1I_4-DGHwC_aB4v-9DL", "https://drive.google.com/thumbnail?id=1T0B2fx65J096t3vygoEHjd7jzstHdwu6"], "folder": "https://drive.google.com/drive/folders/1R_-QYyUQEaxF6MtDR0rVzvmo6bjiQZVF"}, "6262": {"images": ["https://drive.google.com/thumbnail?id=1cfwDWyzkaYRjfAtNVyPi2g23mAp-bBEs", "https://drive.google.com/thumbnail?id=1kWrRiX0bCK81PsDCDRyf7iSMd1xYM_EI"], "folder": "https://drive.google.com/drive/folders/1RMn7WHUu7sHB788fLVILh0Li6eLieTGv"}, "6291": {"images": ["https://drive.google.com/thumbnail?id=1BaoPsfMO55RZnrG5TpGgfGaikX5M6DY5", "https://drive.google.com/thumbnail?id=1ukxTJUnekvKd_BIN0_kQFKtX0IYVSKjv"], "folder": "https://drive.google.com/drive/folders/1vwy9_RRqMNH343LEM6Zu0xLOTqiA9enT"}, "808098725": {"images": [], "folder": "#"}, "6389": {"images": ["https://drive.google.com/thumbnail?id=1fwPwKCGJcKc4YFk97zdXXV7d5bS2s62G"], "folder": "https://drive.google.com/drive/folders/1F3RklGb6PgLhHGneiaUPk8n_1q2UdmQP"}, "6387": {"images": ["https://drive.google.com/thumbnail?id=16q8tZZeo8dmu70P9ZNgkdFaFvjsPu8Qm", "https://drive.google.com/thumbnail?id=1rKGnCxXCbq21FaW7355syHt88K7Dc53h", "https://drive.google.com/thumbnail?id=1ydxxENC8h4B0F-wlIb73N4t5T2mMV1Zv"], "folder": "https://drive.google.com/drive/folders/1n9xP4-aX3tl3q4rNWBMms9n9CdterSHN"}, "6386": {"images": ["https://drive.google.com/thumbnail?id=1wd6OAIk_KGUMsW3_0jSa1Ian184P5WHh", "https://drive.google.com/thumbnail?id=1tOH0EJHbybvOT3RCoGT4S_vC57fk1NwC"], "folder": "https://drive.google.com/drive/folders/1XZqvJwQbH8_jjOLa1S_vCXJCppr1xK14"}};
+          let allPuntos = [{"direccion": "CHARCAS 3715", "lat": -34.588033, "lng": -58.417181, "caso": "5862", "comuna": "14", "ot": "806976061", "observaciones": "Cable en panza Cable cortado", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"5862\" data-comuna=\"14\">\n            <b>Direcci\u00f3n:</b> CHARCAS 3715<br>\n            <b>Comuna:</b> 14<br>\n            <b>OT:</b> 806976061<br>\n            <b>Observaciones:</b><br>Cable en panza Cable\ncortado<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Palermo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 5862<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('5862'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.588033,-58.417181\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('5862');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "5/26/2025", "operacion": "Palermo", "zona": "Capital Sur"}, {"direccion": "MIGUELETES 1330", "lat": -34.562841, "lng": -58.440291, "caso": "6262", "comuna": "14", "ot": "807789707", "observaciones": "Cables en panza", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6262\" data-comuna=\"14\">\n            <b>Direcci\u00f3n:</b> MIGUELETES 1330<br>\n            <b>Comuna:</b> 14<br>\n            <b>OT:</b> 807789707<br>\n            <b>Observaciones:</b><br>Cables en panza<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Colegiales<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6262<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6262'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.562841,-58.440291\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6262');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "6/25/2025", "operacion": "Colegiales", "zona": "Capital Norte"}, {"direccion": "HERRERA 2180", "lat": -34.651444, "lng": -58.373928, "caso": "6291", "comuna": "4", "ot": "807897645", "observaciones": "Tendidos a baja altura con cables cortados colgando", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6291\" data-comuna=\"4\">\n            <b>Direcci\u00f3n:</b> HERRERA 2180<br>\n            <b>Comuna:</b> 4<br>\n            <b>OT:</b> 807897645<br>\n            <b>Observaciones:</b><br>Tendidos a baja altura\ncon cables cortados\ncolgando<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> San Telmo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6291<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6291'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.651444,-58.373928\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6291');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "6/30/2025", "operacion": "San Telmo", "zona": "Capital Sur"}, {"direccion": "Brandsen 1785", "lat": -34.637913, "lng": -58.37593, "caso": "808098725", "comuna": "4", "ot": "808098725", "observaciones": "Realizar lo convenido con Pablo, se genero nueva OT", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"808098725\" data-comuna=\"4\">\n            <b>Direcci\u00f3n:</b> Brandsen 1785<br>\n            <b>Comuna:</b> 4<br>\n            <b>OT:</b> 808098725<br>\n            <b>Observaciones:</b><br>Realizar lo convenido con\nPablo, se genero nueva OT<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> San Telmo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 808098725<br>\n            <br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.637913,-58.37593\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('808098725');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "7/7/2025", "operacion": "San Telmo", "zona": "Capital Sur"}, {"direccion": "Sayos 5244", "lat": -34.673946, "lng": -58.470325, "caso": "6389", "comuna": "8", "ot": "808116824", "observaciones": "Tendido en panza a baja altura", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6389\" data-comuna=\"8\">\n            <b>Direcci\u00f3n:</b> Sayos 5244<br>\n            <b>Comuna:</b> 8<br>\n            <b>OT:</b> 808116824<br>\n            <b>Observaciones:</b><br>Tendido en panza a baja\naltura<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Boedo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6389<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6389'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.673946,-58.470325\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6389');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "7/8/2025", "operacion": "Boedo", "zona": "Capital Sur"}, {"direccion": "LAMARCA, EMILIO 3982", "lat": -34.597458, "lng": -58.506627, "caso": "6387", "comuna": "11", "ot": "808195137", "observaciones": "Cable en panza", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6387\" data-comuna=\"11\">\n            <b>Direcci\u00f3n:</b> LAMARCA, EMILIO 3982<br>\n            <b>Comuna:</b> 11<br>\n            <b>OT:</b> 808195137<br>\n            <b>Observaciones:</b><br>Cable en panza<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Paternal<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6387<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6387'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.597458,-58.506627\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6387');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "7/14/2025", "operacion": "Paternal", "zona": "Capital Norte"}, {"direccion": "MADERO 605", "lat": -34.631719, "lng": -58.526047, "caso": "6386", "comuna": "10", "ot": "808258211", "observaciones": "Cable cortado", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6386\" data-comuna=\"10\">\n            <b>Direcci\u00f3n:</b> MADERO 605<br>\n            <b>Comuna:</b> 10<br>\n            <b>OT:</b> 808258211<br>\n            <b>Observaciones:</b><br>Cable cortado<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Devoto<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6386<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6386'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.631719,-58.526047\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6386');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "7/14/2025", "operacion": "Devoto", "zona": "Capital Norte"}];
+          let selectedMarker = null;
+          let closedCases = {};
+          let routeLayer = null;
+          let isRouteVisible = false;
+          const recorrido = [[-34.588033, -58.417181], [-34.562841, -58.440291], [-34.597458, -58.506627], [-34.631719, -58.526047], [-34.673946, -58.470325], [-34.651444, -58.373928], [-34.637913, -58.37593]];
+
+          waitForFirebase(function() {
+            firebase.initializeApp(firebaseConfig);
+            database = firebase.database();
+
+            database.ref('closedCases').once('value', (snapshot) => {
+              closedCases = snapshot.val() || {};
+              console.log('closedCases cargados desde Firebase:', closedCases);
+              filtrarPorPrioridad();
+              document.getElementById('loading-overlay').style.display = 'none';
+            });
+          });
+
+          window.cerrarReclamo = function(caso) {
+            if (!database) {
+              console.error("Base de datos no inicializada. Espera a que Firebase se cargue.");
+              return;
+            }
+            console.log('Cerrando reclamo para el caso:', caso);
+            closedCases[caso] = true;
+
+            database.ref('closedCases').set(closedCases, (error) => {
+              if (error) {
+                console.error('Error al guardar closedCases en Firebase:', error);
+              } else {
+                console.log('closedCases guardado en Firebase:', closedCases);
+              }
+            });
+
+            var punto = allPuntos.find(p => p.caso === caso);
+            if (!punto) {
+              console.error('No se encontró el punto para el caso:', caso);
+              return;
+            }
+
+            markerCluster.eachLayer(function(marker) {
+              if (marker.getLatLng().lat === punto.lat && marker.getLatLng().lng === punto.lng) {
+                marker.setIcon(L.AwesomeMarkers.icon({
+                  markerColor: 'green',
+                  icon: 'info-sign'
+                }));
+                marker._icon.classList.add('closed');
+                console.log('Marcador cambiado a verde para el caso:', caso);
+              }
+            });
+
+            if (tempMarker && tempMarker.getLatLng().lat === punto.lat && tempMarker.getLatLng().lng === punto.lng) {
+              tempMarker.setIcon(L.AwesomeMarkers.icon({
+                markerColor: 'green',
+                icon: 'info-sign'
+              }));
+              tempMarker._icon.classList.add('closed');
+            }
+          };
+
+          window.resetClosedCases = function() {
+            if (!database) {
+              console.error("Base de datos no inicializada. Espera a que Firebase se cargue.");
+              return;
+            }
+            closedCases = {};
+            database.ref('closedCases').set(closedCases, (error) => {
+              if (error) {
+                console.error('Error al restablecer closedCases en Firebase:', error);
+              } else {
+                console.log('closedCases restablecido en Firebase');
+              }
+            });
+            filtrarPorPrioridad();
+            console.log('Estado de casos cerrados restablecido');
+          };
+
+          window.mostrarFotos = function(caso) {
+            console.log("Mostrando fotos para el caso: " + caso);
+            console.log("Fotos disponibles: ", fotosPorCaso[caso]);
+            var fotosPanel = document.getElementById('fotos-panel');
+            var fotosContent = document.getElementById('fotos-content');
+            var fotosHeaderLink = document.getElementById('fotos-header-link');
+            var body = document.body;
+
+            var fotos = fotosPorCaso[caso] ? fotosPorCaso[caso].images : [];
+            var folderUrl = fotosPorCaso[caso] ? fotosPorCaso[caso].folder : '#';
+
+            fotosHeaderLink.href = folderUrl;
+
+            fotosPanel.style.display = 'flex';
+            body.classList.add('fotos-panel-visible');
+
+            fotosContent.innerHTML = '';
+
+            if (fotos.length === 0) {
+                console.log("No hay fotos para este caso.");
+                fotosContent.innerHTML = '<p>No hay fotos</p>';
+            } else {
+                console.log("Generando HTML para las fotos...");
+                fotos.forEach(function(foto) {
+                    console.log("Procesando foto:", foto);
+                    var fotoHtml = `<div class="foto-item"><img src="${foto}" alt="Foto" onclick="abrirFotoGrande('${foto}')"></div>`;
+                    fotosContent.innerHTML += fotoHtml;
+                });
+                console.log("HTML de fotos generado.");
+            }
+          };
+
+          window.openFotosDrive = function(event) {
+            event.preventDefault();
+            var fotosHeaderLink = document.getElementById('fotos-header-link');
+            if (fotosHeaderLink.href !== '#') {
+                window.open(fotosHeaderLink.href, '_blank');
+            }
+          };
+
+          window.cerrarFotos = function() {
+            var fotosPanel = document.getElementById('fotos-panel');
+            if (fotosPanel.style.display === 'flex') {
+              console.log("Cerrando panel de fotos...");
+              var body = document.body;
+              fotosPanel.style.display = 'none';
+              body.classList.remove('fotos-panel-visible');
+            }
+          };
+
+          window.abrirFotoGrande = function(fotoUrl) {
+            console.log("Abriendo foto en grande:", fotoUrl);
+            var viewer = document.getElementById('fotos-viewer');
+            var viewerImg = document.getElementById('fotos-viewer-img');
+            viewerImg.src = fotoUrl;
+            viewer.style.display = 'flex';
+          };
+
+          window.cerrarFotoGrande = function() {
+            console.log("Cerrando visor de fotos...");
+            var viewer = document.getElementById('fotos-viewer');
+            viewer.style.display = 'none';
+          };
+
+          function waitForMap(callback) {
+            var attempts = 0;
+            var maxAttempts = 100;
+
+            function tryInit() {
+              attempts++;
+              map = window['map_{mapa.get_name()}'];
+              if (map) {
+                console.log('Mapa inicializado después de', attempts, 'intentos');
+                map.eachLayer(function(layer) {
+                  if (layer instanceof L.MarkerClusterGroup) {
+                    markerCluster = layer;
+                    console.log('MarkerCluster encontrado:', markerCluster);
+                  }
+                });
+                callback();
+                return;
+              }
+
+              var mapFound = false;
+              for (var key in window) {
+                if (key.startsWith('map_') && window[key] instanceof L.Map) {
+                  console.log('Mapa encontrado en window con clave:', key);
+                  mapFound = true;
+                  map = window[key];
+                  map.eachLayer(function(layer) {
+                    if (layer instanceof L.MarkerClusterGroup) {
+                      markerCluster = layer;
+                      console.log('MarkerCluster encontrado:', markerCluster);
+                    }
+                  });
+                  callback();
+                  return;
+                }
+              }
+
+              if (attempts < maxAttempts) {
+                console.log('Intento', attempts, 'de', maxAttempts, '- Mapa no encontrado aún');
+                setTimeout(tryInit, 200);
+              } else {
+                console.error('No se pudo inicializar el mapa después de', maxAttempts, 'intentos');
+                var mapElement = document.querySelector('.leaflet-container');
+                if (mapElement && mapElement._leaflet_map) {
+                  map = mapElement._leaflet_map;
+                  console.log('Mapa encontrado directamente en el DOM');
+                  map.eachLayer(function(layer) {
+                    if (layer instanceof L.MarkerClusterGroup) {
+                      markerCluster = layer;
+                      console.log('MarkerCluster encontrado:', markerCluster);
+                    }
+                  });
+                  callback();
+                } else {
+                  console.error('No se pudo encontrar el mapa ni en window ni en el DOM');
+                  document.getElementById('loading-overlay').style.display = 'none';
+                }
+              }
+            }
+
+            tryInit();
+          }
+
+          function processPendingActions() {
+            pendingActions.forEach(function(action) {
+              var lat = action.lat;
+              var lng = action.lng;
+              var popupContent = action.popupContent;
+
+              console.log('Procesando acción pendiente - Centrando en:', lat, lng);
+
+              map.setView([lat, lng], 15);
+
+              if (tempMarker) {
+                map.removeLayer(tempMarker);
+                tempMarker = null;
+              }
+
+              tempMarker = L.marker([lat, lng]).addTo(map);
+              tempMarker.bindPopup(popupContent).openPopup();
+              currentPopup = tempMarker;
+
+              console.log('Popup abierto en:', lat, lng);
+            });
+            pendingActions = [];
+          }
+
+          function toggleLista() {
+            var panel = document.getElementById('pending-panel');
+            var list = document.getElementById('pending-list');
+            var arrow = document.getElementById('pending-arrow');
+            if (!panel || !list || !arrow) {
+              console.error('No se encontraron los elementos pending-panel, pending-list o pending-arrow');
+              return;
+            }
+            isPendingListExpanded = !isPendingListExpanded;
+            if (isPendingListExpanded) {
+              panel.style.display = 'block';
+              list.style.display = 'block';
+              arrow.style.transform = 'rotate(90deg)';
+              panel.classList.add('expanded');
+            } else {
+              panel.style.display = 'none';
+              list.style.display = 'none';
+              arrow.style.transform = 'rotate(0deg)';
+              panel.classList.remove('expanded');
+            }
+            localStorage.setItem('pendingListExpanded', isPendingListExpanded);
+            console.log('Lista "Direcciones Pendientes" toggled. Estado:', isPendingListExpanded);
+          }
+
+          function toggleFilters() {
+            var filtersContent = document.getElementById('filters-content');
+            var filtersArrow = document.getElementById('filters-arrow');
+            var filtersPanel = document.getElementById('filters-panel');
+            if (!filtersContent || !filtersArrow || !filtersPanel) {
+              console.error('No se encontraron los elementos filters-content, filters-arrow o filters-panel');
+              return;
+            }
+            isFiltersExpanded = !isFiltersExpanded;
+            if (isFiltersExpanded) {
+              filtersContent.style.display = 'block';
+              filtersArrow.style.transform = 'rotate(90deg)';
+              filtersPanel.classList.add('expanded');
+            } else {
+              filtersContent.style.display = 'none';
+              filtersArrow.style.transform = 'rotate(0deg)';
+              filtersPanel.classList.remove('expanded');
+            }
+            localStorage.setItem('filtersExpanded', isFiltersExpanded);
+            console.log('Subpanel de filtros toggled. Estado:', isFiltersExpanded);
+          }
+
+          function toggleNoMapeadasLista() {
+            var panel = document.getElementById('no-mapeadas-panel');
+            var list = document.getElementById('no-mapeadas-list');
+            var arrow = document.getElementById('no-mapeadas-arrow');
+            if (!panel || !list || !arrow) {
+              console.error('No se encontraron los elementos no-mapeadas-panel, no-mapeadas-list o no-mapeadas-arrow');
+              return;
+            }
+            isNoMapeadasListExpanded = !isNoMapeadasListExpanded;
+            if (isNoMapeadasListExpanded) {
+              panel.style.display = 'block';
+              list.style.display = 'block';
+              arrow.style.transform = 'rotate(90deg)';
+              panel.classList.add('expanded');
+            } else {
+              panel.style.display = 'none';
+              list.style.display = 'none';
+              arrow.style.transform = 'rotate(0deg)';
+              panel.classList.remove('expanded');
+            }
+            localStorage.setItem('noMapeadasListExpanded', isNoMapeadasListExpanded);
+            console.log('Lista "Direcciones No Mapeadas" toggled. Estado:', isNoMapeadasListExpanded);
+          }
+
+          function filtrarLista() {
+            var direccionInput = document.getElementById('pending-search');
+            var comunaFilter = document.getElementById('comuna-filter');
+            var priorityFilter = document.getElementById('priority-filter');
+            var list = document.getElementById('pending-list');
+            var arrow = document.getElementById('pending-arrow');
+            var panel = document.getElementById('pending-panel');
+
+            if (!direccionInput || !comunaFilter || !priorityFilter || !list || !arrow || !panel) {
+              console.error('No se encontraron los elementos de filtrado en filtrarLista');
+              return;
+            }
+
+            var direccionFilter = direccionInput.value.toLowerCase();
+            var comunaValue = comunaFilter.value;
+            var priorityValue = priorityFilter.value;
+
+            var anyFilter = direccionFilter.length > 0 || comunaValue !== 'all' || priorityValue !== 'all';
+            if (anyFilter && !isPendingListExpanded) {
+              isPendingListExpanded = true;
+              panel.style.display = 'block';
+              list.style.display = 'block';
+              arrow.style.transform = 'rotate(90deg)';
+              panel.classList.add('expanded');
+              localStorage.setItem('pendingListExpanded', isPendingListExpanded);
+            } else if (!anyFilter && isPendingListExpanded) {
+              isPendingListExpanded = false;
+              panel.style.display = 'none';
+              list.style.display = 'none';
+              arrow.style.transform = 'rotate(0deg)';
+              panel.classList.remove('expanded');
+              localStorage.setItem('pendingListExpanded', isPendingListExpanded);
+            }
+
+            var items = list.getElementsByTagName('li');
+            for (var i = 0; i < items.length; i++) {
+              var direccion = (items[i].textContent || items[i].innerText).toLowerCase();
+              var comuna = items[i].getAttribute('data-comuna').toLowerCase();
+
+              var matchesDireccion = direccion.includes(direccionFilter);
+              var matchesComuna = comunaValue === 'all' || comuna === comunaValue.toLowerCase();
+
+              if (matchesDireccion && matchesComuna) {
+                items[i].style.display = '';
+                items[i].classList.add('highlight');
+              } else {
+                items[i].style.display = 'none';
+                items[i].classList.remove('highlight');
+              }
+            }
+            console.log('Filtrando lista "Direcciones Pendientes". Filtros:', {direccion: direccionFilter, comuna: comunaValue, prioridad: priorityValue});
+          }
+
+          function filtrarNoMapeadasLista() {
+            var input = document.getElementById('no-mapeadas-search');
+            var filter = input.value.toLowerCase();
+            var list = document.getElementById('no-mapeadas-list');
+            var arrow = document.getElementById('no-mapeadas-arrow');
+            var panel = document.getElementById('no-mapeadas-panel');
+            if (!input || !list || !arrow || !panel) {
+              console.error('No se encontraron los elementos no-mapeadas-search, no-mapeadas-list, no-mapeadas-arrow o no-mapeadas-panel en filtrarNoMapeadasLista');
+              return;
+            }
+
+            if (filter.length > 0 && !isNoMapeadasListExpanded) {
+              isNoMapeadasListExpanded = true;
+              panel.style.display = 'block';
+              list.style.display = 'block';
+              arrow.style.transform = 'rotate(90deg)';
+              panel.classList.add('expanded');
+              localStorage.setItem('noMapeadasListExpanded', isNoMapeadasListExpanded);
+            } else if (filter.length === 0 && isNoMapeadasListExpanded) {
+              isNoMapeadasListExpanded = false;
+              panel.style.display = 'none';
+              list.style.display = 'none';
+              arrow.style.transform = 'rotate(0deg)';
+              panel.classList.remove('expanded');
+              localStorage.setItem('noMapeadasListExpanded', isNoMapeadasListExpanded);
+            }
+
+            var items = list.getElementsByTagName('li');
+            for (var i = 0; i < items.length; i++) {
+              var txtValue = items[i].textContent || items[i].innerText;
+              if (txtValue.toLowerCase().includes(filter)) {
+                items[i].style.display = '';
+                items[i].classList.add('highlight');
+              } else {
+                items[i].style.display = 'none';
+                items[i].classList.remove('highlight');
+              }
+            }
+            console.log('Filtrando lista "Direcciones No Mapeadas". Filtro:', filter);
+          }
+
+          function filtrarPorPrioridad() {
+            var priorityFilter = document.getElementById('priority-filter').value;
+            markerCluster.clearLayers();
+            allPuntos.forEach(function(punto) {
+              if (priorityFilter === 'all' || punto.color === priorityFilter) {
+                var markerColor = closedCases[punto.caso] ? 'green' : punto.color;
+                var marker = L.marker([punto.lat, punto.lng], {
+                  icon: L.AwesomeMarkers.icon({
+                    markerColor: markerColor,
+                    icon: 'info-sign'
+                  })
+                }).bindPopup(punto.popup_content);
+                markerCluster.addLayer(marker);
+              }
+            });
+            localStorage.setItem('priorityFilter', priorityFilter);
+            filtrarLista();
+            console.log('Filtrando por prioridad:', priorityFilter);
+          }
+
+          function filtrarPorComuna() {
+            var comunaFilter = document.getElementById('comuna-filter').value;
+            localStorage.setItem('comunaFilter', comunaFilter);
+            filtrarLista();
+            console.log('Filtrando por comuna:', comunaFilter);
+          }
+
+          function centrarEn(element) {
+            var lat = parseFloat(element.getAttribute('data-lat'));
+            var lng = parseFloat(element.getAttribute('data-lng'));
+            var popupContent = element.getAttribute('data-popup');
+
+            if (!map) {
+              console.log('Mapa no inicializado aún, añadiendo acción a la cola');
+              pendingActions.push({ lat: lat, lng: lng, popupContent: popupContent });
+              return;
+            }
+
+            console.log('Centrando en:', lat, lng);
+
+            map.setView([lat, lng], 15);
+
+            closeCurrentPopup();
+
+            tempMarker = L.marker([lat, lng]).addTo(map);
+            tempMarker.bindPopup(popupContent).openPopup();
+            currentPopup = tempMarker;
+
+            if (selectedMarker) {
+              selectedMarker._icon.classList.remove('selected');
+            }
+            markerCluster.eachLayer(function(marker) {
+              if (marker.getLatLng().lat === lat && marker.getLatLng().lng === lng) {
+                marker._icon.classList.add('selected');
+                selectedMarker = marker;
+              }
+            });
+
+            console.log('Popup abierto en:', lat, lng);
+          }
+
+          function locateMe() {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(function(position) {
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+                map.setView([lat, lng], 15);
+                L.marker([lat, lng], {
+                  icon: L.AwesomeMarkers.icon({
+                    markerColor: 'blue',
+                    icon: 'user'
+                  })
+                }).addTo(map).bindPopup('Tu ubicación').openPopup();
+                console.log('Centrado en ubicación del usuario:', lat, lng);
+              }, function(error) {
+                console.error('Error al obtener la ubicación:', error);
+                alert('No se pudo obtener tu ubicación. Asegúrate de permitir el acceso a la geolocalización.');
+              });
+            } else {
+              console.error('Geolocalización no soportada por el navegador');
+              alert('Tu navegador no soporta geolocalización.');
+            }
+          }
+
+          function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            var isDarkMode = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode);
+            console.log('Modo oscuro:', isDarkMode);
+          }
+
+          function exportToExcel() {
+            var excelUrl = 'https://raw.githubusercontent.com/riv1matias/mapa_op_cables/main/mapa_interactivo_Optical_Power.xlsx';
+            var nombreArchivo = 'mapa_interactivo_Optical_Power.xlsx';
+            console.log('Intentando descargar Excel desde:', excelUrl);
+
+            // Verificar si el archivo existe en el servidor
+            fetch(excelUrl, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        // Si el archivo existe, proceder con la descarga
+                        var link = document.createElement('a');
+                        link.setAttribute('href', excelUrl);
+                        link.setAttribute('download', nombreArchivo);
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        console.log('Descarga iniciada para:', nombreArchivo);
+                    } else {
+                        console.error('Archivo Excel no encontrado en el servidor:', excelUrl);
+                        alert('El archivo Excel no está disponible en el servidor. Por favor, contacta al administrador.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al verificar el archivo Excel:', error);
+                    alert('Error al intentar descargar el archivo Excel. Verifica tu conexión o contacta al administrador.');
+                });
+          }
+
+          function toggleTableView() {
+            var tablePanel = document.getElementById('table-panel');
+            var tableRows = document.getElementById('table-rows');
+            if (tablePanel.style.display === 'flex') {
+              tablePanel.style.display = 'none';
+              return;
+            }
+
+            tableRows.innerHTML = '';
+            allPuntos.forEach(function(punto) {
+              var row = document.createElement('tr');
+              row.setAttribute('data-lat', punto.lat);
+              row.setAttribute('data-lng', punto.lng);
+              row.setAttribute('data-popup', punto.popup_content);
+              row.innerHTML = `
+                <td>${punto.direccion}</td>
+                <td>${punto.comuna}</td>
+                <td>${punto.caso}</td>
+                <td>${punto.ot}</td>
+              `;
+              tableRows.appendChild(row);
+            });
+
+            tablePanel.style.display = 'flex';
+          }
+
+          function toggleRoute() {
+            if (!map) {
+              console.error('Mapa no inicializado aún');
+              return;
+            }
+
+            isRouteVisible = !isRouteVisible;
+            if (isRouteVisible) {
+              if (!routeLayer) {
+                routeLayer = L.polyline(recorrido, {
+                  color: '#ff0000',
+                  weight: 4,
+                  opacity: 0.7
+                }).addTo(map);
+              } else {
+                map.addLayer(routeLayer);
+              }
+              if (recorrido.length > 0) {
+                var bounds = L.latLngBounds(recorrido);
+                map.fitBounds(bounds, { padding: [50, 50] });
+              }
+              console.log('Recorrido mostrado');
+            } else {
+              if (routeLayer) {
+                map.removeLayer(routeLayer);
+              }
+              console.log('Recorrido ocultado');
+            }
+            localStorage.setItem('routeVisible', isRouteVisible);
+          }
+
+          function limpiarPopupsAntiguos() {
+            console.log("Limpiando popups antiguos del DOM...");
+            var popups = document.querySelectorAll('.leaflet-popup');
+            popups.forEach(function(popup) {
+              console.log("Eliminando popup del DOM:", popup);
+              popup.remove();
+            });
+          }
+
+          function closeCurrentPopup() {
+            if (isClosingPopup) {
+              console.log("closeCurrentPopup ya está en ejecución, evitando recursión.");
+              return;
+            }
+            isClosingPopup = true;
+            try {
+              if (currentPopup) {
+                console.log("Cerrando popup actual...");
+                map.closePopup();
+                currentPopup = null;
+              }
+              if (tempMarker) {
+                console.log("Eliminando marcador temporal...");
+                map.removeLayer(tempMarker);
+                tempMarker = null;
+              }
+              if (selectedMarker) {
+                selectedMarker._icon.classList.remove('selected');
+                selectedMarker = null;
+              }
+              limpiarPopupsAntiguos();
+              window.cerrarFotos();
+            } finally {
+              isClosingPopup = false;
+            }
+          }
+
+          document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOM cargado, inicializando eventos...");
+
+            isPendingListExpanded = localStorage.getItem('pendingListExpanded') === 'true';
+            isNoMapeadasListExpanded = localStorage.getItem('noMapeadasListExpanded') === 'true';
+            isFiltersExpanded = localStorage.getItem('filtersExpanded') === 'true';
+            var savedPriorityFilter = localStorage.getItem('priorityFilter') || 'all';
+            var savedComunaFilter = localStorage.getItem('comunaFilter') || 'all';
+            var savedDarkMode = localStorage.getItem('darkMode') === 'true';
+            isRouteVisible = localStorage.getItem('routeVisible') === 'true';
+
+            var pendingList = document.getElementById('pending-list');
+            var pendingArrow = document.getElementById('pending-arrow');
+            var pendingPanel = document.getElementById('pending-panel');
+            var filtersContent = document.getElementById('filters-content');
+            var filtersArrow = document.getElementById('filters-arrow');
+            var filtersPanel = document.getElementById('filters-panel');
+            var noMapeadasList = document.getElementById('no-mapeadas-list');
+            var noMapeadasArrow = document.getElementById('no-mapeadas-arrow');
+            var noMapeadasPanel = document.getElementById('no-mapeadas-panel');
+            var priorityFilter = document.getElementById('priority-filter');
+            var comunaFilter = document.getElementById('comuna-filter');
+
+            if (isPendingListExpanded) {
+              pendingPanel.style.display = 'block';
+              pendingList.style.display = 'block';
+              pendingArrow.style.transform = 'rotate(90deg)';
+              pendingPanel.classList.add('expanded');
+            }
+            if (isFiltersExpanded) {
+              filtersContent.style.display = 'block';
+              filtersArrow.style.transform = 'rotate(90deg)';
+              filtersPanel.classList.add('expanded');
+            }
+            if (isNoMapeadasListExpanded) {
+              noMapeadasPanel.style.display = 'block';
+              noMapeadasList.style.display = 'block';
+              noMapeadasArrow.style.transform = 'rotate(90deg)';
+              noMapeadasPanel.classList.add('expanded');
+            }
+            if (savedDarkMode) {
+              document.body.classList.add('dark-mode');
+            }
+            priorityFilter.value = savedPriorityFilter;
+            comunaFilter.value = savedComunaFilter;
+
+            waitForMap(function() {
+              console.log("Mapa inicializado, registrando eventos para marcadores...");
+              if (markerCluster) {
+                console.log("Registrando eventos para marcadores dentro de MarkerCluster...");
+                markerCluster.eachLayer(function(marker) {
+                  marker.on('click', function(e) {
+                    console.log("Clic en marcador del mapa en posición:", e.latlng);
+                    closeCurrentPopup();
+                    var popupContent = marker.getPopup().getContent();
+                    if (typeof popupContent !== 'string') {
+                      popupContent = popupContent.outerHTML;
+                    }
+                    var latlng = e.latlng;
+                    tempMarker = L.marker(latlng).addTo(map);
+                    tempMarker.bindPopup(popupContent).openPopup();
+                    currentPopup = tempMarker;
+                    marker._icon.classList.add('selected');
+                    if (selectedMarker) {
+                      selectedMarker._icon.classList.remove('selected');
+                    }
+                    selectedMarker = marker;
+                  });
+                });
+              } else {
+                console.log("MarkerCluster no encontrado.");
+              }
+
+              map.on('popupclose', function() {
+                console.log("Popup cerrado en el mapa.");
+                closeCurrentPopup();
+              });
+
+              filtrarPorPrioridad();
+              filtrarPorComuna();
+              processPendingActions();
+
+              if (isRouteVisible) {
+                toggleRoute();
+              }
+            });
+
+            var filtersHeader = document.getElementById('filters-header');
+            var pendingSearch = document.getElementById('pending-search');
+            var pendingList = document.getElementById('pending-list');
+            var noMapeadasSearch = document.getElementById('no-mapeadas-search');
+            var noMapeadasList = document.getElementById('no-mapeadas-list');
+            var fotosClose = document.getElementById('fotos-close');
+            var fotosViewerClose = document.getElementById('fotos-viewer-close');
+            var fotosPanel = document.getElementById('fotos-panel');
+            var locateMeBtn = document.getElementById('locate-me-btn');
+            var toggleThemeBtn = document.getElementById('toggle-theme-btn');
+            var exportExcelBtn = document.getElementById('export-excel-btn');
+            var toggleTableBtn = document.getElementById('toggle-table-btn');
+            var resetClosedBtn = document.getElementById('reset-closed-btn');
+            var toggleRouteBtn = document.getElementById('toggle-route-btn');
+            var togglePendingBtn = document.getElementById('toggle-pending-btn');
+            var toggleNoMapeadasBtn = document.getElementById('toggle-no-mapeadas-btn');
+            var tableClose = document.getElementById('table-close');
+            var tableRows = document.getElementById('table-rows');
+
+            if (!filtersHeader || !pendingSearch || !pendingList) {
+              console.error('No se encontraron los elementos de "Direcciones Pendientes"');
+              return;
+            }
+            if (!noMapeadasSearch || !noMapeadasList) {
+              console.error('No se encontraron los elementos de "Direcciones No Mapeadas"');
+              return;
+            }
+            if (!fotosClose || !fotosViewerClose || !fotosPanel) {
+              console.error('No se encontraron los elementos del panel de fotos');
+              return;
+            }
+            if (!locateMeBtn || !toggleThemeBtn || !exportExcelBtn || !toggleTableBtn || !resetClosedBtn || !toggleRouteBtn || !togglePendingBtn || !toggleNoMapeadasBtn || !tableClose || !tableRows) {
+              console.error('No se encontraron los botones de control');
+              return;
+            }
+
+            filtersHeader.addEventListener('click', toggleFilters);
+            filtersHeader.addEventListener('keypress', function(e) {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleFilters();
+              }
+            });
+
+            pendingSearch.addEventListener('input', filtrarLista);
+            pendingSearch.addEventListener('keypress', function(e) {
+              if (e.key === 'Enter') {
+                filtrarLista();
+              }
+            });
+
+            var pendingItems = pendingList.getElementsByTagName('li');
+            for (var i = 0; i < pendingItems.length; i++) {
+              pendingItems[i].addEventListener('click', function() {
+                centrarEn(this);
+              });
+            }
+
+            noMapeadasSearch.addEventListener('input', filtrarNoMapeadasLista);
+            noMapeadasSearch.addEventListener('keypress', function(e) {
+              if (e.key === 'Enter') {
+                filtrarNoMapeadasLista();
+              }
+            });
+
+            fotosClose.addEventListener('click', window.cerrarFotos);
+            fotosViewerClose.addEventListener('click', window.cerrarFotoGrande);
+
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            fotosPanel.addEventListener('touchstart', function(e) {
+              touchStartX = e.changedTouches[0].screenX;
+            });
+
+            fotosPanel.addEventListener('touchend', function(e) {
+              touchEndX = e.changedTouches[0].screenX;
+              if (touchStartX - touchEndX < -50) {
+                window.cerrarFotos();
+              }
+            });
+
+            locateMeBtn.addEventListener('click', locateMe);
+            toggleThemeBtn.addEventListener('click', toggleTheme);
+            exportExcelBtn.addEventListener('click', exportToExcel);
+            toggleTableBtn.addEventListener('click', toggleTableView);
+            resetClosedBtn.addEventListener('click', window.resetClosedCases);
+            toggleRouteBtn.addEventListener('click', toggleRoute);
+            togglePendingBtn.addEventListener('click', toggleLista);
+            toggleNoMapeadasBtn.addEventListener('click', toggleNoMapeadasLista);
+            tableClose.addEventListener('click', function() {
+              document.getElementById('table-panel').style.display = 'none';
+            });
+
+            tableRows.addEventListener('click', function(e) {
+              var target = e.target.closest('tr');
+              if (target) {
+                centrarEn(target);
+              }
+            });
+
+            console.log('Eventos inicializados correctamente');
+          });
+        </script>
+        
+    
+            <div class="folium-map" id="map_efdb15e224015be8b7f91ef3249eda7b" ></div>
+        
+    
+        <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+
+        <style>
+        #loading-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.8);
+          z-index: 2000;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        #loading-spinner {
+          border: 4px solid #f3f3f3;
+          border-top: 4px solid #007bff;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        .dark-mode .leaflet-container {
+          filter: invert(90%) hue-rotate(180deg);
+        }
+        .dark-mode #pending-panel, .dark-mode #no-mapeadas-panel, .dark-mode #fotos-panel, .dark-mode #table-panel, .dark-mode #filters-panel {
+          background: #333;
+          color: #fff;
+          border-color: #555;
+        }
+        .dark-mode #pending-panel.expanded, .dark-mode #filters-panel.expanded {
+          border-color: #66b0ff;
+        }
+        .dark-mode #no-mapeadas-panel.expanded {
+          border-color: #ff6666;
+        }
+        .dark-mode #pending-list li:hover, .dark-mode #no-mapeadas-list li:hover, .dark-mode #table-body tr:hover {
+          background: #555;
+        }
+        .dark-mode #pending-list li.highlight, .dark-mode #no-mapeadas-list li.highlight {
+          background: #444;
+        }
+        .dark-mode #pending-search, .dark-mode #no-mapeadas-search, .dark-mode #comuna-filter, .dark-mode #priority-filter {
+          background: #444;
+          color: #fff;
+          border-color: #666;
+        }
+        .dark-mode #fotos-header {
+          border-bottom: 1px solid #555;
+        }
+        .dark-mode #fotos-close, .dark-mode #fotos-viewer-close {
+          color: #fff;
+        }
+        .dark-mode #table-header, .dark-mode #filters-header {
+          background: #444;
+        }
+        #pending-panel {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          z-index: 1000;
+          background: white;
+          padding: 8px;
+          border: 1px solid gray;
+          max-height: 400px;
+          overflow: auto;
+          font: 12px/1.4 Arial;
+          width: 340px;
+          border-radius: 4px;
+          transition: border-color 0.3s;
+          display: none; /* Oculto por defecto */
+        }
+        #pending-panel.expanded {
+          border-color: #007bff;
+        }
+        #pending-header {
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          user-select: none;
+        }
+        #pending-list {
+          padding-left: 16px;
+          list-style: none;
+        }
+        #pending-list li {
+          cursor: pointer;
+          margin: 4px 0;
+          padding: 2px;
+          transition: background 0.2s;
+        }
+        #pending-list li:hover {
+          background: #ccc;
+        }
+        #pending-list li.highlight {
+          background: #e6f3ff;
+        }
+        #pending-search, #comuna-filter, #priority-filter {
+          width: 100%;
+          margin: 4px 0;
+          padding: 4px;
+          font-size: 12px;
+          box-sizing: border-box;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+        }
+        #pending-arrow {
+          transition: transform 0.3s;
+          margin-right: 5px;
+        }
+        #filters-panel {
+          margin-top: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          padding: 4px;
+          transition: border-color 0.3s;
+        }
+        #filters-panel.expanded {
+          border-color: #007bff;
+        }
+        #filters-header {
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          user-select: none;
+          background: #f0f0f0;
+          padding: 4px;
+          border-radius: 3px;
+        }
+        #filters-content {
+          display: none;
+          padding: 4px;
+        }
+        #filters-arrow {
+          transition: transform 0.3s;
+          margin-right: 5px;
+        }
+        #no-mapeadas-panel {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          z-index: 1000;
+          background: white;
+          padding: 8px;
+          border: 1px solid red;
+          max-height: 400px;
+          overflow: auto;
+          font: 12px/1.4 Arial;
+          width: 340px;
+          border-radius: 4px;
+          transition: border-color 0.3s;
+          display: none; /* Oculto por defecto */
+        }
+        #no-mapeadas-panel.expanded {
+          border-color: #ff4d4d;
+        }
+        #no-mapeadas-header {
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          user-select: none;
+        }
+        #no-mapeadas-list {
+          padding-left: 16px;
+          list-style: none;
+        }
+        #no-mapeadas-list li {
+          margin: 4px 0;
+          padding: 2px;
+          transition: background 0.2s;
+        }
+        #no-mapeadas-list li:hover {
+          background: #ccc;
+        }
+        #no-mapeadas-list li.highlight {
+          background: #e6f3ff;
+        }
+        #no-mapeadas-search {
+          width: 100%;
+          margin: 4px 0;
+          padding: 4px;
+          font-size: 12px;
+          box-sizing: border-box;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+        }
+        #no-mapeadas-arrow {
+          transition: transform 0.3s;
+          margin-right: 5px;
+        }
+        #fotos-panel {
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: 30%;
+          height: 100%;
+          background: white;
+          border-left: 1px solid #ccc;
+          z-index: 1000;
+          display: none;
+          flex-direction: column;
+          overflow: hidden;
+          touch-action: pan-y;
+        }
+        #fotos-header {
+          padding: 10px;
+          font: bold 14px Arial;
+          border-bottom: 1px solid #ccc;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        #fotos-content {
+          flex: 1;
+          overflow-y: auto;
+          padding: 10px;
+          font: 12px Arial;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+        .foto-item {
+          flex: 1 1 100%;
+          position: relative;
+        }
+        .foto-item img {
+          width: 100%;
+          height: auto;
+          max-height: 200px;
+          object-fit: contain;
+          cursor: pointer;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+        }
+        #fotos-close {
+          cursor: pointer;
+          font-size: 16px;
+          color: #333;
+        }
+        #fotos-viewer {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0,0,0,0.8);
+          z-index: 2000;
+          display: none;
+          justify-content: center;
+          align-items: center;
+        }
+        #fotos-viewer img {
+          max-width: 90%;
+          max-height: 90%;
+          object-fit: contain;
+        }
+        #fotos-viewer-close {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          color: white;
+          font-size: 24px;
+          cursor: pointer;
+        }
+        .leaflet-container {
+          width: 100%;
+          transition: width 0.3s;
+        }
+        .fotos-panel-visible .leaflet-container {
+          width: 70%;
+        }
+        .leaflet-marker-icon.selected {
+          transform: scale(1.2);
+          transition: transform 0.2s;
+        }
+        .leaflet-marker-icon.closed {
+          filter: hue-rotate(90deg);
+        }
+        #locate-me-btn, #toggle-theme-btn, #export-excel-btn, #toggle-table-btn, #toggle-comparison-btn, #reset-closed-btn, #toggle-route-btn, #toggle-pending-btn, #toggle-no-mapeadas-btn {
+          position: fixed;
+          z-index: 1000;
+          background: #007bff;
+          color: white;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          font-size: 18px;
+          transition: background 0.3s;
+        }
+        #locate-me-btn:hover, #toggle-theme-btn:hover, #export-excel-btn:hover, #toggle-table-btn:hover, #toggle-comparison-btn:hover, #reset-closed-btn:hover, #toggle-route-btn:hover, #toggle-pending-btn:hover, #toggle-no-mapeadas-btn:hover {
+          background: #0056b3;
+        }
+        #locate-me-btn {
+          bottom: 20px;
+          left: 20px;
+        }
+        #toggle-theme-btn {
+          bottom: 70px;
+          left: 20px;
+        }
+        #export-excel-btn {
+          bottom: 120px;
+          left: 20px;
+        }
+        #toggle-table-btn {
+          bottom: 170px;
+          left: 20px;
+        }
+        #toggle-comparison-btn {
+          top: 10px;
+          right: 360px;
+          display: none;
+        }
+        #reset-closed-btn {
+          bottom: 220px;
+          left: 20px;
+        }
+        #toggle-route-btn {
+          bottom: 270px;
+          left: 20px;
+        }
+        #toggle-pending-btn {
+          position: fixed;
+          z-index: 1000;
+          background: #007bff;
+          color: white;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          font-size: 18px;
+          transition: background 0.3s;
+          top: 40px;
+          right: 10px; /* Ajustado para alinearse con el panel */
+        }
+        #toggle-no-mapeadas-btn {
+          position: fixed;
+          z-index: 1000;
+          background: #007bff;
+          color: white;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          font-size: 18px;
+          transition: background 0.3s;
+          bottom: 10px;
+          right: 10px; /* Ajustado para alinearse con el panel */
+        }
+        #table-panel {
+          position: fixed;
+          top: 50px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90%;
+          max-height: 80vh;
+          background: white;
+          border: 1px solid #fff;
+          z-index: 1000;
+          display: none;
+          flex-direction: column;
+          overflow: hidden;
+          border-radius: 4px;
+        }
+        #table-header {
+          background: #f0f0;
+          padding: 8px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        #table-body {
+          flex: 1;
+          overflow-y: auto;
+          font: 12px Arial;
+        }
+
+        #table-body table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+        #table-body th, #table-body td {
+          padding: 8px;
+          border-bottom: 1px solid #ddd;
+          text-align: left;
+        }
+        #table-body th {
+          background: #e0e0e0;
+          position: sticky;
+          top: 0;
+          z-index: 10;
+        }
+
+        #table-body tr {
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+
+        #table-body tr:hover tr {
+          background: #f0f0f0;
+        }
+
+        @media (max-width: 768px) {
+          #pending-panel, #no-mapeadas-panel {
+            width: 90vw;
+            padding: 8px;
+          }
+          #fotos-panel {
+            width: 100vw;
+          }
+          .fotos-panel-visible .leaflet-container {
+            width: 100%;
+          }
+          .foto-foto-item {
+            padding: 4px;
+          }
+          #fotos-viewer img {
+            max-width: 95%;
+            max-height: 85%;
+          }
+          #table-panel {
+            width: 95%;
+            padding: 4px;
+          }
+
+          #table-body th, #table-head th td {
+            padding: 6px;
+          }
+
+          #toggle-pending-btn {
+            top: 40px;
+            right: 10px;
+          }
+
+          #toggle-no-mapeadas-btn {
+            bottom: 10px;
+            right: 10px;
+          }
+        }
+      </style>
+        <div id="loading-overlay">
+          <div id="loading-spinner"></div>
+        </div>
+        <div id="pending-panel">
+          <div id="pending-header">
+            <svg id="pending-arrow" width="14" height="14" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M10 17l5-5-5-5v10z"/>
+            </svg> Direcciones Pendientes <span>(7)</span>
+          </div>
+          <div id="filters-panel">
+            <div id="filters-header">
+              <svg id="filters-arrow" width="14" height="14" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M10 17l5-5-5-5v10z"/>
+              </svg> Filtros
+            </div>
+            <div id="filters-content">
+              <select id="priority-filter" onchange="filtrarPorPrioridad()">
+                <option value="all">Todas las Prioridades</option>
+                <option value="blue">Prioritarios</option>
+                <option value="lightblue">Preventivo sin prioridad</option>
+              </select>
+              <select id="comuna-filter" onchange="filtrarPorComuna()">
+                <option value='all'>Todas las Comunas</option><option value='4'>4</option><option value='8'>8</option><option value='10'>10</option><option value='11'>11</option><option value='14'>14</option>
+              </select>
+              <input id="pending-search" placeholder="Buscar Dirección..." type="text">
+            </div>
+          </div>
+          <ul id="pending-list"><li data-lat="-34.588033" data-lng="-58.417181" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;5862&quot; data-comuna=&quot;14&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; CHARCAS 3715&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 14&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 806976061&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Cable en panza Cable cortado&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Palermo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 5862&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;5862&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.588033,-58.417181&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;5862&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="14" data-caso="5862" data-ot="806976061">CHARCAS 3715</li>
+<li data-lat="-34.562841" data-lng="-58.440291" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6262&quot; data-comuna=&quot;14&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; MIGUELETES 1330&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 14&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 807789707&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Cables en panza&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Colegiales&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6262&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6262&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.562841,-58.440291&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6262&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="14" data-caso="6262" data-ot="807789707">MIGUELETES 1330</li>
+<li data-lat="-34.651444" data-lng="-58.373928" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6291&quot; data-comuna=&quot;4&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; HERRERA 2180&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 4&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 807897645&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Tendidos a baja altura con cables cortados colgando&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; San Telmo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6291&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6291&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.651444,-58.373928&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6291&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="4" data-caso="6291" data-ot="807897645">HERRERA 2180</li>
+<li data-lat="-34.637913" data-lng="-58.37593" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;808098725&quot; data-comuna=&quot;4&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; Brandsen 1785&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 4&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 808098725&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Realizar lo convenido con Pablo, se genero nueva OT&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; San Telmo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 808098725&lt;br&gt;             &lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.637913,-58.37593&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;808098725&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="4" data-caso="808098725" data-ot="808098725">Brandsen 1785</li>
+<li data-lat="-34.673946" data-lng="-58.470325" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6389&quot; data-comuna=&quot;8&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; Sayos 5244&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 8&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 808116824&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Tendido en panza a baja altura&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Boedo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6389&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6389&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.673946,-58.470325&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6389&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="8" data-caso="6389" data-ot="808116824">Sayos 5244</li>
+<li data-lat="-34.597458" data-lng="-58.506627" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6387&quot; data-comuna=&quot;11&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; LAMARCA, EMILIO 3982&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 11&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 808195137&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Cable en panza&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Paternal&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6387&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6387&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.597458,-58.506627&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6387&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="11" data-caso="6387" data-ot="808195137">LAMARCA, EMILIO 3982</li>
+<li data-lat="-34.631719" data-lng="-58.526047" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6386&quot; data-comuna=&quot;10&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; MADERO 605&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 10&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 808258211&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Cable cortado&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Devoto&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6386&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6386&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.631719,-58.526047&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6386&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="10" data-caso="6386" data-ot="808258211">MADERO 605</li></ul>
+        </div>
+        <div id="no-mapeadas-panel">
+          <div id="no-mapeadas-header">
+            <svg id="no-mapeadas-arrow" width="14" height="14" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M10 17l5-5-5-5v10z"/>
+            </svg> Direcciones No Mapeadas <span>(0)</span>
+          </div>
+          <input id="no-mapeadas-search" placeholder="Buscar..." type="text">
+          <ul id="no-mapeadas-list"></ul>
+        </div>
+        <div id="fotos-panel">
+          <div id="fotos-header">
+          <a id="fotos-header-link" href="#" onclick="window.openFotosDrive(event)" style="font: bold 14px Arial; text-decoration: underline; color: red;">Fotos del Reclamo - Tocar aquí para ver en Drive</a>            <span id="fotos-close">✖</span>
+          </div>
+          <div id="fotos-content"></div>
+        </div>
+        <div id="fotos-viewer">
+          <img id="fotos-viewer-img" src="">
+          <span id="fotos-viewer-close">✖</span>
+        </div>
+        <div id="comparison-divider"></div>
+        <div id="locate-me-btn" title="Centrar en mi ubicación">📍</div>
+        <div id="toggle-theme-btn" title="Cambiar tema">🌙</div>
+        <div id="export-excel-btn" title="Exportar a Excel">📥</div>
+        <div id="toggle-table-btn" title="Ver tabla">📋</div>
+        <div id="reset-closed-btn" title="Restablecer casos cerrados">🔄</div>
+        <div id="toggle-route-btn" title="Mostrar/Ocultar Recorrido">🛤️</div>
+        <div id="toggle-pending-btn" title="Mostrar/Ocultar Direcciones Pendientes">📌</div>
+        <div id="toggle-no-mapeadas-btn" title="Mostrar/Ocultar Direcciones No Mapeadas">⚠️</div>
+        <div id="table-panel">
+          <div id="table-header">
+            <span>Lista Completa de Direcciones</span>
+            <span id="table-close">✖</span>
+          </div>
+          <div id="table-body">
+            <table>
+              <thead>
+                <tr>
+                  <th>Dirección</th>
+                  <th>Comuna</th>
+                  <th>Caso</th>
+                  <th>OT</th>
+                </tr>
+              </thead>
+              <tbody id="table-rows"></tbody>
+            </table>
+          </div>
+        </div>
+        
+</body>
+<script>
+    
+    
+            var map_efdb15e224015be8b7f91ef3249eda7b = L.map(
+                "map_efdb15e224015be8b7f91ef3249eda7b",
+                {
+                    center: [-34.6037, -58.3816],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_77bcf85bf3130d141a712b99c7dc595f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_77bcf85bf3130d141a712b99c7dc595f.addTo(map_efdb15e224015be8b7f91ef3249eda7b);
+        
+    
+            var marker_cluster_5a014e4fc597d38266ec67d5aad385b3 = L.markerClusterGroup(
+                {
+  "spiderfyOnMaxZoom": true,
+  "showCoverageOnHover": true,
+  "zoomToBoundsOnClick": true,
+  "disableClusteringAtZoom": 15,
+}
+            );
+        
+    
+            var marker_358615ca0d478696b6aa73af0e94c5c6 = L.marker(
+                [-34.588033, -58.417181],
+                {
+}
+            ).addTo(marker_cluster_5a014e4fc597d38266ec67d5aad385b3);
+        
+    
+            var icon_ebb9fcb7696cd480984a37e2c19fd3ac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_67bb5b715b8ec554c470ddb597113169 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e91796210c6c04d7cf7b0225100e4b2b = $(`<div id="html_e91796210c6c04d7cf7b0225100e4b2b" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="5862" data-comuna="14">             <b>Dirección:</b> CHARCAS 3715<br>             <b>Comuna:</b> 14<br>             <b>OT:</b> 806976061<br>             <b>Observaciones:</b><br>Cable en panza Cable cortado<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Palermo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 5862<br>             <br><b><a href="#" onclick="mostrarFotos('5862'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.588033,-58.417181" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('5862');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_67bb5b715b8ec554c470ddb597113169.setContent(html_e91796210c6c04d7cf7b0225100e4b2b);
+            
+        
+
+        marker_358615ca0d478696b6aa73af0e94c5c6.bindPopup(popup_67bb5b715b8ec554c470ddb597113169)
+        ;
+
+        
+    
+    
+                marker_358615ca0d478696b6aa73af0e94c5c6.setIcon(icon_ebb9fcb7696cd480984a37e2c19fd3ac);
+            
+    
+            var marker_7acb81579fb87e4cf7938bf9dc7bc8ae = L.marker(
+                [-34.562841, -58.440291],
+                {
+}
+            ).addTo(marker_cluster_5a014e4fc597d38266ec67d5aad385b3);
+        
+    
+            var icon_080428bf71f0d350ff42897c8a093a19 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8068af5e422793173ae23fb8d651663a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_26220e0df0b9585a9551f38e80c6447e = $(`<div id="html_26220e0df0b9585a9551f38e80c6447e" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6262" data-comuna="14">             <b>Dirección:</b> MIGUELETES 1330<br>             <b>Comuna:</b> 14<br>             <b>OT:</b> 807789707<br>             <b>Observaciones:</b><br>Cables en panza<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Colegiales<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6262<br>             <br><b><a href="#" onclick="mostrarFotos('6262'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.562841,-58.440291" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6262');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_8068af5e422793173ae23fb8d651663a.setContent(html_26220e0df0b9585a9551f38e80c6447e);
+            
+        
+
+        marker_7acb81579fb87e4cf7938bf9dc7bc8ae.bindPopup(popup_8068af5e422793173ae23fb8d651663a)
+        ;
+
+        
+    
+    
+                marker_7acb81579fb87e4cf7938bf9dc7bc8ae.setIcon(icon_080428bf71f0d350ff42897c8a093a19);
+            
+    
+            var marker_82ff2e7e37ccbecc1b142a95d65f2b48 = L.marker(
+                [-34.651444, -58.373928],
+                {
+}
+            ).addTo(marker_cluster_5a014e4fc597d38266ec67d5aad385b3);
+        
+    
+            var icon_142c53bbe5ff1c36706934a92f12b10e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_13c4a51fe9f62d189aab289b6838310f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a7bfa7c36cb66ba4fbf8bf395afb5473 = $(`<div id="html_a7bfa7c36cb66ba4fbf8bf395afb5473" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6291" data-comuna="4">             <b>Dirección:</b> HERRERA 2180<br>             <b>Comuna:</b> 4<br>             <b>OT:</b> 807897645<br>             <b>Observaciones:</b><br>Tendidos a baja altura con cables cortados colgando<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> San Telmo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6291<br>             <br><b><a href="#" onclick="mostrarFotos('6291'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.651444,-58.373928" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6291');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_13c4a51fe9f62d189aab289b6838310f.setContent(html_a7bfa7c36cb66ba4fbf8bf395afb5473);
+            
+        
+
+        marker_82ff2e7e37ccbecc1b142a95d65f2b48.bindPopup(popup_13c4a51fe9f62d189aab289b6838310f)
+        ;
+
+        
+    
+    
+                marker_82ff2e7e37ccbecc1b142a95d65f2b48.setIcon(icon_142c53bbe5ff1c36706934a92f12b10e);
+            
+    
+            var marker_d258ed5f6fbc8b9bdce8c74134e0e6e1 = L.marker(
+                [-34.637913, -58.37593],
+                {
+}
+            ).addTo(marker_cluster_5a014e4fc597d38266ec67d5aad385b3);
+        
+    
+            var icon_237f7edaf8310612bd5717b71541e6a9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1490ed199f2c669ab3e0d049d7935014 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_6ca3d10ddea46353961d91861ddd73e2 = $(`<div id="html_6ca3d10ddea46353961d91861ddd73e2" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="808098725" data-comuna="4">             <b>Dirección:</b> Brandsen 1785<br>             <b>Comuna:</b> 4<br>             <b>OT:</b> 808098725<br>             <b>Observaciones:</b><br>Realizar lo convenido con Pablo, se genero nueva OT<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> San Telmo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 808098725<br>             <br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.637913,-58.37593" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('808098725');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_1490ed199f2c669ab3e0d049d7935014.setContent(html_6ca3d10ddea46353961d91861ddd73e2);
+            
+        
+
+        marker_d258ed5f6fbc8b9bdce8c74134e0e6e1.bindPopup(popup_1490ed199f2c669ab3e0d049d7935014)
+        ;
+
+        
+    
+    
+                marker_d258ed5f6fbc8b9bdce8c74134e0e6e1.setIcon(icon_237f7edaf8310612bd5717b71541e6a9);
+            
+    
+            var marker_5258dd846592def3b6c8d47cce74f56e = L.marker(
+                [-34.673946, -58.470325],
+                {
+}
+            ).addTo(marker_cluster_5a014e4fc597d38266ec67d5aad385b3);
+        
+    
+            var icon_a5a1d077132276b774cea753e08342e8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_553113a06adf7dbac7943e8e9e2ed846 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c4998a8a6278ac93c68e4c1adeee2a03 = $(`<div id="html_c4998a8a6278ac93c68e4c1adeee2a03" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6389" data-comuna="8">             <b>Dirección:</b> Sayos 5244<br>             <b>Comuna:</b> 8<br>             <b>OT:</b> 808116824<br>             <b>Observaciones:</b><br>Tendido en panza a baja altura<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Boedo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6389<br>             <br><b><a href="#" onclick="mostrarFotos('6389'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.673946,-58.470325" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6389');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_553113a06adf7dbac7943e8e9e2ed846.setContent(html_c4998a8a6278ac93c68e4c1adeee2a03);
+            
+        
+
+        marker_5258dd846592def3b6c8d47cce74f56e.bindPopup(popup_553113a06adf7dbac7943e8e9e2ed846)
+        ;
+
+        
+    
+    
+                marker_5258dd846592def3b6c8d47cce74f56e.setIcon(icon_a5a1d077132276b774cea753e08342e8);
+            
+    
+            var marker_9ad0d5de670e4c5bfc0daa1aeb8ed59c = L.marker(
+                [-34.597458, -58.506627],
+                {
+}
+            ).addTo(marker_cluster_5a014e4fc597d38266ec67d5aad385b3);
+        
+    
+            var icon_822b2ca100fc45bd10cff7dc78d58e2a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dc8766ef2a8efcd30f176efe88c0db6b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_0c0db961b7daa8fdfdb74da725e32cd8 = $(`<div id="html_0c0db961b7daa8fdfdb74da725e32cd8" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6387" data-comuna="11">             <b>Dirección:</b> LAMARCA, EMILIO 3982<br>             <b>Comuna:</b> 11<br>             <b>OT:</b> 808195137<br>             <b>Observaciones:</b><br>Cable en panza<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Paternal<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6387<br>             <br><b><a href="#" onclick="mostrarFotos('6387'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.597458,-58.506627" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6387');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_dc8766ef2a8efcd30f176efe88c0db6b.setContent(html_0c0db961b7daa8fdfdb74da725e32cd8);
+            
+        
+
+        marker_9ad0d5de670e4c5bfc0daa1aeb8ed59c.bindPopup(popup_dc8766ef2a8efcd30f176efe88c0db6b)
+        ;
+
+        
+    
+    
+                marker_9ad0d5de670e4c5bfc0daa1aeb8ed59c.setIcon(icon_822b2ca100fc45bd10cff7dc78d58e2a);
+            
+    
+            var marker_8baf5eb78c9f228e6c0aa2f53b74f3f4 = L.marker(
+                [-34.631719, -58.526047],
+                {
+}
+            ).addTo(marker_cluster_5a014e4fc597d38266ec67d5aad385b3);
+        
+    
+            var icon_946112de1f64ed0c602d1332a4a46410 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c0582c59f438cbc27c0e16089c27f6e3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_1b54352796127344ea89179d0c58c12d = $(`<div id="html_1b54352796127344ea89179d0c58c12d" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6386" data-comuna="10">             <b>Dirección:</b> MADERO 605<br>             <b>Comuna:</b> 10<br>             <b>OT:</b> 808258211<br>             <b>Observaciones:</b><br>Cable cortado<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Devoto<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6386<br>             <br><b><a href="#" onclick="mostrarFotos('6386'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.631719,-58.526047" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6386');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_c0582c59f438cbc27c0e16089c27f6e3.setContent(html_1b54352796127344ea89179d0c58c12d);
+            
+        
+
+        marker_8baf5eb78c9f228e6c0aa2f53b74f3f4.bindPopup(popup_c0582c59f438cbc27c0e16089c27f6e3)
+        ;
+
+        
+    
+    
+                marker_8baf5eb78c9f228e6c0aa2f53b74f3f4.setIcon(icon_946112de1f64ed0c602d1332a4a46410);
+            
+    
+            marker_cluster_5a014e4fc597d38266ec67d5aad385b3.addTo(map_efdb15e224015be8b7f91ef3249eda7b);
+        
+</script>
+</html>
