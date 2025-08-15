@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_a3444c328a5b7e93f5c60c73f090e4e2 {
+                #map_091cbe2561549dc3b9ba6ce4604a30a1 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -80,13 +80,13 @@
           let isPendingListExpanded = false;
           let isNoMapeadasListExpanded = false;
           let isFiltersExpanded = false;
-          let fotosPorCaso = {"5862": {"images": ["https://drive.google.com/thumbnail?id=1VA-8kueapnH4zjesds3FbN0zc2VWk0Jp", "https://drive.google.com/thumbnail?id=1tuoAyn3kSdO0PxJsqCiAFgrqcfe2QJkt", "https://drive.google.com/thumbnail?id=1NaEgNBB000iMcV3yQlzN_0hsxl48YrAp", "https://drive.google.com/thumbnail?id=1edOLM4jqlhjfcMGHoQ4W0lmk34V2BwXI"], "folder": "https://drive.google.com/drive/folders/1CovMXcoT_HSo0GXJNh1qNlyT6iAH_OMh"}, "4238": {"images": ["https://drive.google.com/thumbnail?id=11fdvJuumHDvkc3SUx_Wz02B1se_sVJwm", "https://drive.google.com/thumbnail?id=1EyoeYd1uqZB2J2RBOimatCDNgaMfXdlA", "https://drive.google.com/thumbnail?id=1YFH4MBWiu8H-3Et2ciDBLtrXibCK7tvu"], "folder": "https://drive.google.com/drive/folders/1NbmoxM9fWGqGyGAFCs1raNJPq8_5mkYH"}, "6262": {"images": ["https://drive.google.com/thumbnail?id=1obOzBZzAXgZBgyZ-ZRiLFHfJSEf0Po5v", "https://drive.google.com/thumbnail?id=1ersaeFyeEZM5pMbZZy2eiljMG8kjrhqs"], "folder": "https://drive.google.com/drive/folders/1Z4In2n3xmtxYUeFGYdUW47QON9Vi36Wq"}, "6557": {"images": ["https://drive.google.com/thumbnail?id=1K1XGzXsByw30SxwKgGk5-Gzy-5_UHk72"], "folder": "https://drive.google.com/drive/folders/1IFeJe22vngi-GwQYOURUTqbjmwopyLW6"}, "6265": {"images": ["https://drive.google.com/thumbnail?id=1i9rsFdWazr9wHhRp0hRsYl1bFlMyh6r5", "https://drive.google.com/thumbnail?id=1g05-2d2G-6-sRymux5e2p9BTT3pEOAmG", "https://drive.google.com/thumbnail?id=1eemcehNxmBOW02g_0sU41JZ_3EB2dqdZ"], "folder": "https://drive.google.com/drive/folders/1Yjt6QRb6dM0Jqi1HnxydbKsFjD-JIVvu"}, "6899": {"images": ["https://drive.google.com/thumbnail?id=1jVayHb04aY5a18r68fItdkZ5nF3RIle8", "https://drive.google.com/thumbnail?id=1M2IySGHWuZWAc23xvFntgYa31NSznFsi"], "folder": "https://drive.google.com/drive/folders/1xde1iSJtc-5ANjEMJL5rFlCKQR2y8cwo"}, "6087": {"images": ["https://drive.google.com/thumbnail?id=1xInArEZE1jl9QT914mIx_WVGQF43SqVx", "https://drive.google.com/thumbnail?id=1oR4l53E8iLUmFmJjjlozhvfDyYdKyJGJ"], "folder": "https://drive.google.com/drive/folders/1DeSBd_xV6QqKwt-9lcVBlHI9BC34dYBR"}, "6913": {"images": ["https://drive.google.com/thumbnail?id=1ckRrGK-Hpsn1-oWAA4GDyar2UTSX60sV"], "folder": "https://drive.google.com/drive/folders/1q1ZR5CyERDjxCDdPEojh02Ow8dhYL2EA"}, "6914": {"images": ["https://drive.google.com/thumbnail?id=1jlZBTzNwhI0rTbiVnhH-gf3Hgx1EEkaq"], "folder": "https://drive.google.com/drive/folders/1SjpA8RMwCUoRWUQQVDYD7QpAUe_fLAKg"}, "6917": {"images": ["https://drive.google.com/thumbnail?id=1S4s5apgrPIRu0B5-l4CXq57rAdGirSKq", "https://drive.google.com/thumbnail?id=1L_64WLqwSjVqK8i3sDn0vzWTaho7Pwqf", "https://drive.google.com/thumbnail?id=19bwLHDkUJDIlXisDtX7tEUalSuhIkqVy", "https://drive.google.com/thumbnail?id=1B9W1VqJ7-q_vsrN8lVVyRzfoU3gAvdW7"], "folder": "https://drive.google.com/drive/folders/1qlxh7AqL31I8Irrht-SaA1-DH5sIeODG"}, "6933": {"images": ["https://drive.google.com/thumbnail?id=1ev5LNqbtseQVfllTUlg6944pmlZBVKbl"], "folder": "https://drive.google.com/drive/folders/1BzoR56LAUmiYvkZKuMrp4n_lhxkPW8cP"}, "6937": {"images": ["https://drive.google.com/thumbnail?id=1hLtfUqCfEcAZ9Nuobzl13MFbmWJDPKix", "https://drive.google.com/thumbnail?id=1NbUR3Alfb4PLeTt51N22XCjt0yzQk4q_"], "folder": "https://drive.google.com/drive/folders/1lItpnbvbAr2aF2NhTuFFolE2NmFUOli2"}, "6940": {"images": ["https://drive.google.com/thumbnail?id=1IDGfAoCuTcDpctb9Sy0ApbJgHEJ6ygkF", "https://drive.google.com/thumbnail?id=1z6ITYLy4j1kAtjuhqvS_P6SklkdfNP6I"], "folder": "https://drive.google.com/drive/folders/1NT9y3EMPT28O2ApSX3tsboQ4NKVIZgCQ"}, "5843": {"images": ["https://drive.google.com/thumbnail?id=18zSS-HhE4v_tc1AB2LQ_4kbXL0I7tCwU", "https://drive.google.com/thumbnail?id=16XduH0hSt-OTbJng-b0PYUM9-R3eo4v2", "https://drive.google.com/thumbnail?id=1javye0COWMB-YBCd4cjhueR6B5b3gld5"], "folder": "https://drive.google.com/drive/folders/1f8uzOfurzLHGXGV9XAEe32YUeYuCaYoU"}, "5860": {"images": ["https://drive.google.com/thumbnail?id=1Vs7aMoEZA09dq6fCIKjryta9oVGBD0b5", "https://drive.google.com/thumbnail?id=18uKkBD6n_5je6ZVW16s6MhEwRy4t1bcj", "https://drive.google.com/thumbnail?id=1X8RXtBI-2olO46jOQI4p6gx1iVOFo2eG", "https://drive.google.com/thumbnail?id=1-fgTuG7_LuRZku02Q_ja9qE3YQ6bRk1l"], "folder": "https://drive.google.com/drive/folders/1v73EyWDeDWutrISXNf9QP-ASS7srK0D5"}};
-          let allPuntos = [{"direccion": "CHARCAS 3715", "lat": -34.588033, "lng": -58.417181, "caso": "5862", "comuna": "14", "ot": "806976061", "observaciones": "Cable en panza Cable cortado", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"5862\" data-comuna=\"14\">\n            <b>Direcci\u00f3n:</b> CHARCAS 3715<br>\n            <b>Comuna:</b> 14<br>\n            <b>OT:</b> 806976061<br>\n            <b>Observaciones:</b><br>Cable en panza Cable\ncortado<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Palermo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 5862<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('5862'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.588033,-58.417181\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('5862');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "5/26/2025", "operacion": "Palermo", "zona": "Capital Sur"}, {"direccion": "GUATEMALA 5527", "lat": -34.580805, "lng": -58.431302, "caso": "4238", "comuna": "14", "ot": "807130137", "observaciones": "cable en panza", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"4238\" data-comuna=\"14\">\n            <b>Direcci\u00f3n:</b> GUATEMALA 5527<br>\n            <b>Comuna:</b> 14<br>\n            <b>OT:</b> 807130137<br>\n            <b>Observaciones:</b><br>cable en panza<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Palermo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 4238<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('4238'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.580805,-58.431302\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('4238');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "6/2/2025", "operacion": "Palermo", "zona": "Capital Sur"}, {"direccion": "MIGUELETES 1330", "lat": -34.562841, "lng": -58.440291, "caso": "6262", "comuna": "14", "ot": "807789707", "observaciones": "Cables en panza", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6262\" data-comuna=\"14\">\n            <b>Direcci\u00f3n:</b> MIGUELETES 1330<br>\n            <b>Comuna:</b> 14<br>\n            <b>OT:</b> 807789707<br>\n            <b>Observaciones:</b><br>Cables en panza<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Colegiales<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6262<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6262'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.562841,-58.440291\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6262');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "6/25/2025", "operacion": "Colegiales", "zona": "Capital Norte"}, {"direccion": "ALBERDI, JUAN BAUTISTA AV. 1091", "lat": -34.62289, "lng": -58.443538, "caso": "6557", "comuna": "6", "ot": "ICD30334394", "observaciones": "Verificar si la linga panseada es nuestra y ver con pablo como resolverlo", "popup_content": "\n        <div style='width: 248px; font: 12px Arial;' data-caso=\"6557\" data-comuna=\"6\">\n            <b>Direcci\u00f3n:</b> ALBERDI, JUAN BAUTISTA AV. 1091<br>\n            <b>Comuna:</b> 6<br>\n            <b>OT:</b> ICD30334394<br>\n            <b>Observaciones:</b><br>Verificar si la linga panseada\nes nuestra y ver con pablo como\nresolverlo<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Boedo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6557<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6557'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.62289,-58.443538\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6557');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/4/2025", "operacion": "Boedo", "zona": "Capital Sur"}, {"direccion": "BROWN, ALTE. AV. 881", "lat": -34.632684, "lng": -58.360551, "caso": "6265", "comuna": "4", "ot": "ICD30345482", "observaciones": "tendido a baja altura", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6265\" data-comuna=\"4\">\n            <b>Direcci\u00f3n:</b> BROWN, ALTE. AV. 881<br>\n            <b>Comuna:</b> 4<br>\n            <b>OT:</b> ICD30345482<br>\n            <b>Observaciones:</b><br>tendido a baja altura<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> San Telmo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6265<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6265'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.632684,-58.360551\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6265');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/7/2025", "operacion": "San Telmo", "zona": "Capital Sur"}, {"direccion": "ERCILLA 6159", "lat": -34.647321, "lng": -58.510283, "caso": "6899", "comuna": "9", "ot": "ICD30377283", "observaciones": "Tendido a baja altura y cables cortados", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6899\" data-comuna=\"9\">\n            <b>Direcci\u00f3n:</b> ERCILLA 6159<br>\n            <b>Comuna:</b> 9<br>\n            <b>OT:</b> ICD30377283<br>\n            <b>Observaciones:</b><br>Tendido a baja altura y\ncables cortados<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Devoto<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6899<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6899'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.647321,-58.510283\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6899');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "Devoto", "zona": "Capital Norte"}, {"direccion": "ROSETI 436", "lat": -34.584687, "lng": -58.4501, "caso": "6087", "comuna": "15", "ot": "ICD30377406", "observaciones": "Cable en panza", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6087\" data-comuna=\"15\">\n            <b>Direcci\u00f3n:</b> ROSETI 436<br>\n            <b>Comuna:</b> 15<br>\n            <b>OT:</b> ICD30377406<br>\n            <b>Observaciones:</b><br>Cable en panza<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Colegiales<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6087<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6087'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.584687,-58.4501\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6087');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "Colegiales", "zona": "Capital Norte"}, {"direccion": "RIVADAVIA AV. 6161", "lat": -34.625256, "lng": -58.453305, "caso": "6913", "comuna": "6", "ot": "Pendiente ADM", "observaciones": "Tendido a baja altura", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6913\" data-comuna=\"6\">\n            <b>Direcci\u00f3n:</b> RIVADAVIA AV. 6161<br>\n            <b>Comuna:</b> 6<br>\n            <b>OT:</b> Pendiente ADM<br>\n            <b>Observaciones:</b><br>Tendido a baja altura<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Boedo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6913<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6913'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.625256,-58.453305\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6913');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "Boedo", "zona": "Capital Sur"}, {"direccion": "AVELLANEDA AV. 1240", "lat": -34.618227, "lng": -58.448578, "caso": "6914", "comuna": "6", "ot": "Pendiente ADM", "observaciones": "Tendido a baja altura", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6914\" data-comuna=\"6\">\n            <b>Direcci\u00f3n:</b> AVELLANEDA AV. 1240<br>\n            <b>Comuna:</b> 6<br>\n            <b>OT:</b> Pendiente ADM<br>\n            <b>Observaciones:</b><br>Tendido a baja altura<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Boedo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6914<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6914'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.618227,-58.448578\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6914');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "Boedo", "zona": "Capital Sur"}, {"direccion": "BRIN, MINISTRO 1375", "lat": -34.63565, "lng": -58.355342, "caso": "6917", "comuna": "4", "ot": "Pendiente ADM", "observaciones": "tendido a baja altura tiene pendiente tambien una columna en l mismo lugar ver en conjunto", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6917\" data-comuna=\"4\">\n            <b>Direcci\u00f3n:</b> BRIN, MINISTRO 1375<br>\n            <b>Comuna:</b> 4<br>\n            <b>OT:</b> Pendiente ADM<br>\n            <b>Observaciones:</b><br>tendido a baja altura\ntiene pendiente tambien\nuna columna en l mismo\nlugar ver en conjunto<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> San Telmo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6917<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6917'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.63565,-58.355342\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6917');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "San Telmo", "zona": "Capital Sur"}, {"direccion": "ANDONAEGUI 1894", "lat": -34.581325, "lng": -58.484848, "caso": "6933", "comuna": "12", "ot": "ICD30377539", "observaciones": "Ganancia suelta en la columna", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6933\" data-comuna=\"12\">\n            <b>Direcci\u00f3n:</b> ANDONAEGUI 1894<br>\n            <b>Comuna:</b> 12<br>\n            <b>OT:</b> ICD30377539<br>\n            <b>Observaciones:</b><br>Ganancia suelta en la\ncolumna<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Paternal<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6933<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6933'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.581325,-58.484848\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6933');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "Paternal", "zona": "Capital Norte"}, {"direccion": "ANCHORENA, TOMAS MANUEL DE, DR. 1566", "lat": -34.591997, "lng": -58.403659, "caso": "6937", "comuna": "2", "ot": "Pendiente ADM", "observaciones": "Cable en panza", "popup_content": "\n        <div style='width: 288px; font: 12px Arial;' data-caso=\"6937\" data-comuna=\"2\">\n            <b>Direcci\u00f3n:</b> ANCHORENA, TOMAS MANUEL DE, DR. 1566<br>\n            <b>Comuna:</b> 2<br>\n            <b>OT:</b> Pendiente ADM<br>\n            <b>Observaciones:</b><br>Cable en panza<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Recoleta<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6937<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6937'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.591997,-58.403659\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6937');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "Recoleta", "zona": "Capital Sur"}, {"direccion": "PERDRIEL 1490", "lat": -34.651701, "lng": -58.385244, "caso": "6940", "comuna": "4", "ot": "Pendiente ADM", "observaciones": "Tendido a baja altura", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6940\" data-comuna=\"4\">\n            <b>Direcci\u00f3n:</b> PERDRIEL 1490<br>\n            <b>Comuna:</b> 4<br>\n            <b>OT:</b> Pendiente ADM<br>\n            <b>Observaciones:</b><br>Tendido a baja altura<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> San Telmo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6940<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6940'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.651701,-58.385244\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6940');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "San Telmo", "zona": "Capital Sur"}, {"direccion": "CAMPANA 2545", "lat": -34.607061, "lng": -58.492468, "caso": "5843", "comuna": "11", "ot": "Pendiente ADM", "observaciones": "Cable en panza", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"5843\" data-comuna=\"11\">\n            <b>Direcci\u00f3n:</b> CAMPANA 2545<br>\n            <b>Comuna:</b> 11<br>\n            <b>OT:</b> Pendiente ADM<br>\n            <b>Observaciones:</b><br>Cable en panza<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Devoto<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 5843<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('5843'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.607061,-58.492468\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('5843');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/13/2025", "operacion": "Devoto", "zona": "Capital Norte"}, {"direccion": "ARGERICH 45", "lat": -34.630493, "lng": -58.471436, "caso": "5860", "comuna": "7", "ot": "Pendiente ADM", "observaciones": "cables a baja altura", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"5860\" data-comuna=\"7\">\n            <b>Direcci\u00f3n:</b> ARGERICH 45<br>\n            <b>Comuna:</b> 7<br>\n            <b>OT:</b> Pendiente ADM<br>\n            <b>Observaciones:</b><br>cables a baja altura<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Boedo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 5860<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('5860'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.630493,-58.471436\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('5860');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/13/2025", "operacion": "Boedo", "zona": "Capital Sur"}];
+          let fotosPorCaso = {"5862": {"images": ["https://drive.google.com/thumbnail?id=1VA-8kueapnH4zjesds3FbN0zc2VWk0Jp", "https://drive.google.com/thumbnail?id=1tuoAyn3kSdO0PxJsqCiAFgrqcfe2QJkt", "https://drive.google.com/thumbnail?id=1NaEgNBB000iMcV3yQlzN_0hsxl48YrAp", "https://drive.google.com/thumbnail?id=1edOLM4jqlhjfcMGHoQ4W0lmk34V2BwXI"], "folder": "https://drive.google.com/drive/folders/1CovMXcoT_HSo0GXJNh1qNlyT6iAH_OMh"}, "4238": {"images": ["https://drive.google.com/thumbnail?id=11fdvJuumHDvkc3SUx_Wz02B1se_sVJwm", "https://drive.google.com/thumbnail?id=1EyoeYd1uqZB2J2RBOimatCDNgaMfXdlA", "https://drive.google.com/thumbnail?id=1YFH4MBWiu8H-3Et2ciDBLtrXibCK7tvu"], "folder": "https://drive.google.com/drive/folders/1NbmoxM9fWGqGyGAFCs1raNJPq8_5mkYH"}, "6262": {"images": ["https://drive.google.com/thumbnail?id=1obOzBZzAXgZBgyZ-ZRiLFHfJSEf0Po5v", "https://drive.google.com/thumbnail?id=1ersaeFyeEZM5pMbZZy2eiljMG8kjrhqs"], "folder": "https://drive.google.com/drive/folders/1Z4In2n3xmtxYUeFGYdUW47QON9Vi36Wq"}, "6557": {"images": ["https://drive.google.com/thumbnail?id=1K1XGzXsByw30SxwKgGk5-Gzy-5_UHk72"], "folder": "https://drive.google.com/drive/folders/1IFeJe22vngi-GwQYOURUTqbjmwopyLW6"}, "6265": {"images": ["https://drive.google.com/thumbnail?id=1i9rsFdWazr9wHhRp0hRsYl1bFlMyh6r5", "https://drive.google.com/thumbnail?id=1g05-2d2G-6-sRymux5e2p9BTT3pEOAmG", "https://drive.google.com/thumbnail?id=1eemcehNxmBOW02g_0sU41JZ_3EB2dqdZ"], "folder": "https://drive.google.com/drive/folders/1Yjt6QRb6dM0Jqi1HnxydbKsFjD-JIVvu"}, "6899": {"images": ["https://drive.google.com/thumbnail?id=1jVayHb04aY5a18r68fItdkZ5nF3RIle8", "https://drive.google.com/thumbnail?id=1M2IySGHWuZWAc23xvFntgYa31NSznFsi"], "folder": "https://drive.google.com/drive/folders/1xde1iSJtc-5ANjEMJL5rFlCKQR2y8cwo"}, "6087": {"images": ["https://drive.google.com/thumbnail?id=1xInArEZE1jl9QT914mIx_WVGQF43SqVx", "https://drive.google.com/thumbnail?id=1oR4l53E8iLUmFmJjjlozhvfDyYdKyJGJ"], "folder": "https://drive.google.com/drive/folders/1DeSBd_xV6QqKwt-9lcVBlHI9BC34dYBR"}, "6913": {"images": ["https://drive.google.com/thumbnail?id=1ckRrGK-Hpsn1-oWAA4GDyar2UTSX60sV"], "folder": "https://drive.google.com/drive/folders/1q1ZR5CyERDjxCDdPEojh02Ow8dhYL2EA"}, "6914": {"images": ["https://drive.google.com/thumbnail?id=1jlZBTzNwhI0rTbiVnhH-gf3Hgx1EEkaq"], "folder": "https://drive.google.com/drive/folders/1SjpA8RMwCUoRWUQQVDYD7QpAUe_fLAKg"}, "6917": {"images": ["https://drive.google.com/thumbnail?id=1S4s5apgrPIRu0B5-l4CXq57rAdGirSKq", "https://drive.google.com/thumbnail?id=1L_64WLqwSjVqK8i3sDn0vzWTaho7Pwqf", "https://drive.google.com/thumbnail?id=19bwLHDkUJDIlXisDtX7tEUalSuhIkqVy", "https://drive.google.com/thumbnail?id=1B9W1VqJ7-q_vsrN8lVVyRzfoU3gAvdW7"], "folder": "https://drive.google.com/drive/folders/1qlxh7AqL31I8Irrht-SaA1-DH5sIeODG"}, "6933": {"images": ["https://drive.google.com/thumbnail?id=1ev5LNqbtseQVfllTUlg6944pmlZBVKbl"], "folder": "https://drive.google.com/drive/folders/1BzoR56LAUmiYvkZKuMrp4n_lhxkPW8cP"}, "6937": {"images": ["https://drive.google.com/thumbnail?id=1hLtfUqCfEcAZ9Nuobzl13MFbmWJDPKix", "https://drive.google.com/thumbnail?id=1NbUR3Alfb4PLeTt51N22XCjt0yzQk4q_"], "folder": "https://drive.google.com/drive/folders/1lItpnbvbAr2aF2NhTuFFolE2NmFUOli2"}, "6940": {"images": ["https://drive.google.com/thumbnail?id=1IDGfAoCuTcDpctb9Sy0ApbJgHEJ6ygkF", "https://drive.google.com/thumbnail?id=1z6ITYLy4j1kAtjuhqvS_P6SklkdfNP6I"], "folder": "https://drive.google.com/drive/folders/1NT9y3EMPT28O2ApSX3tsboQ4NKVIZgCQ"}, "5843": {"images": ["https://drive.google.com/thumbnail?id=18zSS-HhE4v_tc1AB2LQ_4kbXL0I7tCwU", "https://drive.google.com/thumbnail?id=16XduH0hSt-OTbJng-b0PYUM9-R3eo4v2", "https://drive.google.com/thumbnail?id=1javye0COWMB-YBCd4cjhueR6B5b3gld5"], "folder": "https://drive.google.com/drive/folders/1f8uzOfurzLHGXGV9XAEe32YUeYuCaYoU"}, "5860": {"images": ["https://drive.google.com/thumbnail?id=1Vs7aMoEZA09dq6fCIKjryta9oVGBD0b5", "https://drive.google.com/thumbnail?id=18uKkBD6n_5je6ZVW16s6MhEwRy4t1bcj", "https://drive.google.com/thumbnail?id=1X8RXtBI-2olO46jOQI4p6gx1iVOFo2eG", "https://drive.google.com/thumbnail?id=1-fgTuG7_LuRZku02Q_ja9qE3YQ6bRk1l"], "folder": "https://drive.google.com/drive/folders/1v73EyWDeDWutrISXNf9QP-ASS7srK0D5"}, "6946": {"images": ["https://drive.google.com/thumbnail?id=15aweC_4I7lAgWCm9VVlD7pUaf-X3YZh6", "https://drive.google.com/thumbnail?id=11cn8UWtyYLAi2EaZTqRq_cS9sGtM8zrC", "https://drive.google.com/thumbnail?id=14_qdG_0h9XmvQyM6o4GuDO5nkZL1O0wJ"], "folder": "https://drive.google.com/drive/folders/1xmZvCN5b6Fz4WUgE-kncbxHEzYZM9Cdi"}};
+          let allPuntos = [{"direccion": "CHARCAS 3715", "lat": -34.588033, "lng": -58.417181, "caso": "5862", "comuna": "14", "ot": "806976061", "observaciones": "Cable en panza Cable cortado", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"5862\" data-comuna=\"14\">\n            <b>Direcci\u00f3n:</b> CHARCAS 3715<br>\n            <b>Comuna:</b> 14<br>\n            <b>OT:</b> 806976061<br>\n            <b>Observaciones:</b><br>Cable en panza Cable\ncortado<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Palermo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 5862<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('5862'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.588033,-58.417181\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('5862');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "5/26/2025", "operacion": "Palermo", "zona": "Capital Sur"}, {"direccion": "GUATEMALA 5527", "lat": -34.580805, "lng": -58.431302, "caso": "4238", "comuna": "14", "ot": "807130137", "observaciones": "cable en panza", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"4238\" data-comuna=\"14\">\n            <b>Direcci\u00f3n:</b> GUATEMALA 5527<br>\n            <b>Comuna:</b> 14<br>\n            <b>OT:</b> 807130137<br>\n            <b>Observaciones:</b><br>cable en panza<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Palermo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 4238<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('4238'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.580805,-58.431302\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('4238');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "6/2/2025", "operacion": "Palermo", "zona": "Capital Sur"}, {"direccion": "MIGUELETES 1330", "lat": -34.562841, "lng": -58.440291, "caso": "6262", "comuna": "14", "ot": "807789707", "observaciones": "Cables en panza", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6262\" data-comuna=\"14\">\n            <b>Direcci\u00f3n:</b> MIGUELETES 1330<br>\n            <b>Comuna:</b> 14<br>\n            <b>OT:</b> 807789707<br>\n            <b>Observaciones:</b><br>Cables en panza<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Colegiales<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6262<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6262'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.562841,-58.440291\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6262');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "6/25/2025", "operacion": "Colegiales", "zona": "Capital Norte"}, {"direccion": "ALBERDI, JUAN BAUTISTA AV. 1091", "lat": -34.62289, "lng": -58.443538, "caso": "6557", "comuna": "6", "ot": "ICD30334394", "observaciones": "Verificar si la linga panseada es nuestra y ver con pablo como resolverlo", "popup_content": "\n        <div style='width: 248px; font: 12px Arial;' data-caso=\"6557\" data-comuna=\"6\">\n            <b>Direcci\u00f3n:</b> ALBERDI, JUAN BAUTISTA AV. 1091<br>\n            <b>Comuna:</b> 6<br>\n            <b>OT:</b> ICD30334394<br>\n            <b>Observaciones:</b><br>Verificar si la linga panseada\nes nuestra y ver con pablo como\nresolverlo<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Boedo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6557<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6557'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.62289,-58.443538\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6557');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/4/2025", "operacion": "Boedo", "zona": "Capital Sur"}, {"direccion": "BROWN, ALTE. AV. 881", "lat": -34.632684, "lng": -58.360551, "caso": "6265", "comuna": "4", "ot": "ICD30345482", "observaciones": "tendido a baja altura", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6265\" data-comuna=\"4\">\n            <b>Direcci\u00f3n:</b> BROWN, ALTE. AV. 881<br>\n            <b>Comuna:</b> 4<br>\n            <b>OT:</b> ICD30345482<br>\n            <b>Observaciones:</b><br>tendido a baja altura<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> San Telmo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6265<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6265'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.632684,-58.360551\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6265');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/7/2025", "operacion": "San Telmo", "zona": "Capital Sur"}, {"direccion": "ERCILLA 6159", "lat": -34.647321, "lng": -58.510283, "caso": "6899", "comuna": "9", "ot": "ICD30377283", "observaciones": "Tendido a baja altura y cables cortados", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6899\" data-comuna=\"9\">\n            <b>Direcci\u00f3n:</b> ERCILLA 6159<br>\n            <b>Comuna:</b> 9<br>\n            <b>OT:</b> ICD30377283<br>\n            <b>Observaciones:</b><br>Tendido a baja altura y\ncables cortados<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Devoto<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6899<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6899'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.647321,-58.510283\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6899');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "Devoto", "zona": "Capital Norte"}, {"direccion": "ROSETI 436", "lat": -34.584687, "lng": -58.4501, "caso": "6087", "comuna": "15", "ot": "ICD30377406", "observaciones": "Cable en panza", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6087\" data-comuna=\"15\">\n            <b>Direcci\u00f3n:</b> ROSETI 436<br>\n            <b>Comuna:</b> 15<br>\n            <b>OT:</b> ICD30377406<br>\n            <b>Observaciones:</b><br>Cable en panza<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Colegiales<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6087<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6087'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.584687,-58.4501\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6087');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "Colegiales", "zona": "Capital Norte"}, {"direccion": "RIVADAVIA AV. 6161", "lat": -34.625256, "lng": -58.453305, "caso": "6913", "comuna": "6", "ot": "ICD30399137", "observaciones": "Tendido a baja altura", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6913\" data-comuna=\"6\">\n            <b>Direcci\u00f3n:</b> RIVADAVIA AV. 6161<br>\n            <b>Comuna:</b> 6<br>\n            <b>OT:</b> ICD30399137<br>\n            <b>Observaciones:</b><br>Tendido a baja altura<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Boedo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6913<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6913'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.625256,-58.453305\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6913');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "Boedo", "zona": "Capital Sur"}, {"direccion": "AVELLANEDA AV. 1240", "lat": -34.618227, "lng": -58.448578, "caso": "6914", "comuna": "6", "ot": "ICD30399168", "observaciones": "Tendido a baja altura", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6914\" data-comuna=\"6\">\n            <b>Direcci\u00f3n:</b> AVELLANEDA AV. 1240<br>\n            <b>Comuna:</b> 6<br>\n            <b>OT:</b> ICD30399168<br>\n            <b>Observaciones:</b><br>Tendido a baja altura<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Boedo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6914<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6914'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.618227,-58.448578\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6914');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "Boedo", "zona": "Capital Sur"}, {"direccion": "BRIN, MINISTRO 1375", "lat": -34.63565, "lng": -58.355342, "caso": "6917", "comuna": "4", "ot": "ICD30399224", "observaciones": "tendido a baja altura tiene pendiente tambien una columna en l mismo lugar ver en conjunto", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6917\" data-comuna=\"4\">\n            <b>Direcci\u00f3n:</b> BRIN, MINISTRO 1375<br>\n            <b>Comuna:</b> 4<br>\n            <b>OT:</b> ICD30399224<br>\n            <b>Observaciones:</b><br>tendido a baja altura\ntiene pendiente tambien\nuna columna en l mismo\nlugar ver en conjunto<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> San Telmo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6917<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6917'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.63565,-58.355342\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6917');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "San Telmo", "zona": "Capital Sur"}, {"direccion": "ANDONAEGUI 1894", "lat": -34.581325, "lng": -58.484848, "caso": "6933", "comuna": "12", "ot": "ICD30377539", "observaciones": "Ganancia suelta en la columna", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6933\" data-comuna=\"12\">\n            <b>Direcci\u00f3n:</b> ANDONAEGUI 1894<br>\n            <b>Comuna:</b> 12<br>\n            <b>OT:</b> ICD30377539<br>\n            <b>Observaciones:</b><br>Ganancia suelta en la\ncolumna<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Paternal<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6933<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6933'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.581325,-58.484848\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6933');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "Paternal", "zona": "Capital Norte"}, {"direccion": "ANCHORENA, TOMAS MANUEL DE, DR. 1566", "lat": -34.591997, "lng": -58.403659, "caso": "6937", "comuna": "2", "ot": "ICD30399267", "observaciones": "Cable en panza", "popup_content": "\n        <div style='width: 288px; font: 12px Arial;' data-caso=\"6937\" data-comuna=\"2\">\n            <b>Direcci\u00f3n:</b> ANCHORENA, TOMAS MANUEL DE, DR. 1566<br>\n            <b>Comuna:</b> 2<br>\n            <b>OT:</b> ICD30399267<br>\n            <b>Observaciones:</b><br>Cable en panza<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Recoleta<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6937<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6937'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.591997,-58.403659\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6937');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "Recoleta", "zona": "Capital Sur"}, {"direccion": "PERDRIEL 1490", "lat": -34.651701, "lng": -58.385244, "caso": "6940", "comuna": "4", "ot": "ICD30399377", "observaciones": "Tendido a baja altura", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6940\" data-comuna=\"4\">\n            <b>Direcci\u00f3n:</b> PERDRIEL 1490<br>\n            <b>Comuna:</b> 4<br>\n            <b>OT:</b> ICD30399377<br>\n            <b>Observaciones:</b><br>Tendido a baja altura<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> San Telmo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6940<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6940'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.651701,-58.385244\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6940');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/12/2025", "operacion": "San Telmo", "zona": "Capital Sur"}, {"direccion": "CAMPANA 2545", "lat": -34.607061, "lng": -58.492468, "caso": "5843", "comuna": "11", "ot": "ICD30388090", "observaciones": "Cable en panza", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"5843\" data-comuna=\"11\">\n            <b>Direcci\u00f3n:</b> CAMPANA 2545<br>\n            <b>Comuna:</b> 11<br>\n            <b>OT:</b> ICD30388090<br>\n            <b>Observaciones:</b><br>Cable en panza<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Devoto<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 5843<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('5843'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.607061,-58.492468\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('5843');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/13/2025", "operacion": "Devoto", "zona": "Capital Norte"}, {"direccion": "ARGERICH 45", "lat": -34.630493, "lng": -58.471436, "caso": "5860", "comuna": "7", "ot": "ICD30398505", "observaciones": "cables a baja altura", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"5860\" data-comuna=\"7\">\n            <b>Direcci\u00f3n:</b> ARGERICH 45<br>\n            <b>Comuna:</b> 7<br>\n            <b>OT:</b> ICD30398505<br>\n            <b>Observaciones:</b><br>cables a baja altura<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Boedo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 5860<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('5860'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.630493,-58.471436\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('5860');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/13/2025", "operacion": "Boedo", "zona": "Capital Sur"}, {"direccion": "SAENZ AV. 1161", "lat": -34.65375, "lng": -58.416595, "caso": "6946", "comuna": "4", "ot": "ICD30398322 ", "observaciones": "Tendido a baja altura", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"6946\" data-comuna=\"4\">\n            <b>Direcci\u00f3n:</b> SAENZ AV. 1161<br>\n            <b>Comuna:</b> 4<br>\n            <b>OT:</b> ICD30398322 <br>\n            <b>Observaciones:</b><br>Tendido a baja altura<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> San Telmo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 6946<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('6946'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.65375,-58.416595\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('6946');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "8/14/2025", "operacion": "San Telmo", "zona": "Capital Sur"}];
           let selectedMarker = null;
           let closedCases = {};
           let routeLayer = null;
           let isRouteVisible = false;
-          const recorrido = [[-34.588033, -58.417181], [-34.591997, -58.403659], [-34.580805, -58.431302], [-34.584687, -58.4501], [-34.562841, -58.440291], [-34.581325, -58.484848], [-34.607061, -58.492468], [-34.630493, -58.471436], [-34.625256, -58.453305], [-34.618227, -58.448578], [-34.62289, -58.443538], [-34.651701, -58.385244], [-34.632684, -58.360551], [-34.63565, -58.355342], [-34.647321, -58.510283]];
+          const recorrido = [[-34.588033, -58.417181], [-34.591997, -58.403659], [-34.580805, -58.431302], [-34.584687, -58.4501], [-34.562841, -58.440291], [-34.581325, -58.484848], [-34.607061, -58.492468], [-34.630493, -58.471436], [-34.625256, -58.453305], [-34.618227, -58.448578], [-34.62289, -58.443538], [-34.65375, -58.416595], [-34.651701, -58.385244], [-34.632684, -58.360551], [-34.63565, -58.355342], [-34.647321, -58.510283]];
 
           waitForFirebase(function() {
             firebase.initializeApp(firebaseConfig);
@@ -879,7 +879,7 @@
         </script>
         
     
-            <div class="folium-map" id="map_a3444c328a5b7e93f5c60c73f090e4e2" ></div>
+            <div class="folium-map" id="map_091cbe2561549dc3b9ba6ce4604a30a1" ></div>
         
     
         <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
@@ -1345,7 +1345,7 @@
           <div id="pending-header">
             <svg id="pending-arrow" width="14" height="14" viewBox="0 0 24 24">
               <path fill="currentColor" d="M10 17l5-5-5-5v10z"/>
-            </svg> Direcciones Pendientes <span>(15)</span>
+            </svg> Direcciones Pendientes <span>(16)</span>
           </div>
           <div id="filters-panel">
             <div id="filters-header">
@@ -1372,14 +1372,15 @@
 <li data-lat="-34.632684" data-lng="-58.360551" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6265&quot; data-comuna=&quot;4&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; BROWN, ALTE. AV. 881&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 4&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; ICD30345482&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;tendido a baja altura&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; San Telmo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6265&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6265&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.632684,-58.360551&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6265&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="4" data-caso="6265" data-ot="ICD30345482">BROWN, ALTE. AV. 881</li>
 <li data-lat="-34.647321" data-lng="-58.510283" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6899&quot; data-comuna=&quot;9&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; ERCILLA 6159&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 9&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; ICD30377283&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Tendido a baja altura y cables cortados&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Devoto&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6899&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6899&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.647321,-58.510283&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6899&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="9" data-caso="6899" data-ot="ICD30377283">ERCILLA 6159</li>
 <li data-lat="-34.584687" data-lng="-58.4501" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6087&quot; data-comuna=&quot;15&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; ROSETI 436&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 15&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; ICD30377406&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Cable en panza&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Colegiales&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6087&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6087&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.584687,-58.4501&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6087&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="15" data-caso="6087" data-ot="ICD30377406">ROSETI 436</li>
-<li data-lat="-34.625256" data-lng="-58.453305" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6913&quot; data-comuna=&quot;6&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; RIVADAVIA AV. 6161&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 6&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; Pendiente ADM&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Tendido a baja altura&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Boedo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6913&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6913&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.625256,-58.453305&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6913&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="6" data-caso="6913" data-ot="Pendiente ADM">RIVADAVIA AV. 6161</li>
-<li data-lat="-34.618227" data-lng="-58.448578" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6914&quot; data-comuna=&quot;6&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; AVELLANEDA AV. 1240&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 6&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; Pendiente ADM&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Tendido a baja altura&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Boedo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6914&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6914&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.618227,-58.448578&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6914&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="6" data-caso="6914" data-ot="Pendiente ADM">AVELLANEDA AV. 1240</li>
-<li data-lat="-34.63565" data-lng="-58.355342" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6917&quot; data-comuna=&quot;4&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; BRIN, MINISTRO 1375&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 4&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; Pendiente ADM&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;tendido a baja altura tiene pendiente tambien una columna en l mismo lugar ver en conjunto&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; San Telmo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6917&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6917&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.63565,-58.355342&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6917&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="4" data-caso="6917" data-ot="Pendiente ADM">BRIN, MINISTRO 1375</li>
+<li data-lat="-34.625256" data-lng="-58.453305" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6913&quot; data-comuna=&quot;6&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; RIVADAVIA AV. 6161&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 6&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; ICD30399137&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Tendido a baja altura&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Boedo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6913&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6913&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.625256,-58.453305&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6913&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="6" data-caso="6913" data-ot="ICD30399137">RIVADAVIA AV. 6161</li>
+<li data-lat="-34.618227" data-lng="-58.448578" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6914&quot; data-comuna=&quot;6&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; AVELLANEDA AV. 1240&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 6&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; ICD30399168&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Tendido a baja altura&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Boedo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6914&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6914&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.618227,-58.448578&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6914&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="6" data-caso="6914" data-ot="ICD30399168">AVELLANEDA AV. 1240</li>
+<li data-lat="-34.63565" data-lng="-58.355342" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6917&quot; data-comuna=&quot;4&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; BRIN, MINISTRO 1375&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 4&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; ICD30399224&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;tendido a baja altura tiene pendiente tambien una columna en l mismo lugar ver en conjunto&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; San Telmo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6917&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6917&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.63565,-58.355342&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6917&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="4" data-caso="6917" data-ot="ICD30399224">BRIN, MINISTRO 1375</li>
 <li data-lat="-34.581325" data-lng="-58.484848" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6933&quot; data-comuna=&quot;12&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; ANDONAEGUI 1894&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 12&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; ICD30377539&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Ganancia suelta en la columna&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Paternal&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6933&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6933&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.581325,-58.484848&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6933&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="12" data-caso="6933" data-ot="ICD30377539">ANDONAEGUI 1894</li>
-<li data-lat="-34.591997" data-lng="-58.403659" data-popup="&lt;div style=&#x27;width: 288px; font: 12px Arial;&#x27; data-caso=&quot;6937&quot; data-comuna=&quot;2&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; ANCHORENA, TOMAS MANUEL DE, DR. 1566&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 2&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; Pendiente ADM&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Cable en panza&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Recoleta&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6937&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6937&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.591997,-58.403659&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6937&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="2" data-caso="6937" data-ot="Pendiente ADM">ANCHORENA, TOMAS MANUEL DE, DR. 1566</li>
-<li data-lat="-34.651701" data-lng="-58.385244" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6940&quot; data-comuna=&quot;4&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; PERDRIEL 1490&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 4&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; Pendiente ADM&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Tendido a baja altura&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; San Telmo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6940&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6940&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.651701,-58.385244&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6940&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="4" data-caso="6940" data-ot="Pendiente ADM">PERDRIEL 1490</li>
-<li data-lat="-34.607061" data-lng="-58.492468" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;5843&quot; data-comuna=&quot;11&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; CAMPANA 2545&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 11&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; Pendiente ADM&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Cable en panza&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Devoto&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 5843&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;5843&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.607061,-58.492468&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;5843&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="11" data-caso="5843" data-ot="Pendiente ADM">CAMPANA 2545</li>
-<li data-lat="-34.630493" data-lng="-58.471436" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;5860&quot; data-comuna=&quot;7&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; ARGERICH 45&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 7&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; Pendiente ADM&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;cables a baja altura&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Boedo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 5860&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;5860&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.630493,-58.471436&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;5860&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="7" data-caso="5860" data-ot="Pendiente ADM">ARGERICH 45</li></ul>
+<li data-lat="-34.591997" data-lng="-58.403659" data-popup="&lt;div style=&#x27;width: 288px; font: 12px Arial;&#x27; data-caso=&quot;6937&quot; data-comuna=&quot;2&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; ANCHORENA, TOMAS MANUEL DE, DR. 1566&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 2&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; ICD30399267&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Cable en panza&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Recoleta&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6937&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6937&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.591997,-58.403659&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6937&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="2" data-caso="6937" data-ot="ICD30399267">ANCHORENA, TOMAS MANUEL DE, DR. 1566</li>
+<li data-lat="-34.651701" data-lng="-58.385244" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6940&quot; data-comuna=&quot;4&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; PERDRIEL 1490&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 4&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; ICD30399377&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Tendido a baja altura&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; San Telmo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6940&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6940&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.651701,-58.385244&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6940&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="4" data-caso="6940" data-ot="ICD30399377">PERDRIEL 1490</li>
+<li data-lat="-34.607061" data-lng="-58.492468" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;5843&quot; data-comuna=&quot;11&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; CAMPANA 2545&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 11&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; ICD30388090&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Cable en panza&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Devoto&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 5843&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;5843&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.607061,-58.492468&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;5843&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="11" data-caso="5843" data-ot="ICD30388090">CAMPANA 2545</li>
+<li data-lat="-34.630493" data-lng="-58.471436" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;5860&quot; data-comuna=&quot;7&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; ARGERICH 45&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 7&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; ICD30398505&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;cables a baja altura&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Boedo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 5860&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;5860&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.630493,-58.471436&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;5860&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="7" data-caso="5860" data-ot="ICD30398505">ARGERICH 45</li>
+<li data-lat="-34.65375" data-lng="-58.416595" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;6946&quot; data-comuna=&quot;4&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; SAENZ AV. 1161&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 4&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; ICD30398322 &lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;Tendido a baja altura&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; San Telmo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 6946&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;6946&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.65375,-58.416595&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;6946&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="4" data-caso="6946" data-ot="ICD30398322 ">SAENZ AV. 1161</li></ul>
         </div>
         <div id="no-mapeadas-panel">
           <div id="no-mapeadas-header">
@@ -1433,8 +1434,8 @@
 <script>
     
     
-            var map_a3444c328a5b7e93f5c60c73f090e4e2 = L.map(
-                "map_a3444c328a5b7e93f5c60c73f090e4e2",
+            var map_091cbe2561549dc3b9ba6ce4604a30a1 = L.map(
+                "map_091cbe2561549dc3b9ba6ce4604a30a1",
                 {
                     center: [-34.6037, -58.3816],
                     crs: L.CRS.EPSG3857,
@@ -1451,7 +1452,7 @@
 
         
     
-            var tile_layer_550a19490309475952b492e61510ba6d = L.tileLayer(
+            var tile_layer_d0fd836b4383291cefcad1ba34d0b9ff = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -1468,10 +1469,10 @@
             );
         
     
-            tile_layer_550a19490309475952b492e61510ba6d.addTo(map_a3444c328a5b7e93f5c60c73f090e4e2);
+            tile_layer_d0fd836b4383291cefcad1ba34d0b9ff.addTo(map_091cbe2561549dc3b9ba6ce4604a30a1);
         
     
-            var marker_cluster_eb45cc9621d74371cfbce6346f2e9b97 = L.markerClusterGroup(
+            var marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7 = L.markerClusterGroup(
                 {
   "spiderfyOnMaxZoom": true,
   "showCoverageOnHover": true,
@@ -1481,14 +1482,14 @@
             );
         
     
-            var marker_39a16dc04df4202494a86aa04c0c3a35 = L.marker(
+            var marker_5c0d69edcc6142a251c8f4b10112fd04 = L.marker(
                 [-34.588033, -58.417181],
                 {
 }
-            ).addTo(marker_cluster_eb45cc9621d74371cfbce6346f2e9b97);
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
         
     
-            var icon_7a63aea10363b976996f81876a8d2926 = L.AwesomeMarkers.icon(
+            var icon_d8aab816ee78e43ad9ca52d6ada234b9 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1499,34 +1500,34 @@
             );
         
     
-        var popup_41315cc30341d3af800e0b4bf07c9054 = L.popup({
+        var popup_9324e34765f0e4dec92fe1668b42287e = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_83c04f7f3cd22c22de30a59b739f8a52 = $(`<div id="html_83c04f7f3cd22c22de30a59b739f8a52" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="5862" data-comuna="14">             <b>Dirección:</b> CHARCAS 3715<br>             <b>Comuna:</b> 14<br>             <b>OT:</b> 806976061<br>             <b>Observaciones:</b><br>Cable en panza Cable cortado<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Palermo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 5862<br>             <br><b><a href="#" onclick="mostrarFotos('5862'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.588033,-58.417181" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('5862');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_41315cc30341d3af800e0b4bf07c9054.setContent(html_83c04f7f3cd22c22de30a59b739f8a52);
+                var html_ec920f39f13d2683d9ffaa4bc52e5020 = $(`<div id="html_ec920f39f13d2683d9ffaa4bc52e5020" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="5862" data-comuna="14">             <b>Dirección:</b> CHARCAS 3715<br>             <b>Comuna:</b> 14<br>             <b>OT:</b> 806976061<br>             <b>Observaciones:</b><br>Cable en panza Cable cortado<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Palermo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 5862<br>             <br><b><a href="#" onclick="mostrarFotos('5862'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.588033,-58.417181" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('5862');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_9324e34765f0e4dec92fe1668b42287e.setContent(html_ec920f39f13d2683d9ffaa4bc52e5020);
             
         
 
-        marker_39a16dc04df4202494a86aa04c0c3a35.bindPopup(popup_41315cc30341d3af800e0b4bf07c9054)
+        marker_5c0d69edcc6142a251c8f4b10112fd04.bindPopup(popup_9324e34765f0e4dec92fe1668b42287e)
         ;
 
         
     
     
-                marker_39a16dc04df4202494a86aa04c0c3a35.setIcon(icon_7a63aea10363b976996f81876a8d2926);
+                marker_5c0d69edcc6142a251c8f4b10112fd04.setIcon(icon_d8aab816ee78e43ad9ca52d6ada234b9);
             
     
-            var marker_ecc1d90cb7cbaa4aacd6d5b499cc2930 = L.marker(
+            var marker_03a41827cc59dafb30e2716ee50fb0e1 = L.marker(
                 [-34.580805, -58.431302],
                 {
 }
-            ).addTo(marker_cluster_eb45cc9621d74371cfbce6346f2e9b97);
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
         
     
-            var icon_162f13486385c616f38e173df50abda8 = L.AwesomeMarkers.icon(
+            var icon_49dd114e181579332a981e674e1be090 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1537,34 +1538,34 @@
             );
         
     
-        var popup_b72f3ecc33346bbd8d07ab3ba469ec3b = L.popup({
+        var popup_7530a44f85866e05d448e99e45c57f10 = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_4cf3bdc8df7526fe0dee8748e3a4b879 = $(`<div id="html_4cf3bdc8df7526fe0dee8748e3a4b879" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="4238" data-comuna="14">             <b>Dirección:</b> GUATEMALA 5527<br>             <b>Comuna:</b> 14<br>             <b>OT:</b> 807130137<br>             <b>Observaciones:</b><br>cable en panza<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Palermo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 4238<br>             <br><b><a href="#" onclick="mostrarFotos('4238'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.580805,-58.431302" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('4238');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_b72f3ecc33346bbd8d07ab3ba469ec3b.setContent(html_4cf3bdc8df7526fe0dee8748e3a4b879);
+                var html_5c10e5169da63a230a2398071fb32379 = $(`<div id="html_5c10e5169da63a230a2398071fb32379" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="4238" data-comuna="14">             <b>Dirección:</b> GUATEMALA 5527<br>             <b>Comuna:</b> 14<br>             <b>OT:</b> 807130137<br>             <b>Observaciones:</b><br>cable en panza<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Palermo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 4238<br>             <br><b><a href="#" onclick="mostrarFotos('4238'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.580805,-58.431302" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('4238');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_7530a44f85866e05d448e99e45c57f10.setContent(html_5c10e5169da63a230a2398071fb32379);
             
         
 
-        marker_ecc1d90cb7cbaa4aacd6d5b499cc2930.bindPopup(popup_b72f3ecc33346bbd8d07ab3ba469ec3b)
+        marker_03a41827cc59dafb30e2716ee50fb0e1.bindPopup(popup_7530a44f85866e05d448e99e45c57f10)
         ;
 
         
     
     
-                marker_ecc1d90cb7cbaa4aacd6d5b499cc2930.setIcon(icon_162f13486385c616f38e173df50abda8);
+                marker_03a41827cc59dafb30e2716ee50fb0e1.setIcon(icon_49dd114e181579332a981e674e1be090);
             
     
-            var marker_f3b4ee3bdc07e927da6290fa3f005200 = L.marker(
+            var marker_ba60709ede3206648b60fa241eea7afe = L.marker(
                 [-34.562841, -58.440291],
                 {
 }
-            ).addTo(marker_cluster_eb45cc9621d74371cfbce6346f2e9b97);
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
         
     
-            var icon_ab735a4e26b9dbc2b1aaba6d78d56783 = L.AwesomeMarkers.icon(
+            var icon_5ddd9b8e5759bb3d4317761bf98655fa = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1575,34 +1576,34 @@
             );
         
     
-        var popup_52dd898cd57dcae65611e0701551c1e1 = L.popup({
+        var popup_89355dab98f1a6ced663df974ab774ff = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_aa59557407d9f4d4491531cde31813bc = $(`<div id="html_aa59557407d9f4d4491531cde31813bc" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6262" data-comuna="14">             <b>Dirección:</b> MIGUELETES 1330<br>             <b>Comuna:</b> 14<br>             <b>OT:</b> 807789707<br>             <b>Observaciones:</b><br>Cables en panza<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Colegiales<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6262<br>             <br><b><a href="#" onclick="mostrarFotos('6262'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.562841,-58.440291" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6262');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_52dd898cd57dcae65611e0701551c1e1.setContent(html_aa59557407d9f4d4491531cde31813bc);
+                var html_7bf0fc0449fdf37fdb8c56c84c969f77 = $(`<div id="html_7bf0fc0449fdf37fdb8c56c84c969f77" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6262" data-comuna="14">             <b>Dirección:</b> MIGUELETES 1330<br>             <b>Comuna:</b> 14<br>             <b>OT:</b> 807789707<br>             <b>Observaciones:</b><br>Cables en panza<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Colegiales<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6262<br>             <br><b><a href="#" onclick="mostrarFotos('6262'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.562841,-58.440291" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6262');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_89355dab98f1a6ced663df974ab774ff.setContent(html_7bf0fc0449fdf37fdb8c56c84c969f77);
             
         
 
-        marker_f3b4ee3bdc07e927da6290fa3f005200.bindPopup(popup_52dd898cd57dcae65611e0701551c1e1)
+        marker_ba60709ede3206648b60fa241eea7afe.bindPopup(popup_89355dab98f1a6ced663df974ab774ff)
         ;
 
         
     
     
-                marker_f3b4ee3bdc07e927da6290fa3f005200.setIcon(icon_ab735a4e26b9dbc2b1aaba6d78d56783);
+                marker_ba60709ede3206648b60fa241eea7afe.setIcon(icon_5ddd9b8e5759bb3d4317761bf98655fa);
             
     
-            var marker_4bb80dbf5bdd636ba4dc416ed41ab830 = L.marker(
+            var marker_8215a91bc13c24f37ca4fd9bba48aad6 = L.marker(
                 [-34.62289, -58.443538],
                 {
 }
-            ).addTo(marker_cluster_eb45cc9621d74371cfbce6346f2e9b97);
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
         
     
-            var icon_8bbea813ae494f557ed9c0a639cafcfd = L.AwesomeMarkers.icon(
+            var icon_9a8fdb448463321823924c8808706dbf = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1613,34 +1614,34 @@
             );
         
     
-        var popup_85bd77d4b87782f6d26c7a174a581902 = L.popup({
+        var popup_cecbd9ce40f96277fad8d2ae064a93b0 = L.popup({
   "maxWidth": 248,
 });
 
         
             
-                var html_33a3093430c8c32bee5442a10de839fa = $(`<div id="html_33a3093430c8c32bee5442a10de839fa" style="width: 100.0%; height: 100.0%;">         <div style='width: 248px; font: 12px Arial;' data-caso="6557" data-comuna="6">             <b>Dirección:</b> ALBERDI, JUAN BAUTISTA AV. 1091<br>             <b>Comuna:</b> 6<br>             <b>OT:</b> ICD30334394<br>             <b>Observaciones:</b><br>Verificar si la linga panseada es nuestra y ver con pablo como resolverlo<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Boedo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6557<br>             <br><b><a href="#" onclick="mostrarFotos('6557'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.62289,-58.443538" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6557');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_85bd77d4b87782f6d26c7a174a581902.setContent(html_33a3093430c8c32bee5442a10de839fa);
+                var html_67e6f417cfee66de2f61eabf3f20591c = $(`<div id="html_67e6f417cfee66de2f61eabf3f20591c" style="width: 100.0%; height: 100.0%;">         <div style='width: 248px; font: 12px Arial;' data-caso="6557" data-comuna="6">             <b>Dirección:</b> ALBERDI, JUAN BAUTISTA AV. 1091<br>             <b>Comuna:</b> 6<br>             <b>OT:</b> ICD30334394<br>             <b>Observaciones:</b><br>Verificar si la linga panseada es nuestra y ver con pablo como resolverlo<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Boedo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6557<br>             <br><b><a href="#" onclick="mostrarFotos('6557'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.62289,-58.443538" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6557');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_cecbd9ce40f96277fad8d2ae064a93b0.setContent(html_67e6f417cfee66de2f61eabf3f20591c);
             
         
 
-        marker_4bb80dbf5bdd636ba4dc416ed41ab830.bindPopup(popup_85bd77d4b87782f6d26c7a174a581902)
+        marker_8215a91bc13c24f37ca4fd9bba48aad6.bindPopup(popup_cecbd9ce40f96277fad8d2ae064a93b0)
         ;
 
         
     
     
-                marker_4bb80dbf5bdd636ba4dc416ed41ab830.setIcon(icon_8bbea813ae494f557ed9c0a639cafcfd);
+                marker_8215a91bc13c24f37ca4fd9bba48aad6.setIcon(icon_9a8fdb448463321823924c8808706dbf);
             
     
-            var marker_99383c2c74c7c9bc8cd022886d88fc62 = L.marker(
+            var marker_59801c23b3d26fa7c832133726fd5235 = L.marker(
                 [-34.632684, -58.360551],
                 {
 }
-            ).addTo(marker_cluster_eb45cc9621d74371cfbce6346f2e9b97);
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
         
     
-            var icon_2485319c7159b96b1968e579c95454c5 = L.AwesomeMarkers.icon(
+            var icon_92118cc9a5c0d07f1af10a1f65d9bdc2 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1651,34 +1652,34 @@
             );
         
     
-        var popup_ea7c7134ffa3bafd1a8ebfab16eb1f42 = L.popup({
+        var popup_c8448c900e823beda1ff86395edf974e = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_ff09e6cf9e4b35ba1e3a41b0ecfdcab2 = $(`<div id="html_ff09e6cf9e4b35ba1e3a41b0ecfdcab2" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6265" data-comuna="4">             <b>Dirección:</b> BROWN, ALTE. AV. 881<br>             <b>Comuna:</b> 4<br>             <b>OT:</b> ICD30345482<br>             <b>Observaciones:</b><br>tendido a baja altura<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> San Telmo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6265<br>             <br><b><a href="#" onclick="mostrarFotos('6265'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.632684,-58.360551" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6265');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_ea7c7134ffa3bafd1a8ebfab16eb1f42.setContent(html_ff09e6cf9e4b35ba1e3a41b0ecfdcab2);
+                var html_406b2bd954d188b58efef515fe4fcdc1 = $(`<div id="html_406b2bd954d188b58efef515fe4fcdc1" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6265" data-comuna="4">             <b>Dirección:</b> BROWN, ALTE. AV. 881<br>             <b>Comuna:</b> 4<br>             <b>OT:</b> ICD30345482<br>             <b>Observaciones:</b><br>tendido a baja altura<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> San Telmo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6265<br>             <br><b><a href="#" onclick="mostrarFotos('6265'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.632684,-58.360551" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6265');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_c8448c900e823beda1ff86395edf974e.setContent(html_406b2bd954d188b58efef515fe4fcdc1);
             
         
 
-        marker_99383c2c74c7c9bc8cd022886d88fc62.bindPopup(popup_ea7c7134ffa3bafd1a8ebfab16eb1f42)
+        marker_59801c23b3d26fa7c832133726fd5235.bindPopup(popup_c8448c900e823beda1ff86395edf974e)
         ;
 
         
     
     
-                marker_99383c2c74c7c9bc8cd022886d88fc62.setIcon(icon_2485319c7159b96b1968e579c95454c5);
+                marker_59801c23b3d26fa7c832133726fd5235.setIcon(icon_92118cc9a5c0d07f1af10a1f65d9bdc2);
             
     
-            var marker_fd40446c09ff702f4036e3612fbdf138 = L.marker(
+            var marker_166a7e2ce10cc062b9df915a6af717b9 = L.marker(
                 [-34.647321, -58.510283],
                 {
 }
-            ).addTo(marker_cluster_eb45cc9621d74371cfbce6346f2e9b97);
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
         
     
-            var icon_31abaf3ebb0703bba646102373487a44 = L.AwesomeMarkers.icon(
+            var icon_eec540e0ac6e4152099160e2d2080d30 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1689,34 +1690,34 @@
             );
         
     
-        var popup_2ed03a3b8214e31980d1fb9c6e1114fa = L.popup({
+        var popup_76898b326d751442ab5acd12c77f2e96 = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_aa3790f3463a6082fc80218523c41df2 = $(`<div id="html_aa3790f3463a6082fc80218523c41df2" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6899" data-comuna="9">             <b>Dirección:</b> ERCILLA 6159<br>             <b>Comuna:</b> 9<br>             <b>OT:</b> ICD30377283<br>             <b>Observaciones:</b><br>Tendido a baja altura y cables cortados<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Devoto<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6899<br>             <br><b><a href="#" onclick="mostrarFotos('6899'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.647321,-58.510283" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6899');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_2ed03a3b8214e31980d1fb9c6e1114fa.setContent(html_aa3790f3463a6082fc80218523c41df2);
+                var html_4fa8bc1e1c398234a2823650ee816d7a = $(`<div id="html_4fa8bc1e1c398234a2823650ee816d7a" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6899" data-comuna="9">             <b>Dirección:</b> ERCILLA 6159<br>             <b>Comuna:</b> 9<br>             <b>OT:</b> ICD30377283<br>             <b>Observaciones:</b><br>Tendido a baja altura y cables cortados<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Devoto<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6899<br>             <br><b><a href="#" onclick="mostrarFotos('6899'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.647321,-58.510283" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6899');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_76898b326d751442ab5acd12c77f2e96.setContent(html_4fa8bc1e1c398234a2823650ee816d7a);
             
         
 
-        marker_fd40446c09ff702f4036e3612fbdf138.bindPopup(popup_2ed03a3b8214e31980d1fb9c6e1114fa)
+        marker_166a7e2ce10cc062b9df915a6af717b9.bindPopup(popup_76898b326d751442ab5acd12c77f2e96)
         ;
 
         
     
     
-                marker_fd40446c09ff702f4036e3612fbdf138.setIcon(icon_31abaf3ebb0703bba646102373487a44);
+                marker_166a7e2ce10cc062b9df915a6af717b9.setIcon(icon_eec540e0ac6e4152099160e2d2080d30);
             
     
-            var marker_025bb104012451b1719587a723760c65 = L.marker(
+            var marker_f3296ea4dd4791671e5388eace207c72 = L.marker(
                 [-34.584687, -58.4501],
                 {
 }
-            ).addTo(marker_cluster_eb45cc9621d74371cfbce6346f2e9b97);
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
         
     
-            var icon_71f15066a2be3d7f66399f6a85a7d17d = L.AwesomeMarkers.icon(
+            var icon_f1654fbba3cf1d3546daa2e694a99b73 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1727,34 +1728,34 @@
             );
         
     
-        var popup_242e67e85a643d069023babad6360bc9 = L.popup({
+        var popup_9e87c1813e1c9114e8443c65d36ca583 = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_385b33d27f2098c4ab6b816821422f60 = $(`<div id="html_385b33d27f2098c4ab6b816821422f60" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6087" data-comuna="15">             <b>Dirección:</b> ROSETI 436<br>             <b>Comuna:</b> 15<br>             <b>OT:</b> ICD30377406<br>             <b>Observaciones:</b><br>Cable en panza<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Colegiales<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6087<br>             <br><b><a href="#" onclick="mostrarFotos('6087'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.584687,-58.4501" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6087');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_242e67e85a643d069023babad6360bc9.setContent(html_385b33d27f2098c4ab6b816821422f60);
+                var html_57b172e5841e74a0184d60db35f6fac4 = $(`<div id="html_57b172e5841e74a0184d60db35f6fac4" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6087" data-comuna="15">             <b>Dirección:</b> ROSETI 436<br>             <b>Comuna:</b> 15<br>             <b>OT:</b> ICD30377406<br>             <b>Observaciones:</b><br>Cable en panza<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Colegiales<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6087<br>             <br><b><a href="#" onclick="mostrarFotos('6087'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.584687,-58.4501" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6087');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_9e87c1813e1c9114e8443c65d36ca583.setContent(html_57b172e5841e74a0184d60db35f6fac4);
             
         
 
-        marker_025bb104012451b1719587a723760c65.bindPopup(popup_242e67e85a643d069023babad6360bc9)
+        marker_f3296ea4dd4791671e5388eace207c72.bindPopup(popup_9e87c1813e1c9114e8443c65d36ca583)
         ;
 
         
     
     
-                marker_025bb104012451b1719587a723760c65.setIcon(icon_71f15066a2be3d7f66399f6a85a7d17d);
+                marker_f3296ea4dd4791671e5388eace207c72.setIcon(icon_f1654fbba3cf1d3546daa2e694a99b73);
             
     
-            var marker_fd02859efd8422c713cbcffb782fc5a7 = L.marker(
+            var marker_c064a92353460db181502aa6efcd01c3 = L.marker(
                 [-34.625256, -58.453305],
                 {
 }
-            ).addTo(marker_cluster_eb45cc9621d74371cfbce6346f2e9b97);
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
         
     
-            var icon_cea616fd0ddfa8e1565773075ff6641e = L.AwesomeMarkers.icon(
+            var icon_6e44adf2b1b1d4b8ad2bc544201e771a = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1765,34 +1766,34 @@
             );
         
     
-        var popup_bc97f03ada745c14917cea37ba066680 = L.popup({
+        var popup_d8237f767fb25123883d58608a01c17c = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_f6f98557a8b0d7775ebda5727ce90542 = $(`<div id="html_f6f98557a8b0d7775ebda5727ce90542" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6913" data-comuna="6">             <b>Dirección:</b> RIVADAVIA AV. 6161<br>             <b>Comuna:</b> 6<br>             <b>OT:</b> Pendiente ADM<br>             <b>Observaciones:</b><br>Tendido a baja altura<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Boedo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6913<br>             <br><b><a href="#" onclick="mostrarFotos('6913'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.625256,-58.453305" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6913');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_bc97f03ada745c14917cea37ba066680.setContent(html_f6f98557a8b0d7775ebda5727ce90542);
+                var html_476052d582d014f1f5894bf208a754b8 = $(`<div id="html_476052d582d014f1f5894bf208a754b8" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6913" data-comuna="6">             <b>Dirección:</b> RIVADAVIA AV. 6161<br>             <b>Comuna:</b> 6<br>             <b>OT:</b> ICD30399137<br>             <b>Observaciones:</b><br>Tendido a baja altura<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Boedo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6913<br>             <br><b><a href="#" onclick="mostrarFotos('6913'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.625256,-58.453305" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6913');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_d8237f767fb25123883d58608a01c17c.setContent(html_476052d582d014f1f5894bf208a754b8);
             
         
 
-        marker_fd02859efd8422c713cbcffb782fc5a7.bindPopup(popup_bc97f03ada745c14917cea37ba066680)
+        marker_c064a92353460db181502aa6efcd01c3.bindPopup(popup_d8237f767fb25123883d58608a01c17c)
         ;
 
         
     
     
-                marker_fd02859efd8422c713cbcffb782fc5a7.setIcon(icon_cea616fd0ddfa8e1565773075ff6641e);
+                marker_c064a92353460db181502aa6efcd01c3.setIcon(icon_6e44adf2b1b1d4b8ad2bc544201e771a);
             
     
-            var marker_a91e742dbecd3b7820f32b4b8daad249 = L.marker(
+            var marker_43012cfd694ec2056a1da713d76213e5 = L.marker(
                 [-34.618227, -58.448578],
                 {
 }
-            ).addTo(marker_cluster_eb45cc9621d74371cfbce6346f2e9b97);
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
         
     
-            var icon_d680faf161c392975fea4f1081801720 = L.AwesomeMarkers.icon(
+            var icon_3380739c545ae82f0946d1f706bdb9ed = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1803,34 +1804,34 @@
             );
         
     
-        var popup_1791667a37ec012d459de31e8b71e5c1 = L.popup({
+        var popup_10abb5b9a6eb2d55c419fe9e9657c75e = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_f0d26b80b199d643d62caad9dc3b022b = $(`<div id="html_f0d26b80b199d643d62caad9dc3b022b" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6914" data-comuna="6">             <b>Dirección:</b> AVELLANEDA AV. 1240<br>             <b>Comuna:</b> 6<br>             <b>OT:</b> Pendiente ADM<br>             <b>Observaciones:</b><br>Tendido a baja altura<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Boedo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6914<br>             <br><b><a href="#" onclick="mostrarFotos('6914'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.618227,-58.448578" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6914');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_1791667a37ec012d459de31e8b71e5c1.setContent(html_f0d26b80b199d643d62caad9dc3b022b);
+                var html_facd80a053af6288cb8bdbf50a2cf791 = $(`<div id="html_facd80a053af6288cb8bdbf50a2cf791" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6914" data-comuna="6">             <b>Dirección:</b> AVELLANEDA AV. 1240<br>             <b>Comuna:</b> 6<br>             <b>OT:</b> ICD30399168<br>             <b>Observaciones:</b><br>Tendido a baja altura<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Boedo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6914<br>             <br><b><a href="#" onclick="mostrarFotos('6914'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.618227,-58.448578" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6914');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_10abb5b9a6eb2d55c419fe9e9657c75e.setContent(html_facd80a053af6288cb8bdbf50a2cf791);
             
         
 
-        marker_a91e742dbecd3b7820f32b4b8daad249.bindPopup(popup_1791667a37ec012d459de31e8b71e5c1)
+        marker_43012cfd694ec2056a1da713d76213e5.bindPopup(popup_10abb5b9a6eb2d55c419fe9e9657c75e)
         ;
 
         
     
     
-                marker_a91e742dbecd3b7820f32b4b8daad249.setIcon(icon_d680faf161c392975fea4f1081801720);
+                marker_43012cfd694ec2056a1da713d76213e5.setIcon(icon_3380739c545ae82f0946d1f706bdb9ed);
             
     
-            var marker_e0489dfbd3ed0f846f49231a2162e9e8 = L.marker(
+            var marker_8e1297878b33bb399eec11baa28f93b6 = L.marker(
                 [-34.63565, -58.355342],
                 {
 }
-            ).addTo(marker_cluster_eb45cc9621d74371cfbce6346f2e9b97);
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
         
     
-            var icon_1b93e52c939ad2ac0a016321234c5dbd = L.AwesomeMarkers.icon(
+            var icon_01112ec93adeb4321d6d82913d5f37d2 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1841,34 +1842,34 @@
             );
         
     
-        var popup_580a9c383119b4a75edb2b7715fedf4b = L.popup({
+        var popup_886f670d466b56a2b96e6cbdf35b6bff = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_d4649f5254947bba75cf2a0235872692 = $(`<div id="html_d4649f5254947bba75cf2a0235872692" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6917" data-comuna="4">             <b>Dirección:</b> BRIN, MINISTRO 1375<br>             <b>Comuna:</b> 4<br>             <b>OT:</b> Pendiente ADM<br>             <b>Observaciones:</b><br>tendido a baja altura tiene pendiente tambien una columna en l mismo lugar ver en conjunto<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> San Telmo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6917<br>             <br><b><a href="#" onclick="mostrarFotos('6917'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.63565,-58.355342" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6917');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_580a9c383119b4a75edb2b7715fedf4b.setContent(html_d4649f5254947bba75cf2a0235872692);
+                var html_022c34c6fb8b84661e08863f41f0963e = $(`<div id="html_022c34c6fb8b84661e08863f41f0963e" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6917" data-comuna="4">             <b>Dirección:</b> BRIN, MINISTRO 1375<br>             <b>Comuna:</b> 4<br>             <b>OT:</b> ICD30399224<br>             <b>Observaciones:</b><br>tendido a baja altura tiene pendiente tambien una columna en l mismo lugar ver en conjunto<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> San Telmo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6917<br>             <br><b><a href="#" onclick="mostrarFotos('6917'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.63565,-58.355342" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6917');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_886f670d466b56a2b96e6cbdf35b6bff.setContent(html_022c34c6fb8b84661e08863f41f0963e);
             
         
 
-        marker_e0489dfbd3ed0f846f49231a2162e9e8.bindPopup(popup_580a9c383119b4a75edb2b7715fedf4b)
+        marker_8e1297878b33bb399eec11baa28f93b6.bindPopup(popup_886f670d466b56a2b96e6cbdf35b6bff)
         ;
 
         
     
     
-                marker_e0489dfbd3ed0f846f49231a2162e9e8.setIcon(icon_1b93e52c939ad2ac0a016321234c5dbd);
+                marker_8e1297878b33bb399eec11baa28f93b6.setIcon(icon_01112ec93adeb4321d6d82913d5f37d2);
             
     
-            var marker_97e7c85d67f87ebca9bcf3f90d756147 = L.marker(
+            var marker_95ec28cf513011888d28841d9a55acbe = L.marker(
                 [-34.581325, -58.484848],
                 {
 }
-            ).addTo(marker_cluster_eb45cc9621d74371cfbce6346f2e9b97);
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
         
     
-            var icon_6c25adb31f95c03f8cadcd5ac1ca32e0 = L.AwesomeMarkers.icon(
+            var icon_77bf9319ac7c4f18b0a283426fcf1dfb = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1879,34 +1880,34 @@
             );
         
     
-        var popup_c84d5eef5e1629009b05a8f5141c5352 = L.popup({
+        var popup_51ec105e3fabfd9e421c6efeb2776332 = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_8c9a734f3063c3b33c5e6b35433d3dae = $(`<div id="html_8c9a734f3063c3b33c5e6b35433d3dae" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6933" data-comuna="12">             <b>Dirección:</b> ANDONAEGUI 1894<br>             <b>Comuna:</b> 12<br>             <b>OT:</b> ICD30377539<br>             <b>Observaciones:</b><br>Ganancia suelta en la columna<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Paternal<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6933<br>             <br><b><a href="#" onclick="mostrarFotos('6933'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.581325,-58.484848" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6933');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_c84d5eef5e1629009b05a8f5141c5352.setContent(html_8c9a734f3063c3b33c5e6b35433d3dae);
+                var html_ea8b2806f766abc15a4b63e804457aac = $(`<div id="html_ea8b2806f766abc15a4b63e804457aac" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6933" data-comuna="12">             <b>Dirección:</b> ANDONAEGUI 1894<br>             <b>Comuna:</b> 12<br>             <b>OT:</b> ICD30377539<br>             <b>Observaciones:</b><br>Ganancia suelta en la columna<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Paternal<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6933<br>             <br><b><a href="#" onclick="mostrarFotos('6933'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.581325,-58.484848" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6933');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_51ec105e3fabfd9e421c6efeb2776332.setContent(html_ea8b2806f766abc15a4b63e804457aac);
             
         
 
-        marker_97e7c85d67f87ebca9bcf3f90d756147.bindPopup(popup_c84d5eef5e1629009b05a8f5141c5352)
+        marker_95ec28cf513011888d28841d9a55acbe.bindPopup(popup_51ec105e3fabfd9e421c6efeb2776332)
         ;
 
         
     
     
-                marker_97e7c85d67f87ebca9bcf3f90d756147.setIcon(icon_6c25adb31f95c03f8cadcd5ac1ca32e0);
+                marker_95ec28cf513011888d28841d9a55acbe.setIcon(icon_77bf9319ac7c4f18b0a283426fcf1dfb);
             
     
-            var marker_eed9c00d8859107c7cfc3cc1012898db = L.marker(
+            var marker_f90c04190f568c9310c63caea993b9c6 = L.marker(
                 [-34.591997, -58.403659],
                 {
 }
-            ).addTo(marker_cluster_eb45cc9621d74371cfbce6346f2e9b97);
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
         
     
-            var icon_341c9a0888a865f41aca80b2f97d69da = L.AwesomeMarkers.icon(
+            var icon_995b946b0550560ef6a42e193227447c = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1917,34 +1918,34 @@
             );
         
     
-        var popup_6d2602b4567191af6e77a9148c34adf9 = L.popup({
+        var popup_df442f77cfbad3917384447b56e05b21 = L.popup({
   "maxWidth": 288,
 });
 
         
             
-                var html_b5d0a5f6482b54487815ae8e9db69f3b = $(`<div id="html_b5d0a5f6482b54487815ae8e9db69f3b" style="width: 100.0%; height: 100.0%;">         <div style='width: 288px; font: 12px Arial;' data-caso="6937" data-comuna="2">             <b>Dirección:</b> ANCHORENA, TOMAS MANUEL DE, DR. 1566<br>             <b>Comuna:</b> 2<br>             <b>OT:</b> Pendiente ADM<br>             <b>Observaciones:</b><br>Cable en panza<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Recoleta<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6937<br>             <br><b><a href="#" onclick="mostrarFotos('6937'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.591997,-58.403659" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6937');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_6d2602b4567191af6e77a9148c34adf9.setContent(html_b5d0a5f6482b54487815ae8e9db69f3b);
+                var html_efb496d28bb252569b574b2133688d0d = $(`<div id="html_efb496d28bb252569b574b2133688d0d" style="width: 100.0%; height: 100.0%;">         <div style='width: 288px; font: 12px Arial;' data-caso="6937" data-comuna="2">             <b>Dirección:</b> ANCHORENA, TOMAS MANUEL DE, DR. 1566<br>             <b>Comuna:</b> 2<br>             <b>OT:</b> ICD30399267<br>             <b>Observaciones:</b><br>Cable en panza<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Recoleta<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6937<br>             <br><b><a href="#" onclick="mostrarFotos('6937'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.591997,-58.403659" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6937');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_df442f77cfbad3917384447b56e05b21.setContent(html_efb496d28bb252569b574b2133688d0d);
             
         
 
-        marker_eed9c00d8859107c7cfc3cc1012898db.bindPopup(popup_6d2602b4567191af6e77a9148c34adf9)
+        marker_f90c04190f568c9310c63caea993b9c6.bindPopup(popup_df442f77cfbad3917384447b56e05b21)
         ;
 
         
     
     
-                marker_eed9c00d8859107c7cfc3cc1012898db.setIcon(icon_341c9a0888a865f41aca80b2f97d69da);
+                marker_f90c04190f568c9310c63caea993b9c6.setIcon(icon_995b946b0550560ef6a42e193227447c);
             
     
-            var marker_bf71fe6115daede8908285b8097dff0d = L.marker(
+            var marker_45f1791cdeea8466379a661b4cf1377d = L.marker(
                 [-34.651701, -58.385244],
                 {
 }
-            ).addTo(marker_cluster_eb45cc9621d74371cfbce6346f2e9b97);
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
         
     
-            var icon_0d66e6d7c0365c6d0576ca22708ddf12 = L.AwesomeMarkers.icon(
+            var icon_0659637f15f6f12a0c428b53e41c396d = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1955,34 +1956,34 @@
             );
         
     
-        var popup_e9dafae9916f7dc88b951add3b98a469 = L.popup({
+        var popup_82b5b5b208985a1c5f2c92331627078d = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_a6e1093aaa4a72a81811a4c4d97f48eb = $(`<div id="html_a6e1093aaa4a72a81811a4c4d97f48eb" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6940" data-comuna="4">             <b>Dirección:</b> PERDRIEL 1490<br>             <b>Comuna:</b> 4<br>             <b>OT:</b> Pendiente ADM<br>             <b>Observaciones:</b><br>Tendido a baja altura<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> San Telmo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6940<br>             <br><b><a href="#" onclick="mostrarFotos('6940'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.651701,-58.385244" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6940');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_e9dafae9916f7dc88b951add3b98a469.setContent(html_a6e1093aaa4a72a81811a4c4d97f48eb);
+                var html_8125fddf10d57acfca2ed94aef258ae8 = $(`<div id="html_8125fddf10d57acfca2ed94aef258ae8" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6940" data-comuna="4">             <b>Dirección:</b> PERDRIEL 1490<br>             <b>Comuna:</b> 4<br>             <b>OT:</b> ICD30399377<br>             <b>Observaciones:</b><br>Tendido a baja altura<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> San Telmo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6940<br>             <br><b><a href="#" onclick="mostrarFotos('6940'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.651701,-58.385244" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6940');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_82b5b5b208985a1c5f2c92331627078d.setContent(html_8125fddf10d57acfca2ed94aef258ae8);
             
         
 
-        marker_bf71fe6115daede8908285b8097dff0d.bindPopup(popup_e9dafae9916f7dc88b951add3b98a469)
+        marker_45f1791cdeea8466379a661b4cf1377d.bindPopup(popup_82b5b5b208985a1c5f2c92331627078d)
         ;
 
         
     
     
-                marker_bf71fe6115daede8908285b8097dff0d.setIcon(icon_0d66e6d7c0365c6d0576ca22708ddf12);
+                marker_45f1791cdeea8466379a661b4cf1377d.setIcon(icon_0659637f15f6f12a0c428b53e41c396d);
             
     
-            var marker_86cfb7e7f3d4d9d4b70268a82b479a7c = L.marker(
+            var marker_0d282fa3e11f5127484febe9ab7bb812 = L.marker(
                 [-34.607061, -58.492468],
                 {
 }
-            ).addTo(marker_cluster_eb45cc9621d74371cfbce6346f2e9b97);
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
         
     
-            var icon_5b99a619448a3ca2d12f1101ab053bfd = L.AwesomeMarkers.icon(
+            var icon_f3505c0926f07284df4d2ec1f25634b2 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1993,34 +1994,34 @@
             );
         
     
-        var popup_157290a3731400e56b8b21dc88715db2 = L.popup({
+        var popup_77d6cdf92ca32a9940482d21f8a3b55f = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_fb8f97c75372e8789130272aa99c4b09 = $(`<div id="html_fb8f97c75372e8789130272aa99c4b09" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="5843" data-comuna="11">             <b>Dirección:</b> CAMPANA 2545<br>             <b>Comuna:</b> 11<br>             <b>OT:</b> Pendiente ADM<br>             <b>Observaciones:</b><br>Cable en panza<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Devoto<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 5843<br>             <br><b><a href="#" onclick="mostrarFotos('5843'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.607061,-58.492468" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('5843');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_157290a3731400e56b8b21dc88715db2.setContent(html_fb8f97c75372e8789130272aa99c4b09);
+                var html_2427c28078cd96d263f56c96a06a8a5e = $(`<div id="html_2427c28078cd96d263f56c96a06a8a5e" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="5843" data-comuna="11">             <b>Dirección:</b> CAMPANA 2545<br>             <b>Comuna:</b> 11<br>             <b>OT:</b> ICD30388090<br>             <b>Observaciones:</b><br>Cable en panza<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Devoto<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 5843<br>             <br><b><a href="#" onclick="mostrarFotos('5843'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.607061,-58.492468" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('5843');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_77d6cdf92ca32a9940482d21f8a3b55f.setContent(html_2427c28078cd96d263f56c96a06a8a5e);
             
         
 
-        marker_86cfb7e7f3d4d9d4b70268a82b479a7c.bindPopup(popup_157290a3731400e56b8b21dc88715db2)
+        marker_0d282fa3e11f5127484febe9ab7bb812.bindPopup(popup_77d6cdf92ca32a9940482d21f8a3b55f)
         ;
 
         
     
     
-                marker_86cfb7e7f3d4d9d4b70268a82b479a7c.setIcon(icon_5b99a619448a3ca2d12f1101ab053bfd);
+                marker_0d282fa3e11f5127484febe9ab7bb812.setIcon(icon_f3505c0926f07284df4d2ec1f25634b2);
             
     
-            var marker_cdfb12ff720aa8964422307005233385 = L.marker(
+            var marker_91b6a8d62d9c44821dbbb3bbf338cf78 = L.marker(
                 [-34.630493, -58.471436],
                 {
 }
-            ).addTo(marker_cluster_eb45cc9621d74371cfbce6346f2e9b97);
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
         
     
-            var icon_3b45fbcb2cbc67442d3aa38df0f1422c = L.AwesomeMarkers.icon(
+            var icon_cef462a157a299eeaea012e9f63c3fdf = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -2031,27 +2032,65 @@
             );
         
     
-        var popup_595ae5b5ceb014601f338c882664e761 = L.popup({
+        var popup_19a1d64ca6b73b92c68f56cbd085afc9 = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_808a578c6c651d2d89d5200f773f9239 = $(`<div id="html_808a578c6c651d2d89d5200f773f9239" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="5860" data-comuna="7">             <b>Dirección:</b> ARGERICH 45<br>             <b>Comuna:</b> 7<br>             <b>OT:</b> Pendiente ADM<br>             <b>Observaciones:</b><br>cables a baja altura<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Boedo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 5860<br>             <br><b><a href="#" onclick="mostrarFotos('5860'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.630493,-58.471436" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('5860');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_595ae5b5ceb014601f338c882664e761.setContent(html_808a578c6c651d2d89d5200f773f9239);
+                var html_e71138e9992cbdf45f061f1526f3f396 = $(`<div id="html_e71138e9992cbdf45f061f1526f3f396" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="5860" data-comuna="7">             <b>Dirección:</b> ARGERICH 45<br>             <b>Comuna:</b> 7<br>             <b>OT:</b> ICD30398505<br>             <b>Observaciones:</b><br>cables a baja altura<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Boedo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 5860<br>             <br><b><a href="#" onclick="mostrarFotos('5860'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.630493,-58.471436" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('5860');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_19a1d64ca6b73b92c68f56cbd085afc9.setContent(html_e71138e9992cbdf45f061f1526f3f396);
             
         
 
-        marker_cdfb12ff720aa8964422307005233385.bindPopup(popup_595ae5b5ceb014601f338c882664e761)
+        marker_91b6a8d62d9c44821dbbb3bbf338cf78.bindPopup(popup_19a1d64ca6b73b92c68f56cbd085afc9)
         ;
 
         
     
     
-                marker_cdfb12ff720aa8964422307005233385.setIcon(icon_3b45fbcb2cbc67442d3aa38df0f1422c);
+                marker_91b6a8d62d9c44821dbbb3bbf338cf78.setIcon(icon_cef462a157a299eeaea012e9f63c3fdf);
             
     
-            marker_cluster_eb45cc9621d74371cfbce6346f2e9b97.addTo(map_a3444c328a5b7e93f5c60c73f090e4e2);
+            var marker_87ba718cfce98d4bb8033bfaf8cbda4d = L.marker(
+                [-34.65375, -58.416595],
+                {
+}
+            ).addTo(marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7);
+        
+    
+            var icon_44757ab2bcc8927425c193b2e7fcde98 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7524473fd07ea3b160d878d040b2fb2a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_7a4d5b19d8ae90ba557f8a65e8414e35 = $(`<div id="html_7a4d5b19d8ae90ba557f8a65e8414e35" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="6946" data-comuna="4">             <b>Dirección:</b> SAENZ AV. 1161<br>             <b>Comuna:</b> 4<br>             <b>OT:</b> ICD30398322 <br>             <b>Observaciones:</b><br>Tendido a baja altura<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> San Telmo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 6946<br>             <br><b><a href="#" onclick="mostrarFotos('6946'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.65375,-58.416595" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('6946');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_7524473fd07ea3b160d878d040b2fb2a.setContent(html_7a4d5b19d8ae90ba557f8a65e8414e35);
+            
+        
+
+        marker_87ba718cfce98d4bb8033bfaf8cbda4d.bindPopup(popup_7524473fd07ea3b160d878d040b2fb2a)
+        ;
+
+        
+    
+    
+                marker_87ba718cfce98d4bb8033bfaf8cbda4d.setIcon(icon_44757ab2bcc8927425c193b2e7fcde98);
+            
+    
+            marker_cluster_f49f5eff0925dcc7a7c7a27a0f3cb7f7.addTo(map_091cbe2561549dc3b9ba6ce4604a30a1);
         
 </script>
 </html>
