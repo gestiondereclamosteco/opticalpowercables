@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_ce99f3af939e0b32f2d6e0fc906892d9 {
+                #map_e15e450e00c04d275b6dd5f9df50d370 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -95,13 +95,13 @@
           let isPendingListExpanded = false;
           let isNoMapeadasListExpanded = false;
           let isFiltersExpanded = false;
-          let fotosPorCaso = {"00147974": {"images": ["https://drive.google.com/thumbnail?id=1Q_sNnvgwzb4ZqKaRBAsrpiY8EIsGEMKK", "https://drive.google.com/thumbnail?id=1Fk5kVUGL3hjJiI3bjHUT5b6BN73srww-", "https://drive.google.com/thumbnail?id=1NWRnyzR3tbszPxzuMwIYAohz9kVbauDW", "https://drive.google.com/thumbnail?id=1Tidihvo_HrCYhfQhmBgsHlXswsskW_1t"], "folder": "https://drive.google.com/drive/folders/1EyXOcLDG5Zgy9U3Ii0gq2QWzN78fJhzh"}, "00203594": {"images": ["https://drive.google.com/thumbnail?id=1X1mocmCR5VP9kcqtJ652Zj3Qbxt-_EZ2", "https://drive.google.com/thumbnail?id=15XEgw5whCl6Z9uqZIp5sCxru5hJcbS5G", "https://drive.google.com/thumbnail?id=19W-aGnQExJJkseRRFcuCY4JjqeJaW82p", "https://drive.google.com/thumbnail?id=1ETcDLm7eMRzwkWkgRUDPLd0qz5ajniGW", "https://drive.google.com/thumbnail?id=1Ja1mdvJSO5xeVI2zmbploOjBay8DaF8a"], "folder": "https://drive.google.com/drive/folders/1za309Gb9cyYqkWy7lO4NAmu60bJdgnNr"}, "S00328955": {"images": ["https://drive.google.com/thumbnail?id=1-n8TkU7FGGjrzVH1lLACt8SgXf5xAT7L", "https://drive.google.com/thumbnail?id=1nKRDt7W8FJGJoFC71yCjm-XkLEFW64eh", "https://drive.google.com/thumbnail?id=1oCm38TvPCR-rCoQbkWNgqETj_Uo5bIpf"], "folder": "https://drive.google.com/drive/folders/1E7e3N4lz89DMUNiPZohRuTrXhh1YUuMa"}, "S00328057": {"images": ["https://drive.google.com/thumbnail?id=12zGczhM2enxjBrdLVW7K-hookm_zpND9", "https://drive.google.com/thumbnail?id=13P3fD7ZzteJVXQ62cl8vc_KtnjZ_-b61", "https://drive.google.com/thumbnail?id=1WjpoEhU2GDeJ54v25CkZK6ZH942C_Wba", "https://drive.google.com/thumbnail?id=1Z7-VM1iiKvEx1N7fBBiV9JfwHD0uHPnB"], "folder": "https://drive.google.com/drive/folders/16hfoZ9GN_WBEOX_r_WA8qBsnYwAcjxpO"}, "S00363996": {"images": ["https://drive.google.com/thumbnail?id=161mapO8FCSYthQOm4CXSh2CL6yUoYHXb", "https://drive.google.com/thumbnail?id=19KFUk4nbknwYphRXXq77jGweLr0p2TyX", "https://drive.google.com/thumbnail?id=1ac8ynLh2GJgBpXGLDRC6d0wb3mlxkiP7", "https://drive.google.com/thumbnail?id=1iL7AFrf95yc1riHpicvqqI8iWxyPm95v"], "folder": "https://drive.google.com/drive/folders/1tmj9fXoOBsBbeUpdgL1-e-pIcmZPIToC"}, "8876": {"images": ["https://drive.google.com/thumbnail?id=17y22ldENJMpFZtrGQA1PabIYfkUO_g-K", "https://drive.google.com/thumbnail?id=1O7P5womPwK2KTTyrl4UUQJ-Q-8xuftyN", "https://drive.google.com/thumbnail?id=1bmA3nCbSO3IcHT_AO_Fk1J38OPT2n1YE", "https://drive.google.com/thumbnail?id=1hZdEB-D54tJg2kqxtOhofaAIG8jTjbrE"], "folder": "https://drive.google.com/drive/folders/1TbvGq1BTkozaCIfzlE6zHqLnCE1SKKS0"}, "S00160880": {"images": ["https://drive.google.com/thumbnail?id=19DAfGv2L16tJaDG1T_SslE78fOiFUktA", "https://drive.google.com/thumbnail?id=1GlgylpgSsO7y9hNFW2zgC-6ZyMQsWVb1", "https://drive.google.com/thumbnail?id=1HHYRNJEpyN5fQNl1I0vCqU7jxoRyf6xU"], "folder": "https://drive.google.com/drive/folders/1ylIboWU4uleMpgnSdEONrurpH25IURmd"}, "S00164926": {"images": [], "folder": "#"}, "S00384650": {"images": ["https://drive.google.com/thumbnail?id=1OnEUzwskb2NgolKcS7lXpvWOvY7aqF12", "https://drive.google.com/thumbnail?id=1V0OtgnHwRIXEZcBD68voOQBMk_nMreh9"], "folder": "https://drive.google.com/drive/folders/19moO0vOs4hAdeNmI-s_6qyNd8qhW60yo"}};
-          let allPuntos = [{"direccion": "CAMINO MIGUEL ANDRES 3710", "lat": -34.564503, "lng": -58.501857, "caso": "00147974", "comuna": "12", "ot": "nan", "observaciones": "NORMALIZAR RED A BAJA ALTURA", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"00147974\" data-comuna=\"12\">\n            <b>Direcci\u00f3n:</b> CAMINO MIGUEL ANDRES 3710<br>\n            <b>Comuna:</b> 12<br>\n            <b>OT:</b> nan<br>\n            <b>Observaciones:</b><br>NORMALIZAR RED A BAJA\nALTURA<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Paternal<br>\n            <b>Zona:</b> Capital Norte<br>\n            <b>Proveedor:</b> Optical Power<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 00147974<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('00147974'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.564503,-58.501857\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('00147974');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "3/21/2026", "operacion": "Paternal", "zona": "Capital Norte"}, {"direccion": "CRAMER 4061", "lat": -34.547194, "lng": -58.475268, "caso": "00203594", "comuna": "12", "ot": "nan", "observaciones": "NORMALIZAR CABLES A BAJA ALTURA", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"00203594\" data-comuna=\"12\">\n            <b>Direcci\u00f3n:</b> CRAMER 4061<br>\n            <b>Comuna:</b> 12<br>\n            <b>OT:</b> nan<br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA\nALTURA<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Saavedra<br>\n            <b>Zona:</b> Capital Norte<br>\n            <b>Proveedor:</b> Optical Power<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 00203594<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('00203594'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.547194,-58.475268\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('00203594');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "3/28/2026", "operacion": "Saavedra", "zona": "Capital Norte"}, {"direccion": "AV CALLAO 2014", "lat": -34.587337, "lng": -58.386954, "caso": "S00328955", "comuna": "2", "ot": "nan", "observaciones": "NORMALIZAR CABLES CAIDOS", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"S00328955\" data-comuna=\"2\">\n            <b>Direcci\u00f3n:</b> AV CALLAO 2014<br>\n            <b>Comuna:</b> 2<br>\n            <b>OT:</b> nan<br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES CAIDOS<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Recoleta<br>\n            <b>Zona:</b> Capital Sur<br>\n            <b>Proveedor:</b> Optical Power<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> S00328955<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('S00328955'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.587337,-58.386954\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('S00328955');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/11/2026", "operacion": "Recoleta", "zona": "Capital Sur"}, {"direccion": "OHIGGINS 2328", "lat": -34.55774, "lng": -58.454826, "caso": "S00328057", "comuna": "13", "ot": "nan", "observaciones": "NORMALIZAR CABLES CAIDOS", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"S00328057\" data-comuna=\"13\">\n            <b>Direcci\u00f3n:</b> OHIGGINS 2328<br>\n            <b>Comuna:</b> 13<br>\n            <b>OT:</b> nan<br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES CAIDOS<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Saavedra<br>\n            <b>Zona:</b> Capital Norte<br>\n            <b>Proveedor:</b> Optical Power<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> S00328057<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('S00328057'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.55774,-58.454826\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('S00328057');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/11/2026", "operacion": "Saavedra", "zona": "Capital Norte"}, {"direccion": "CONGRESO 2077", "lat": -34.553673, "lng": -58.459312, "caso": "S00363996", "comuna": "13", "ot": "nan", "observaciones": "CABLE SUELTO", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"S00363996\" data-comuna=\"13\">\n            <b>Direcci\u00f3n:</b> CONGRESO 2077<br>\n            <b>Comuna:</b> 13<br>\n            <b>OT:</b> nan<br>\n            <b>Observaciones:</b><br>CABLE SUELTO<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Saavedra<br>\n            <b>Zona:</b> Capital Norte<br>\n            <b>Proveedor:</b> Optical Power<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> S00363996<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('S00363996'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.553673,-58.459312\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('S00363996');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/11/2026", "operacion": "Saavedra", "zona": "Capital Norte"}, {"direccion": "PICO 1597", "lat": -34.536587, "lng": -58.466221, "caso": "8876", "comuna": "12", "ot": "nan", "observaciones": "NORMALIZAR CABLES A BAJA ALTURA", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"8876\" data-comuna=\"12\">\n            <b>Direcci\u00f3n:</b> PICO 1597<br>\n            <b>Comuna:</b> 12<br>\n            <b>OT:</b> nan<br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA\nALTURA<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Saavedra<br>\n            <b>Zona:</b> Capital Norte<br>\n            <b>Proveedor:</b> Optical Power<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 8876<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('8876'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.536587,-58.466221\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('8876');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "4/11/2026", "operacion": "Saavedra", "zona": "Capital Norte"}, {"direccion": "SAN MARTIN 577", "lat": -34.601335, "lng": -58.373937, "caso": "S00160880", "comuna": "1", "ot": "nan", "observaciones": "NORMALIZAR CABLES CON MEDIA CA\u00d1A EN FACHADA", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"S00160880\" data-comuna=\"1\">\n            <b>Direcci\u00f3n:</b> SAN MARTIN 577<br>\n            <b>Comuna:</b> 1<br>\n            <b>OT:</b> nan<br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES CON\nMEDIA CA\u00d1A EN FACHADA<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> San Telmo<br>\n            <b>Zona:</b> Capital Sur<br>\n            <b>Proveedor:</b> Optical Power<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> S00160880<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('S00160880'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.601335,-58.373937\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('S00160880');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/11/2026", "operacion": "San Telmo", "zona": "Capital Sur"}, {"direccion": "NAON ROMULO 2381", "lat": -34.567521, "lng": -58.472548, "caso": "S00164926", "comuna": "13", "ot": "nan", "observaciones": "NORMALIZAR CABLES A BAJA ALTURA", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"S00164926\" data-comuna=\"13\">\n            <b>Direcci\u00f3n:</b> NAON ROMULO 2381<br>\n            <b>Comuna:</b> 13<br>\n            <b>OT:</b> nan<br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA\nALTURA<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Colegiales<br>\n            <b>Zona:</b> Capital Norte<br>\n            <b>Proveedor:</b> Optical Power<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> S00164926<br>\n            <br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.567521,-58.472548\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('S00164926');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/11/2026", "operacion": "Colegiales", "zona": "Capital Norte"}, {"direccion": "MANZONI 106", "lat": -34.638825, "lng": -58.499154, "caso": "S00384650", "comuna": "10", "ot": "nan", "observaciones": "NORMALIZAR CABLES A BAJA ALTURA", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"S00384650\" data-comuna=\"10\">\n            <b>Direcci\u00f3n:</b> MANZONI 106<br>\n            <b>Comuna:</b> 10<br>\n            <b>OT:</b> nan<br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA\nALTURA<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Devoto<br>\n            <b>Zona:</b> Capital Norte<br>\n            <b>Proveedor:</b> Optical Power<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> S00384650<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('S00384650'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.638825,-58.499154\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('S00384650');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/11/2026", "operacion": "Devoto", "zona": "Capital Norte"}];
+          let fotosPorCaso = {"00147974": {"images": ["https://drive.google.com/thumbnail?id=1Q_sNnvgwzb4ZqKaRBAsrpiY8EIsGEMKK", "https://drive.google.com/thumbnail?id=1Fk5kVUGL3hjJiI3bjHUT5b6BN73srww-", "https://drive.google.com/thumbnail?id=1NWRnyzR3tbszPxzuMwIYAohz9kVbauDW", "https://drive.google.com/thumbnail?id=1Tidihvo_HrCYhfQhmBgsHlXswsskW_1t"], "folder": "https://drive.google.com/drive/folders/1EyXOcLDG5Zgy9U3Ii0gq2QWzN78fJhzh"}, "00203594": {"images": ["https://drive.google.com/thumbnail?id=1X1mocmCR5VP9kcqtJ652Zj3Qbxt-_EZ2", "https://drive.google.com/thumbnail?id=15XEgw5whCl6Z9uqZIp5sCxru5hJcbS5G", "https://drive.google.com/thumbnail?id=19W-aGnQExJJkseRRFcuCY4JjqeJaW82p", "https://drive.google.com/thumbnail?id=1ETcDLm7eMRzwkWkgRUDPLd0qz5ajniGW", "https://drive.google.com/thumbnail?id=1Ja1mdvJSO5xeVI2zmbploOjBay8DaF8a"], "folder": "https://drive.google.com/drive/folders/1za309Gb9cyYqkWy7lO4NAmu60bJdgnNr"}, "S00328955": {"images": ["https://drive.google.com/thumbnail?id=1-n8TkU7FGGjrzVH1lLACt8SgXf5xAT7L", "https://drive.google.com/thumbnail?id=1nKRDt7W8FJGJoFC71yCjm-XkLEFW64eh", "https://drive.google.com/thumbnail?id=1oCm38TvPCR-rCoQbkWNgqETj_Uo5bIpf"], "folder": "https://drive.google.com/drive/folders/1E7e3N4lz89DMUNiPZohRuTrXhh1YUuMa"}, "S00328057": {"images": ["https://drive.google.com/thumbnail?id=12zGczhM2enxjBrdLVW7K-hookm_zpND9", "https://drive.google.com/thumbnail?id=13P3fD7ZzteJVXQ62cl8vc_KtnjZ_-b61", "https://drive.google.com/thumbnail?id=1WjpoEhU2GDeJ54v25CkZK6ZH942C_Wba", "https://drive.google.com/thumbnail?id=1Z7-VM1iiKvEx1N7fBBiV9JfwHD0uHPnB"], "folder": "https://drive.google.com/drive/folders/16hfoZ9GN_WBEOX_r_WA8qBsnYwAcjxpO"}, "S00363996": {"images": ["https://drive.google.com/thumbnail?id=161mapO8FCSYthQOm4CXSh2CL6yUoYHXb", "https://drive.google.com/thumbnail?id=19KFUk4nbknwYphRXXq77jGweLr0p2TyX", "https://drive.google.com/thumbnail?id=1ac8ynLh2GJgBpXGLDRC6d0wb3mlxkiP7", "https://drive.google.com/thumbnail?id=1iL7AFrf95yc1riHpicvqqI8iWxyPm95v"], "folder": "https://drive.google.com/drive/folders/1tmj9fXoOBsBbeUpdgL1-e-pIcmZPIToC"}, "8876": {"images": ["https://drive.google.com/thumbnail?id=17y22ldENJMpFZtrGQA1PabIYfkUO_g-K", "https://drive.google.com/thumbnail?id=1O7P5womPwK2KTTyrl4UUQJ-Q-8xuftyN", "https://drive.google.com/thumbnail?id=1bmA3nCbSO3IcHT_AO_Fk1J38OPT2n1YE", "https://drive.google.com/thumbnail?id=1hZdEB-D54tJg2kqxtOhofaAIG8jTjbrE"], "folder": "https://drive.google.com/drive/folders/1TbvGq1BTkozaCIfzlE6zHqLnCE1SKKS0"}, "S00160880": {"images": ["https://drive.google.com/thumbnail?id=19DAfGv2L16tJaDG1T_SslE78fOiFUktA", "https://drive.google.com/thumbnail?id=1GlgylpgSsO7y9hNFW2zgC-6ZyMQsWVb1", "https://drive.google.com/thumbnail?id=1HHYRNJEpyN5fQNl1I0vCqU7jxoRyf6xU"], "folder": "https://drive.google.com/drive/folders/1ylIboWU4uleMpgnSdEONrurpH25IURmd"}, "S00164926": {"images": [], "folder": "#"}, "S00384650": {"images": ["https://drive.google.com/thumbnail?id=1OnEUzwskb2NgolKcS7lXpvWOvY7aqF12", "https://drive.google.com/thumbnail?id=1V0OtgnHwRIXEZcBD68voOQBMk_nMreh9"], "folder": "https://drive.google.com/drive/folders/19moO0vOs4hAdeNmI-s_6qyNd8qhW60yo"}, "S00344962": {"images": [], "folder": "#"}, "S00384928": {"images": [], "folder": "#"}, "S00420728": {"images": [], "folder": "#"}, "M00002": {"images": [], "folder": "#"}};
+          let allPuntos = [{"direccion": "CAMINO MIGUEL ANDRES 3710", "lat": -34.564503, "lng": -58.501857, "caso": "00147974", "comuna": "12", "ot": "03732939 ", "observaciones": "NORMALIZAR RED A BAJA ALTURA", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"00147974\" data-comuna=\"12\">\n            <b>Direcci\u00f3n:</b> CAMINO MIGUEL ANDRES 3710<br>\n            <b>Comuna:</b> 12<br>\n            <b>OT:</b> 03732939 <br>\n            <b>Observaciones:</b><br>NORMALIZAR RED A BAJA\nALTURA<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Paternal<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 00147974<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('00147974'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.564503,-58.501857\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('00147974');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "3/21/2026", "operacion": "Paternal", "zona": "Capital Norte"}, {"direccion": "CRAMER 4061", "lat": -34.547194, "lng": -58.475268, "caso": "00203594", "comuna": "12", "ot": "03733598 ", "observaciones": "NORMALIZAR CABLES A BAJA ALTURA", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"00203594\" data-comuna=\"12\">\n            <b>Direcci\u00f3n:</b> CRAMER 4061<br>\n            <b>Comuna:</b> 12<br>\n            <b>OT:</b> 03733598 <br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA\nALTURA<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Saavedra<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 00203594<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('00203594'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.547194,-58.475268\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('00203594');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "3/28/2026", "operacion": "Saavedra", "zona": "Capital Norte"}, {"direccion": "AV CALLAO 2014", "lat": -34.587337, "lng": -58.386954, "caso": "S00328955", "comuna": "2", "ot": "03730209 ", "observaciones": "NORMALIZAR CABLES CAIDOS", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"S00328955\" data-comuna=\"2\">\n            <b>Direcci\u00f3n:</b> AV CALLAO 2014<br>\n            <b>Comuna:</b> 2<br>\n            <b>OT:</b> 03730209 <br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES CAIDOS<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Recoleta<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> S00328955<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('S00328955'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.587337,-58.386954\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('S00328955');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/11/2026", "operacion": "Recoleta", "zona": "Capital Sur"}, {"direccion": "OHIGGINS 2328", "lat": -34.55774, "lng": -58.454826, "caso": "S00328057", "comuna": "13", "ot": "03733730 ", "observaciones": "NORMALIZAR CABLES CAIDOS", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"S00328057\" data-comuna=\"13\">\n            <b>Direcci\u00f3n:</b> OHIGGINS 2328<br>\n            <b>Comuna:</b> 13<br>\n            <b>OT:</b> 03733730 <br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES CAIDOS<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Saavedra<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> S00328057<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('S00328057'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.55774,-58.454826\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('S00328057');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/11/2026", "operacion": "Saavedra", "zona": "Capital Norte"}, {"direccion": "CONGRESO 2077", "lat": -34.553673, "lng": -58.459312, "caso": "S00363996", "comuna": "13", "ot": "03733876 ", "observaciones": "CABLE SUELTO", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"S00363996\" data-comuna=\"13\">\n            <b>Direcci\u00f3n:</b> CONGRESO 2077<br>\n            <b>Comuna:</b> 13<br>\n            <b>OT:</b> 03733876 <br>\n            <b>Observaciones:</b><br>CABLE SUELTO<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Saavedra<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> S00363996<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('S00363996'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.553673,-58.459312\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('S00363996');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/11/2026", "operacion": "Saavedra", "zona": "Capital Norte"}, {"direccion": "PICO 1597", "lat": -34.536587, "lng": -58.466221, "caso": "8876", "comuna": "12", "ot": "03734392 ", "observaciones": "NORMALIZAR CABLES A BAJA ALTURA", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"8876\" data-comuna=\"12\">\n            <b>Direcci\u00f3n:</b> PICO 1597<br>\n            <b>Comuna:</b> 12<br>\n            <b>OT:</b> 03734392 <br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA\nALTURA<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Saavedra<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> 8876<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('8876'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.536587,-58.466221\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('8876');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "blue", "fecha_reclamo": "4/11/2026", "operacion": "Saavedra", "zona": "Capital Norte"}, {"direccion": "SAN MARTIN 577", "lat": -34.601335, "lng": -58.373937, "caso": "S00160880", "comuna": "1", "ot": "03730921 ", "observaciones": "NORMALIZAR CABLES CON MEDIA CA\u00d1A EN FACHADA", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"S00160880\" data-comuna=\"1\">\n            <b>Direcci\u00f3n:</b> SAN MARTIN 577<br>\n            <b>Comuna:</b> 1<br>\n            <b>OT:</b> 03730921 <br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES CON\nMEDIA CA\u00d1A EN FACHADA<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> San Telmo<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> S00160880<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('S00160880'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.601335,-58.373937\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('S00160880');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/11/2026", "operacion": "San Telmo", "zona": "Capital Sur"}, {"direccion": "NAON ROMULO 2381", "lat": -34.567521, "lng": -58.472548, "caso": "S00164926", "comuna": "13", "ot": "03734641 ", "observaciones": "NORMALIZAR CABLES A BAJA ALTURA", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"S00164926\" data-comuna=\"13\">\n            <b>Direcci\u00f3n:</b> NAON ROMULO 2381<br>\n            <b>Comuna:</b> 13<br>\n            <b>OT:</b> 03734641 <br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA\nALTURA<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Colegiales<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> S00164926<br>\n            <br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.567521,-58.472548\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('S00164926');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/11/2026", "operacion": "Colegiales", "zona": "Capital Norte"}, {"direccion": "MANZONI 106", "lat": -34.638825, "lng": -58.499154, "caso": "S00384650", "comuna": "10", "ot": "03734759 ", "observaciones": "NORMALIZAR CABLES A BAJA ALTURA", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"S00384650\" data-comuna=\"10\">\n            <b>Direcci\u00f3n:</b> MANZONI 106<br>\n            <b>Comuna:</b> 10<br>\n            <b>OT:</b> 03734759 <br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA\nALTURA<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Devoto<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> S00384650<br>\n            <br><b><a href=\"#\" onclick=\"mostrarFotos('S00384650'); return false;\" style=\"font-size: 14px;\">Ver Fotos</a></b><br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.638825,-58.499154\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('S00384650');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/11/2026", "operacion": "Devoto", "zona": "Capital Norte"}, {"direccion": "ALBERDI, JUAN BAUTISTA AV. 3840", "lat": -34.637357, "lng": -58.479124, "caso": "S00344962", "comuna": "9", "ot": "813113244", "observaciones": "NORMALIZAR CABLES A BAJA ALTURA", "popup_content": "\n        <div style='width: 248px; font: 12px Arial;' data-caso=\"S00344962\" data-comuna=\"9\">\n            <b>Direcci\u00f3n:</b> ALBERDI, JUAN BAUTISTA AV. 3840<br>\n            <b>Comuna:</b> 9<br>\n            <b>OT:</b> 813113244<br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA ALTURA<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Devoto<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> S00344962<br>\n            <br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.637357,-58.479124\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('S00344962');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/14/2026", "operacion": "Devoto", "zona": "Capital Norte"}, {"direccion": "LOPE DE VEGA 267", "lat": -34.635661, "lng": -58.499765, "caso": "S00384928", "comuna": "10", "ot": "813113274", "observaciones": "NORMALIZAR CABLES A BAJA ALTURA", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"S00384928\" data-comuna=\"10\">\n            <b>Direcci\u00f3n:</b> LOPE DE VEGA 267<br>\n            <b>Comuna:</b> 10<br>\n            <b>OT:</b> 813113274<br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA\nALTURA<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Devoto<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> S00384928<br>\n            <br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.635661,-58.499765\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('S00384928');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/14/2026", "operacion": "Devoto", "zona": "Capital Norte"}, {"direccion": "ECUADOR 1394", "lat": -34.594307, "lng": -58.403782, "caso": "S00420728", "comuna": "2", "ot": "813113291", "observaciones": "NORMALIZAR CABLES FUERA DE NORMA", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"S00420728\" data-comuna=\"2\">\n            <b>Direcci\u00f3n:</b> ECUADOR 1394<br>\n            <b>Comuna:</b> 2<br>\n            <b>OT:</b> 813113291<br>\n            <b>Observaciones:</b><br>NORMALIZAR CABLES FUERA\nDE NORMA<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Recoleta<br>\n            <b>Zona:</b> Capital Sur<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> S00420728<br>\n            <br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.594307,-58.403782\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('S00420728');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/14/2026", "operacion": "Recoleta", "zona": "Capital Sur"}, {"direccion": "MELIAN AV 3893", "lat": -34.552784, "lng": -58.481571, "caso": "M00002", "comuna": "12", "ot": "PEDIDA APP", "observaciones": "DESPUES DE CORRIMIENTO DE COLUMNA NORMALIZAR NAP Y CDO.", "popup_content": "\n        <div style='width: 200px; font: 12px Arial;' data-caso=\"M00002\" data-comuna=\"12\">\n            <b>Direcci\u00f3n:</b> MELIAN AV 3893<br>\n            <b>Comuna:</b> 12<br>\n            <b>OT:</b> PEDIDA APP<br>\n            <b>Observaciones:</b><br>DESPUES DE CORRIMIENTO DE\nCOLUMNA NORMALIZAR NAP Y\nCDO.<br>\n            <hr style=\"margin: 3px 0;\">\n            <b>Operaci\u00f3n:</b> Saavedra<br>\n            <b>Zona:</b> Capital Norte<br>\n            \n            <hr style=\"margin: 3px 0;\">\n            <b>Caso:</b> M00002<br>\n            <br>\n            <b>Ver en Google Maps:</b> <a href=\"https://www.google.com/maps?q=-34.552784,-58.481571\" target=\"_blank\">Abrir</a><br>\n            <br><b><a href=\"https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform\" target=\"_blank\" onclick=\"window.cerrarReclamo('M00002');\" style=\"font-size: 14px;\">CERRAR RECLAMO</a></b>\n        </div>\n        ", "color": "lightblue", "fecha_reclamo": "4/17/2026", "operacion": "Saavedra", "zona": "Capital Norte"}];
           let selectedMarker = null;
           let closedCases = {};
           let routeLayer = null;
           let isRouteVisible = false;
-          const recorrido = [[-34.564503, -58.501857], [-34.567521, -58.472548], [-34.55774, -58.454826], [-34.553673, -58.459312], [-34.547194, -58.475268], [-34.536587, -58.466221], [-34.587337, -58.386954], [-34.601335, -58.373937], [-34.638825, -58.499154]];
+          const recorrido = [[-34.564503, -58.501857], [-34.552784, -58.481571], [-34.547194, -58.475268], [-34.536587, -58.466221], [-34.553673, -58.459312], [-34.55774, -58.454826], [-34.567521, -58.472548], [-34.594307, -58.403782], [-34.587337, -58.386954], [-34.601335, -58.373937], [-34.637357, -58.479124], [-34.638825, -58.499154], [-34.635661, -58.499765]];
 
           waitForFirebase(function() {
             firebase.initializeApp(firebaseConfig);
@@ -580,8 +580,8 @@
           }
 
           function exportToExcel() {
-            var excelUrl = 'https://raw.githubusercontent.com/riv1matias/mapa_op_cables/main/mapa_interactivo.xlsx';
-            var nombreArchivo = 'mapa_interactivo.xlsx';
+            var excelUrl = 'https://raw.githubusercontent.com/riv1matias/mapa_op_cables/main/mapa_interactivo_Optical_Power.xlsx';
+            var nombreArchivo = 'mapa_interactivo_Optical_Power.xlsx';
             console.log('Intentando descargar Excel desde:', excelUrl);
 
             // Verificar si el archivo existe en el servidor
@@ -894,7 +894,7 @@
         </script>
         
     
-            <div class="folium-map" id="map_ce99f3af939e0b32f2d6e0fc906892d9" ></div>
+            <div class="folium-map" id="map_e15e450e00c04d275b6dd5f9df50d370" ></div>
         
     
         <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
@@ -1360,7 +1360,7 @@
           <div id="pending-header">
             <svg id="pending-arrow" width="14" height="14" viewBox="0 0 24 24">
               <path fill="currentColor" d="M10 17l5-5-5-5v10z"/>
-            </svg> Direcciones Pendientes <span>(9)</span>
+            </svg> Direcciones Pendientes <span>(13)</span>
           </div>
           <div id="filters-panel">
             <div id="filters-header">
@@ -1375,20 +1375,24 @@
                 <option value="lightblue">Preventivo sin prioridad</option>
               </select>
               <select id="comuna-filter" onchange="filtrarPorComuna()">
-                <option value='all'>Todas las Comunas</option><option value='1'>1</option><option value='2'>2</option><option value='10'>10</option><option value='12'>12</option><option value='13'>13</option>
+                <option value='all'>Todas las Comunas</option><option value='1'>1</option><option value='2'>2</option><option value='9'>9</option><option value='10'>10</option><option value='12'>12</option><option value='13'>13</option>
               </select>
               <input id="pending-search" placeholder="Buscar Dirección..." type="text">
             </div>
           </div>
-          <ul id="pending-list"><li data-lat="-34.564503" data-lng="-58.501857" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;00147974&quot; data-comuna=&quot;12&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; CAMINO MIGUEL ANDRES 3710&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 12&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; nan&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR RED A BAJA ALTURA&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Paternal&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;             &lt;b&gt;Proveedor:&lt;/b&gt; Optical Power&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 00147974&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;00147974&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.564503,-58.501857&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;00147974&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="12" data-caso="00147974" data-ot="nan">CAMINO MIGUEL ANDRES 3710</li>
-<li data-lat="-34.547194" data-lng="-58.475268" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;00203594&quot; data-comuna=&quot;12&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; CRAMER 4061&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 12&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; nan&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES A BAJA ALTURA&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Saavedra&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;             &lt;b&gt;Proveedor:&lt;/b&gt; Optical Power&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 00203594&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;00203594&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.547194,-58.475268&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;00203594&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="12" data-caso="00203594" data-ot="nan">CRAMER 4061</li>
-<li data-lat="-34.587337" data-lng="-58.386954" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;S00328955&quot; data-comuna=&quot;2&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; AV CALLAO 2014&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 2&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; nan&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES CAIDOS&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Recoleta&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;             &lt;b&gt;Proveedor:&lt;/b&gt; Optical Power&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; S00328955&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;S00328955&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.587337,-58.386954&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;S00328955&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="2" data-caso="S00328955" data-ot="nan">AV CALLAO 2014</li>
-<li data-lat="-34.55774" data-lng="-58.454826" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;S00328057&quot; data-comuna=&quot;13&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; OHIGGINS 2328&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 13&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; nan&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES CAIDOS&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Saavedra&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;             &lt;b&gt;Proveedor:&lt;/b&gt; Optical Power&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; S00328057&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;S00328057&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.55774,-58.454826&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;S00328057&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="13" data-caso="S00328057" data-ot="nan">OHIGGINS 2328</li>
-<li data-lat="-34.553673" data-lng="-58.459312" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;S00363996&quot; data-comuna=&quot;13&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; CONGRESO 2077&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 13&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; nan&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;CABLE SUELTO&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Saavedra&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;             &lt;b&gt;Proveedor:&lt;/b&gt; Optical Power&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; S00363996&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;S00363996&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.553673,-58.459312&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;S00363996&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="13" data-caso="S00363996" data-ot="nan">CONGRESO 2077</li>
-<li data-lat="-34.536587" data-lng="-58.466221" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;8876&quot; data-comuna=&quot;12&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; PICO 1597&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 12&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; nan&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES A BAJA ALTURA&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Saavedra&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;             &lt;b&gt;Proveedor:&lt;/b&gt; Optical Power&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 8876&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;8876&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.536587,-58.466221&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;8876&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="12" data-caso="8876" data-ot="nan">PICO 1597</li>
-<li data-lat="-34.601335" data-lng="-58.373937" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;S00160880&quot; data-comuna=&quot;1&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; SAN MARTIN 577&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 1&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; nan&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES CON MEDIA CAÑA EN FACHADA&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; San Telmo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;             &lt;b&gt;Proveedor:&lt;/b&gt; Optical Power&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; S00160880&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;S00160880&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.601335,-58.373937&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;S00160880&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="1" data-caso="S00160880" data-ot="nan">SAN MARTIN 577</li>
-<li data-lat="-34.567521" data-lng="-58.472548" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;S00164926&quot; data-comuna=&quot;13&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; NAON ROMULO 2381&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 13&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; nan&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES A BAJA ALTURA&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Colegiales&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;             &lt;b&gt;Proveedor:&lt;/b&gt; Optical Power&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; S00164926&lt;br&gt;             &lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.567521,-58.472548&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;S00164926&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="13" data-caso="S00164926" data-ot="nan">NAON ROMULO 2381</li>
-<li data-lat="-34.638825" data-lng="-58.499154" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;S00384650&quot; data-comuna=&quot;10&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; MANZONI 106&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 10&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; nan&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES A BAJA ALTURA&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Devoto&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;             &lt;b&gt;Proveedor:&lt;/b&gt; Optical Power&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; S00384650&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;S00384650&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.638825,-58.499154&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;S00384650&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="10" data-caso="S00384650" data-ot="nan">MANZONI 106</li></ul>
+          <ul id="pending-list"><li data-lat="-34.564503" data-lng="-58.501857" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;00147974&quot; data-comuna=&quot;12&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; CAMINO MIGUEL ANDRES 3710&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 12&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 03732939 &lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR RED A BAJA ALTURA&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Paternal&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 00147974&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;00147974&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.564503,-58.501857&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;00147974&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="12" data-caso="00147974" data-ot="03732939 ">CAMINO MIGUEL ANDRES 3710</li>
+<li data-lat="-34.547194" data-lng="-58.475268" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;00203594&quot; data-comuna=&quot;12&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; CRAMER 4061&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 12&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 03733598 &lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES A BAJA ALTURA&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Saavedra&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 00203594&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;00203594&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.547194,-58.475268&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;00203594&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="12" data-caso="00203594" data-ot="03733598 ">CRAMER 4061</li>
+<li data-lat="-34.587337" data-lng="-58.386954" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;S00328955&quot; data-comuna=&quot;2&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; AV CALLAO 2014&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 2&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 03730209 &lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES CAIDOS&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Recoleta&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; S00328955&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;S00328955&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.587337,-58.386954&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;S00328955&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="2" data-caso="S00328955" data-ot="03730209 ">AV CALLAO 2014</li>
+<li data-lat="-34.55774" data-lng="-58.454826" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;S00328057&quot; data-comuna=&quot;13&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; OHIGGINS 2328&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 13&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 03733730 &lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES CAIDOS&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Saavedra&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; S00328057&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;S00328057&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.55774,-58.454826&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;S00328057&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="13" data-caso="S00328057" data-ot="03733730 ">OHIGGINS 2328</li>
+<li data-lat="-34.553673" data-lng="-58.459312" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;S00363996&quot; data-comuna=&quot;13&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; CONGRESO 2077&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 13&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 03733876 &lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;CABLE SUELTO&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Saavedra&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; S00363996&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;S00363996&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.553673,-58.459312&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;S00363996&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="13" data-caso="S00363996" data-ot="03733876 ">CONGRESO 2077</li>
+<li data-lat="-34.536587" data-lng="-58.466221" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;8876&quot; data-comuna=&quot;12&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; PICO 1597&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 12&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 03734392 &lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES A BAJA ALTURA&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Saavedra&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; 8876&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;8876&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.536587,-58.466221&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;8876&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="12" data-caso="8876" data-ot="03734392 ">PICO 1597</li>
+<li data-lat="-34.601335" data-lng="-58.373937" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;S00160880&quot; data-comuna=&quot;1&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; SAN MARTIN 577&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 1&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 03730921 &lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES CON MEDIA CAÑA EN FACHADA&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; San Telmo&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; S00160880&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;S00160880&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.601335,-58.373937&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;S00160880&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="1" data-caso="S00160880" data-ot="03730921 ">SAN MARTIN 577</li>
+<li data-lat="-34.567521" data-lng="-58.472548" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;S00164926&quot; data-comuna=&quot;13&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; NAON ROMULO 2381&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 13&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 03734641 &lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES A BAJA ALTURA&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Colegiales&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; S00164926&lt;br&gt;             &lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.567521,-58.472548&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;S00164926&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="13" data-caso="S00164926" data-ot="03734641 ">NAON ROMULO 2381</li>
+<li data-lat="-34.638825" data-lng="-58.499154" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;S00384650&quot; data-comuna=&quot;10&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; MANZONI 106&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 10&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 03734759 &lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES A BAJA ALTURA&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Devoto&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; S00384650&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;#&quot; onclick=&quot;mostrarFotos(&#x27;S00384650&#x27;); return false;&quot; style=&quot;font-size: 14px;&quot;&gt;Ver Fotos&lt;/a&gt;&lt;/b&gt;&lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.638825,-58.499154&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;S00384650&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="10" data-caso="S00384650" data-ot="03734759 ">MANZONI 106</li>
+<li data-lat="-34.637357" data-lng="-58.479124" data-popup="&lt;div style=&#x27;width: 248px; font: 12px Arial;&#x27; data-caso=&quot;S00344962&quot; data-comuna=&quot;9&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; ALBERDI, JUAN BAUTISTA AV. 3840&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 9&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 813113244&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES A BAJA ALTURA&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Devoto&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; S00344962&lt;br&gt;             &lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.637357,-58.479124&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;S00344962&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="9" data-caso="S00344962" data-ot="813113244">ALBERDI, JUAN BAUTISTA AV. 3840</li>
+<li data-lat="-34.635661" data-lng="-58.499765" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;S00384928&quot; data-comuna=&quot;10&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; LOPE DE VEGA 267&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 10&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 813113274&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES A BAJA ALTURA&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Devoto&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; S00384928&lt;br&gt;             &lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.635661,-58.499765&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;S00384928&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="10" data-caso="S00384928" data-ot="813113274">LOPE DE VEGA 267</li>
+<li data-lat="-34.594307" data-lng="-58.403782" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;S00420728&quot; data-comuna=&quot;2&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; ECUADOR 1394&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 2&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; 813113291&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;NORMALIZAR CABLES FUERA DE NORMA&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Recoleta&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Sur&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; S00420728&lt;br&gt;             &lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.594307,-58.403782&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;S00420728&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="2" data-caso="S00420728" data-ot="813113291">ECUADOR 1394</li>
+<li data-lat="-34.552784" data-lng="-58.481571" data-popup="&lt;div style=&#x27;width: 200px; font: 12px Arial;&#x27; data-caso=&quot;M00002&quot; data-comuna=&quot;12&quot;&gt;             &lt;b&gt;Dirección:&lt;/b&gt; MELIAN AV 3893&lt;br&gt;             &lt;b&gt;Comuna:&lt;/b&gt; 12&lt;br&gt;             &lt;b&gt;OT:&lt;/b&gt; PEDIDA APP&lt;br&gt;             &lt;b&gt;Observaciones:&lt;/b&gt;&lt;br&gt;DESPUES DE CORRIMIENTO DE COLUMNA NORMALIZAR NAP Y CDO.&lt;br&gt;             &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Operación:&lt;/b&gt; Saavedra&lt;br&gt;             &lt;b&gt;Zona:&lt;/b&gt; Capital Norte&lt;br&gt;                          &lt;hr style=&quot;margin: 3px 0;&quot;&gt;             &lt;b&gt;Caso:&lt;/b&gt; M00002&lt;br&gt;             &lt;br&gt;             &lt;b&gt;Ver en Google Maps:&lt;/b&gt; &lt;a href=&quot;https://www.google.com/maps?q=-34.552784,-58.481571&quot; target=&quot;_blank&quot;&gt;Abrir&lt;/a&gt;&lt;br&gt;             &lt;br&gt;&lt;b&gt;&lt;a href=&quot;https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform&quot; target=&quot;_blank&quot; onclick=&quot;window.cerrarReclamo(&#x27;M00002&#x27;);&quot; style=&quot;font-size: 14px;&quot;&gt;CERRAR RECLAMO&lt;/a&gt;&lt;/b&gt;         &lt;/div&gt;" data-comuna="12" data-caso="M00002" data-ot="PEDIDA APP">MELIAN AV 3893</li></ul>
         </div>
         <div id="no-mapeadas-panel">
           <div id="no-mapeadas-header">
@@ -1442,8 +1446,8 @@
 <script>
     
     
-            var map_ce99f3af939e0b32f2d6e0fc906892d9 = L.map(
-                "map_ce99f3af939e0b32f2d6e0fc906892d9",
+            var map_e15e450e00c04d275b6dd5f9df50d370 = L.map(
+                "map_e15e450e00c04d275b6dd5f9df50d370",
                 {
                     center: [-34.6037, -58.3816],
                     crs: L.CRS.EPSG3857,
@@ -1460,7 +1464,7 @@
 
         
     
-            var tile_layer_8de668a1bff139401b6c1cfc2e818b31 = L.tileLayer(
+            var tile_layer_df0186bd8fd8265baf460a48946c78b6 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -1477,10 +1481,10 @@
             );
         
     
-            tile_layer_8de668a1bff139401b6c1cfc2e818b31.addTo(map_ce99f3af939e0b32f2d6e0fc906892d9);
+            tile_layer_df0186bd8fd8265baf460a48946c78b6.addTo(map_e15e450e00c04d275b6dd5f9df50d370);
         
     
-            var marker_cluster_31c84ff232c5ea5808b428d7bef86727 = L.markerClusterGroup(
+            var marker_cluster_0b21bb7a910ea0aefcc1b9849c448d40 = L.markerClusterGroup(
                 {
   "spiderfyOnMaxZoom": true,
   "showCoverageOnHover": true,
@@ -1490,14 +1494,14 @@
             );
         
     
-            var marker_1c7b3f20d930326a3bbc6b4ce87f34e1 = L.marker(
+            var marker_5ba9a2babeb37d1d3adca1419283e5ac = L.marker(
                 [-34.564503, -58.501857],
                 {
 }
-            ).addTo(marker_cluster_31c84ff232c5ea5808b428d7bef86727);
+            ).addTo(marker_cluster_0b21bb7a910ea0aefcc1b9849c448d40);
         
     
-            var icon_4ccedc80020eb4e60c320b13d0c0ecfa = L.AwesomeMarkers.icon(
+            var icon_3711c28eecdd88a6a311584f52c746f6 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -1508,34 +1512,34 @@
             );
         
     
-        var popup_ba729329e4612483812d6f2406c66865 = L.popup({
+        var popup_82ebb057b37a4599188bec686fe28717 = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_8632f7127c682945413b444cf196c336 = $(`<div id="html_8632f7127c682945413b444cf196c336" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="00147974" data-comuna="12">             <b>Dirección:</b> CAMINO MIGUEL ANDRES 3710<br>             <b>Comuna:</b> 12<br>             <b>OT:</b> nan<br>             <b>Observaciones:</b><br>NORMALIZAR RED A BAJA ALTURA<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Paternal<br>             <b>Zona:</b> Capital Norte<br>             <b>Proveedor:</b> Optical Power<br>             <hr style="margin: 3px 0;">             <b>Caso:</b> 00147974<br>             <br><b><a href="#" onclick="mostrarFotos('00147974'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.564503,-58.501857" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('00147974');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_ba729329e4612483812d6f2406c66865.setContent(html_8632f7127c682945413b444cf196c336);
+                var html_21d00759b8406db1519b94ede3639a78 = $(`<div id="html_21d00759b8406db1519b94ede3639a78" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="00147974" data-comuna="12">             <b>Dirección:</b> CAMINO MIGUEL ANDRES 3710<br>             <b>Comuna:</b> 12<br>             <b>OT:</b> 03732939 <br>             <b>Observaciones:</b><br>NORMALIZAR RED A BAJA ALTURA<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Paternal<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 00147974<br>             <br><b><a href="#" onclick="mostrarFotos('00147974'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.564503,-58.501857" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('00147974');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_82ebb057b37a4599188bec686fe28717.setContent(html_21d00759b8406db1519b94ede3639a78);
             
         
 
-        marker_1c7b3f20d930326a3bbc6b4ce87f34e1.bindPopup(popup_ba729329e4612483812d6f2406c66865)
+        marker_5ba9a2babeb37d1d3adca1419283e5ac.bindPopup(popup_82ebb057b37a4599188bec686fe28717)
         ;
 
         
     
     
-                marker_1c7b3f20d930326a3bbc6b4ce87f34e1.setIcon(icon_4ccedc80020eb4e60c320b13d0c0ecfa);
+                marker_5ba9a2babeb37d1d3adca1419283e5ac.setIcon(icon_3711c28eecdd88a6a311584f52c746f6);
             
     
-            var marker_ba6d8900d8427cd4a3756f64ef96def0 = L.marker(
+            var marker_c199093b312fa8858f9dadfdc2e2b235 = L.marker(
                 [-34.547194, -58.475268],
                 {
 }
-            ).addTo(marker_cluster_31c84ff232c5ea5808b428d7bef86727);
+            ).addTo(marker_cluster_0b21bb7a910ea0aefcc1b9849c448d40);
         
     
-            var icon_1ef7a3d3af9258022c105d437c59c437 = L.AwesomeMarkers.icon(
+            var icon_ed45146aee8a4289c428bb28516a9488 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -1546,34 +1550,34 @@
             );
         
     
-        var popup_226725d79c0eeda2478c397f3a959ff5 = L.popup({
+        var popup_7e3fb6d1685c30f92e15ee2f3cd08681 = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_d6ea844b029cbc75251b242b5730e2d0 = $(`<div id="html_d6ea844b029cbc75251b242b5730e2d0" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="00203594" data-comuna="12">             <b>Dirección:</b> CRAMER 4061<br>             <b>Comuna:</b> 12<br>             <b>OT:</b> nan<br>             <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA ALTURA<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Saavedra<br>             <b>Zona:</b> Capital Norte<br>             <b>Proveedor:</b> Optical Power<br>             <hr style="margin: 3px 0;">             <b>Caso:</b> 00203594<br>             <br><b><a href="#" onclick="mostrarFotos('00203594'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.547194,-58.475268" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('00203594');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_226725d79c0eeda2478c397f3a959ff5.setContent(html_d6ea844b029cbc75251b242b5730e2d0);
+                var html_0be2dc1ca87820ab9f7ffd6abfc63fb9 = $(`<div id="html_0be2dc1ca87820ab9f7ffd6abfc63fb9" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="00203594" data-comuna="12">             <b>Dirección:</b> CRAMER 4061<br>             <b>Comuna:</b> 12<br>             <b>OT:</b> 03733598 <br>             <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA ALTURA<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Saavedra<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 00203594<br>             <br><b><a href="#" onclick="mostrarFotos('00203594'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.547194,-58.475268" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('00203594');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_7e3fb6d1685c30f92e15ee2f3cd08681.setContent(html_0be2dc1ca87820ab9f7ffd6abfc63fb9);
             
         
 
-        marker_ba6d8900d8427cd4a3756f64ef96def0.bindPopup(popup_226725d79c0eeda2478c397f3a959ff5)
+        marker_c199093b312fa8858f9dadfdc2e2b235.bindPopup(popup_7e3fb6d1685c30f92e15ee2f3cd08681)
         ;
 
         
     
     
-                marker_ba6d8900d8427cd4a3756f64ef96def0.setIcon(icon_1ef7a3d3af9258022c105d437c59c437);
+                marker_c199093b312fa8858f9dadfdc2e2b235.setIcon(icon_ed45146aee8a4289c428bb28516a9488);
             
     
-            var marker_f2489238a4c85863b8f4901251ad37cd = L.marker(
+            var marker_34daaf17f4a6587d66290ebb63b48429 = L.marker(
                 [-34.587337, -58.386954],
                 {
 }
-            ).addTo(marker_cluster_31c84ff232c5ea5808b428d7bef86727);
+            ).addTo(marker_cluster_0b21bb7a910ea0aefcc1b9849c448d40);
         
     
-            var icon_6d193ccd8fcd4e2fceb6eeac3845e038 = L.AwesomeMarkers.icon(
+            var icon_c1948e0998ef8a39a19a68be0dbeca89 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -1584,34 +1588,34 @@
             );
         
     
-        var popup_676b5aabd2dea029b98fcec8f71f0e0b = L.popup({
+        var popup_ee30b732c5f4b39f90eeb126f72660c3 = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_26fcaab87d760e48a7b65489084df293 = $(`<div id="html_26fcaab87d760e48a7b65489084df293" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="S00328955" data-comuna="2">             <b>Dirección:</b> AV CALLAO 2014<br>             <b>Comuna:</b> 2<br>             <b>OT:</b> nan<br>             <b>Observaciones:</b><br>NORMALIZAR CABLES CAIDOS<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Recoleta<br>             <b>Zona:</b> Capital Sur<br>             <b>Proveedor:</b> Optical Power<br>             <hr style="margin: 3px 0;">             <b>Caso:</b> S00328955<br>             <br><b><a href="#" onclick="mostrarFotos('S00328955'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.587337,-58.386954" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('S00328955');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_676b5aabd2dea029b98fcec8f71f0e0b.setContent(html_26fcaab87d760e48a7b65489084df293);
+                var html_20575e4ecf0b6b2bba8c24d9b10612a8 = $(`<div id="html_20575e4ecf0b6b2bba8c24d9b10612a8" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="S00328955" data-comuna="2">             <b>Dirección:</b> AV CALLAO 2014<br>             <b>Comuna:</b> 2<br>             <b>OT:</b> 03730209 <br>             <b>Observaciones:</b><br>NORMALIZAR CABLES CAIDOS<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Recoleta<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> S00328955<br>             <br><b><a href="#" onclick="mostrarFotos('S00328955'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.587337,-58.386954" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('S00328955');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_ee30b732c5f4b39f90eeb126f72660c3.setContent(html_20575e4ecf0b6b2bba8c24d9b10612a8);
             
         
 
-        marker_f2489238a4c85863b8f4901251ad37cd.bindPopup(popup_676b5aabd2dea029b98fcec8f71f0e0b)
+        marker_34daaf17f4a6587d66290ebb63b48429.bindPopup(popup_ee30b732c5f4b39f90eeb126f72660c3)
         ;
 
         
     
     
-                marker_f2489238a4c85863b8f4901251ad37cd.setIcon(icon_6d193ccd8fcd4e2fceb6eeac3845e038);
+                marker_34daaf17f4a6587d66290ebb63b48429.setIcon(icon_c1948e0998ef8a39a19a68be0dbeca89);
             
     
-            var marker_ba00525b91abde2d504fe800fa610346 = L.marker(
+            var marker_e7370b2a0b622e32690a82d138ae68c0 = L.marker(
                 [-34.55774, -58.454826],
                 {
 }
-            ).addTo(marker_cluster_31c84ff232c5ea5808b428d7bef86727);
+            ).addTo(marker_cluster_0b21bb7a910ea0aefcc1b9849c448d40);
         
     
-            var icon_4f5acf900bdce6ffad5dbcf443dc1596 = L.AwesomeMarkers.icon(
+            var icon_8eb73077bf7a93a6f8ad1b86d8263a32 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -1622,34 +1626,34 @@
             );
         
     
-        var popup_b34244e49223901b691d028e622f5144 = L.popup({
+        var popup_050693a349fc6e49f70fcc89e6192f91 = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_b7cd2afcfbeba76e57dc6fa903d58f4f = $(`<div id="html_b7cd2afcfbeba76e57dc6fa903d58f4f" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="S00328057" data-comuna="13">             <b>Dirección:</b> OHIGGINS 2328<br>             <b>Comuna:</b> 13<br>             <b>OT:</b> nan<br>             <b>Observaciones:</b><br>NORMALIZAR CABLES CAIDOS<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Saavedra<br>             <b>Zona:</b> Capital Norte<br>             <b>Proveedor:</b> Optical Power<br>             <hr style="margin: 3px 0;">             <b>Caso:</b> S00328057<br>             <br><b><a href="#" onclick="mostrarFotos('S00328057'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.55774,-58.454826" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('S00328057');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_b34244e49223901b691d028e622f5144.setContent(html_b7cd2afcfbeba76e57dc6fa903d58f4f);
+                var html_57d5adf0963f56ebcbd3a8af2bbe21ea = $(`<div id="html_57d5adf0963f56ebcbd3a8af2bbe21ea" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="S00328057" data-comuna="13">             <b>Dirección:</b> OHIGGINS 2328<br>             <b>Comuna:</b> 13<br>             <b>OT:</b> 03733730 <br>             <b>Observaciones:</b><br>NORMALIZAR CABLES CAIDOS<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Saavedra<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> S00328057<br>             <br><b><a href="#" onclick="mostrarFotos('S00328057'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.55774,-58.454826" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('S00328057');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_050693a349fc6e49f70fcc89e6192f91.setContent(html_57d5adf0963f56ebcbd3a8af2bbe21ea);
             
         
 
-        marker_ba00525b91abde2d504fe800fa610346.bindPopup(popup_b34244e49223901b691d028e622f5144)
+        marker_e7370b2a0b622e32690a82d138ae68c0.bindPopup(popup_050693a349fc6e49f70fcc89e6192f91)
         ;
 
         
     
     
-                marker_ba00525b91abde2d504fe800fa610346.setIcon(icon_4f5acf900bdce6ffad5dbcf443dc1596);
+                marker_e7370b2a0b622e32690a82d138ae68c0.setIcon(icon_8eb73077bf7a93a6f8ad1b86d8263a32);
             
     
-            var marker_bf832c1d06b833785346698044dfd9b3 = L.marker(
+            var marker_af6617d83a64dec5396f8816481368b8 = L.marker(
                 [-34.553673, -58.459312],
                 {
 }
-            ).addTo(marker_cluster_31c84ff232c5ea5808b428d7bef86727);
+            ).addTo(marker_cluster_0b21bb7a910ea0aefcc1b9849c448d40);
         
     
-            var icon_818d656e73a3037219bae8070e3f5b6b = L.AwesomeMarkers.icon(
+            var icon_9e7c14a46e4926eecb43ae164c8226a1 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -1660,34 +1664,34 @@
             );
         
     
-        var popup_bf7e09d1ed2b2c54c67e3e5be61a2e08 = L.popup({
+        var popup_433745e4e30e0edf06cd34b85ca094a4 = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_81248dd0d3f34a81f146ab15108b4e65 = $(`<div id="html_81248dd0d3f34a81f146ab15108b4e65" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="S00363996" data-comuna="13">             <b>Dirección:</b> CONGRESO 2077<br>             <b>Comuna:</b> 13<br>             <b>OT:</b> nan<br>             <b>Observaciones:</b><br>CABLE SUELTO<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Saavedra<br>             <b>Zona:</b> Capital Norte<br>             <b>Proveedor:</b> Optical Power<br>             <hr style="margin: 3px 0;">             <b>Caso:</b> S00363996<br>             <br><b><a href="#" onclick="mostrarFotos('S00363996'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.553673,-58.459312" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('S00363996');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_bf7e09d1ed2b2c54c67e3e5be61a2e08.setContent(html_81248dd0d3f34a81f146ab15108b4e65);
+                var html_29b61336f9806edaea64b01b4d25e05d = $(`<div id="html_29b61336f9806edaea64b01b4d25e05d" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="S00363996" data-comuna="13">             <b>Dirección:</b> CONGRESO 2077<br>             <b>Comuna:</b> 13<br>             <b>OT:</b> 03733876 <br>             <b>Observaciones:</b><br>CABLE SUELTO<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Saavedra<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> S00363996<br>             <br><b><a href="#" onclick="mostrarFotos('S00363996'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.553673,-58.459312" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('S00363996');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_433745e4e30e0edf06cd34b85ca094a4.setContent(html_29b61336f9806edaea64b01b4d25e05d);
             
         
 
-        marker_bf832c1d06b833785346698044dfd9b3.bindPopup(popup_bf7e09d1ed2b2c54c67e3e5be61a2e08)
+        marker_af6617d83a64dec5396f8816481368b8.bindPopup(popup_433745e4e30e0edf06cd34b85ca094a4)
         ;
 
         
     
     
-                marker_bf832c1d06b833785346698044dfd9b3.setIcon(icon_818d656e73a3037219bae8070e3f5b6b);
+                marker_af6617d83a64dec5396f8816481368b8.setIcon(icon_9e7c14a46e4926eecb43ae164c8226a1);
             
     
-            var marker_0a8bd8cff77ee50ac9f50bf3df45a1ab = L.marker(
+            var marker_34c022eada938b3383faa5de0e5e661f = L.marker(
                 [-34.536587, -58.466221],
                 {
 }
-            ).addTo(marker_cluster_31c84ff232c5ea5808b428d7bef86727);
+            ).addTo(marker_cluster_0b21bb7a910ea0aefcc1b9849c448d40);
         
     
-            var icon_9f76603bb9eac290415ace07be883da1 = L.AwesomeMarkers.icon(
+            var icon_de9ab758f08857e008ca8923c5d94929 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "blue",
   "iconColor": "white",
@@ -1698,34 +1702,34 @@
             );
         
     
-        var popup_c50f50c41fabd37f72d906ee9e878a66 = L.popup({
+        var popup_68ebf03008178049b33cb1e0e1dbcf70 = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_67e01df76e70c285d294ea8a8b474c52 = $(`<div id="html_67e01df76e70c285d294ea8a8b474c52" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="8876" data-comuna="12">             <b>Dirección:</b> PICO 1597<br>             <b>Comuna:</b> 12<br>             <b>OT:</b> nan<br>             <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA ALTURA<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Saavedra<br>             <b>Zona:</b> Capital Norte<br>             <b>Proveedor:</b> Optical Power<br>             <hr style="margin: 3px 0;">             <b>Caso:</b> 8876<br>             <br><b><a href="#" onclick="mostrarFotos('8876'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.536587,-58.466221" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('8876');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_c50f50c41fabd37f72d906ee9e878a66.setContent(html_67e01df76e70c285d294ea8a8b474c52);
+                var html_475da94d1583ae1208130ded7eceb875 = $(`<div id="html_475da94d1583ae1208130ded7eceb875" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="8876" data-comuna="12">             <b>Dirección:</b> PICO 1597<br>             <b>Comuna:</b> 12<br>             <b>OT:</b> 03734392 <br>             <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA ALTURA<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Saavedra<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> 8876<br>             <br><b><a href="#" onclick="mostrarFotos('8876'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.536587,-58.466221" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('8876');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_68ebf03008178049b33cb1e0e1dbcf70.setContent(html_475da94d1583ae1208130ded7eceb875);
             
         
 
-        marker_0a8bd8cff77ee50ac9f50bf3df45a1ab.bindPopup(popup_c50f50c41fabd37f72d906ee9e878a66)
+        marker_34c022eada938b3383faa5de0e5e661f.bindPopup(popup_68ebf03008178049b33cb1e0e1dbcf70)
         ;
 
         
     
     
-                marker_0a8bd8cff77ee50ac9f50bf3df45a1ab.setIcon(icon_9f76603bb9eac290415ace07be883da1);
+                marker_34c022eada938b3383faa5de0e5e661f.setIcon(icon_de9ab758f08857e008ca8923c5d94929);
             
     
-            var marker_0e69f601e785d1bf2cb7ab90fabed171 = L.marker(
+            var marker_8074224649c17e14ed4ea9234605f6f0 = L.marker(
                 [-34.601335, -58.373937],
                 {
 }
-            ).addTo(marker_cluster_31c84ff232c5ea5808b428d7bef86727);
+            ).addTo(marker_cluster_0b21bb7a910ea0aefcc1b9849c448d40);
         
     
-            var icon_6bb608151b99e89cc802c4ba7177bb6c = L.AwesomeMarkers.icon(
+            var icon_574510b77a4fe161735547a05187e7a4 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -1736,34 +1740,34 @@
             );
         
     
-        var popup_632ed947d9112e01adffaf16e07f3998 = L.popup({
+        var popup_87ebb943ce2b3dfb551d978241bc7a7d = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_af655d02333a40668827b556436a0cac = $(`<div id="html_af655d02333a40668827b556436a0cac" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="S00160880" data-comuna="1">             <b>Dirección:</b> SAN MARTIN 577<br>             <b>Comuna:</b> 1<br>             <b>OT:</b> nan<br>             <b>Observaciones:</b><br>NORMALIZAR CABLES CON MEDIA CAÑA EN FACHADA<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> San Telmo<br>             <b>Zona:</b> Capital Sur<br>             <b>Proveedor:</b> Optical Power<br>             <hr style="margin: 3px 0;">             <b>Caso:</b> S00160880<br>             <br><b><a href="#" onclick="mostrarFotos('S00160880'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.601335,-58.373937" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('S00160880');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_632ed947d9112e01adffaf16e07f3998.setContent(html_af655d02333a40668827b556436a0cac);
+                var html_36ee2497a1acfd5565cb58da5114dd9e = $(`<div id="html_36ee2497a1acfd5565cb58da5114dd9e" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="S00160880" data-comuna="1">             <b>Dirección:</b> SAN MARTIN 577<br>             <b>Comuna:</b> 1<br>             <b>OT:</b> 03730921 <br>             <b>Observaciones:</b><br>NORMALIZAR CABLES CON MEDIA CAÑA EN FACHADA<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> San Telmo<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> S00160880<br>             <br><b><a href="#" onclick="mostrarFotos('S00160880'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.601335,-58.373937" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('S00160880');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_87ebb943ce2b3dfb551d978241bc7a7d.setContent(html_36ee2497a1acfd5565cb58da5114dd9e);
             
         
 
-        marker_0e69f601e785d1bf2cb7ab90fabed171.bindPopup(popup_632ed947d9112e01adffaf16e07f3998)
+        marker_8074224649c17e14ed4ea9234605f6f0.bindPopup(popup_87ebb943ce2b3dfb551d978241bc7a7d)
         ;
 
         
     
     
-                marker_0e69f601e785d1bf2cb7ab90fabed171.setIcon(icon_6bb608151b99e89cc802c4ba7177bb6c);
+                marker_8074224649c17e14ed4ea9234605f6f0.setIcon(icon_574510b77a4fe161735547a05187e7a4);
             
     
-            var marker_1da742ec863f7d6cefa2843651810c0a = L.marker(
+            var marker_664dcd4ee97c8031cf018b95fffbac0f = L.marker(
                 [-34.567521, -58.472548],
                 {
 }
-            ).addTo(marker_cluster_31c84ff232c5ea5808b428d7bef86727);
+            ).addTo(marker_cluster_0b21bb7a910ea0aefcc1b9849c448d40);
         
     
-            var icon_d73b85f0ae4840155016bf39c7a8b474 = L.AwesomeMarkers.icon(
+            var icon_962c0da37107d3171a27c51264da8e50 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -1774,34 +1778,34 @@
             );
         
     
-        var popup_6714a6c37e632698ed0990ddf156c17a = L.popup({
+        var popup_92bb083013219a30b661e0846ad98786 = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_7e42ba1023c65679663c3499187e6a40 = $(`<div id="html_7e42ba1023c65679663c3499187e6a40" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="S00164926" data-comuna="13">             <b>Dirección:</b> NAON ROMULO 2381<br>             <b>Comuna:</b> 13<br>             <b>OT:</b> nan<br>             <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA ALTURA<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Colegiales<br>             <b>Zona:</b> Capital Norte<br>             <b>Proveedor:</b> Optical Power<br>             <hr style="margin: 3px 0;">             <b>Caso:</b> S00164926<br>             <br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.567521,-58.472548" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('S00164926');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_6714a6c37e632698ed0990ddf156c17a.setContent(html_7e42ba1023c65679663c3499187e6a40);
+                var html_c8897cd43ca2460b5fd11c4f07e4441d = $(`<div id="html_c8897cd43ca2460b5fd11c4f07e4441d" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="S00164926" data-comuna="13">             <b>Dirección:</b> NAON ROMULO 2381<br>             <b>Comuna:</b> 13<br>             <b>OT:</b> 03734641 <br>             <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA ALTURA<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Colegiales<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> S00164926<br>             <br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.567521,-58.472548" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('S00164926');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_92bb083013219a30b661e0846ad98786.setContent(html_c8897cd43ca2460b5fd11c4f07e4441d);
             
         
 
-        marker_1da742ec863f7d6cefa2843651810c0a.bindPopup(popup_6714a6c37e632698ed0990ddf156c17a)
+        marker_664dcd4ee97c8031cf018b95fffbac0f.bindPopup(popup_92bb083013219a30b661e0846ad98786)
         ;
 
         
     
     
-                marker_1da742ec863f7d6cefa2843651810c0a.setIcon(icon_d73b85f0ae4840155016bf39c7a8b474);
+                marker_664dcd4ee97c8031cf018b95fffbac0f.setIcon(icon_962c0da37107d3171a27c51264da8e50);
             
     
-            var marker_9aa35451909c9b9fef6308a846efa483 = L.marker(
+            var marker_cc094f15e9adae24870ba596c778e00f = L.marker(
                 [-34.638825, -58.499154],
                 {
 }
-            ).addTo(marker_cluster_31c84ff232c5ea5808b428d7bef86727);
+            ).addTo(marker_cluster_0b21bb7a910ea0aefcc1b9849c448d40);
         
     
-            var icon_b72eabc7d37589fad523d8e0a46a87c7 = L.AwesomeMarkers.icon(
+            var icon_87f34a362e68d88f5e1c4d85d1a8a81a = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightblue",
   "iconColor": "white",
@@ -1812,27 +1816,179 @@
             );
         
     
-        var popup_7470c5b13c5ec02a4f9c1fa11d14c93b = L.popup({
+        var popup_c8a5b4a045a84b3b0c44276f928451b9 = L.popup({
   "maxWidth": 200,
 });
 
         
             
-                var html_d73a92e5a57dfa6e0eb2c4ab9266ad9a = $(`<div id="html_d73a92e5a57dfa6e0eb2c4ab9266ad9a" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="S00384650" data-comuna="10">             <b>Dirección:</b> MANZONI 106<br>             <b>Comuna:</b> 10<br>             <b>OT:</b> nan<br>             <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA ALTURA<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Devoto<br>             <b>Zona:</b> Capital Norte<br>             <b>Proveedor:</b> Optical Power<br>             <hr style="margin: 3px 0;">             <b>Caso:</b> S00384650<br>             <br><b><a href="#" onclick="mostrarFotos('S00384650'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.638825,-58.499154" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('S00384650');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
-                popup_7470c5b13c5ec02a4f9c1fa11d14c93b.setContent(html_d73a92e5a57dfa6e0eb2c4ab9266ad9a);
+                var html_854387dd621bb37599ce5cc1c7b291e0 = $(`<div id="html_854387dd621bb37599ce5cc1c7b291e0" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="S00384650" data-comuna="10">             <b>Dirección:</b> MANZONI 106<br>             <b>Comuna:</b> 10<br>             <b>OT:</b> 03734759 <br>             <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA ALTURA<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Devoto<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> S00384650<br>             <br><b><a href="#" onclick="mostrarFotos('S00384650'); return false;" style="font-size: 14px;">Ver Fotos</a></b><br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.638825,-58.499154" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('S00384650');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_c8a5b4a045a84b3b0c44276f928451b9.setContent(html_854387dd621bb37599ce5cc1c7b291e0);
             
         
 
-        marker_9aa35451909c9b9fef6308a846efa483.bindPopup(popup_7470c5b13c5ec02a4f9c1fa11d14c93b)
+        marker_cc094f15e9adae24870ba596c778e00f.bindPopup(popup_c8a5b4a045a84b3b0c44276f928451b9)
         ;
 
         
     
     
-                marker_9aa35451909c9b9fef6308a846efa483.setIcon(icon_b72eabc7d37589fad523d8e0a46a87c7);
+                marker_cc094f15e9adae24870ba596c778e00f.setIcon(icon_87f34a362e68d88f5e1c4d85d1a8a81a);
             
     
-            marker_cluster_31c84ff232c5ea5808b428d7bef86727.addTo(map_ce99f3af939e0b32f2d6e0fc906892d9);
+            var marker_2bf52d98d4c4c20bb6541b0d6f1b4345 = L.marker(
+                [-34.637357, -58.479124],
+                {
+}
+            ).addTo(marker_cluster_0b21bb7a910ea0aefcc1b9849c448d40);
+        
+    
+            var icon_8c4a13228ef726576e2902fdce52ce3d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4635b3a36f577d9c19b375b277bc62e5 = L.popup({
+  "maxWidth": 248,
+});
+
+        
+            
+                var html_3a4fb7b816726e0061ec89c96b6bb3c9 = $(`<div id="html_3a4fb7b816726e0061ec89c96b6bb3c9" style="width: 100.0%; height: 100.0%;">         <div style='width: 248px; font: 12px Arial;' data-caso="S00344962" data-comuna="9">             <b>Dirección:</b> ALBERDI, JUAN BAUTISTA AV. 3840<br>             <b>Comuna:</b> 9<br>             <b>OT:</b> 813113244<br>             <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA ALTURA<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Devoto<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> S00344962<br>             <br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.637357,-58.479124" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('S00344962');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_4635b3a36f577d9c19b375b277bc62e5.setContent(html_3a4fb7b816726e0061ec89c96b6bb3c9);
+            
+        
+
+        marker_2bf52d98d4c4c20bb6541b0d6f1b4345.bindPopup(popup_4635b3a36f577d9c19b375b277bc62e5)
+        ;
+
+        
+    
+    
+                marker_2bf52d98d4c4c20bb6541b0d6f1b4345.setIcon(icon_8c4a13228ef726576e2902fdce52ce3d);
+            
+    
+            var marker_1e15c26b1723afa9e81a8031cc555eda = L.marker(
+                [-34.635661, -58.499765],
+                {
+}
+            ).addTo(marker_cluster_0b21bb7a910ea0aefcc1b9849c448d40);
+        
+    
+            var icon_f1302ed05cb93d0cdf9eeef256ba75fb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_68d436bc5046071635e6b6260134fd28 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3530417bbb4dd7d880e3467c26794ad6 = $(`<div id="html_3530417bbb4dd7d880e3467c26794ad6" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="S00384928" data-comuna="10">             <b>Dirección:</b> LOPE DE VEGA 267<br>             <b>Comuna:</b> 10<br>             <b>OT:</b> 813113274<br>             <b>Observaciones:</b><br>NORMALIZAR CABLES A BAJA ALTURA<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Devoto<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> S00384928<br>             <br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.635661,-58.499765" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('S00384928');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_68d436bc5046071635e6b6260134fd28.setContent(html_3530417bbb4dd7d880e3467c26794ad6);
+            
+        
+
+        marker_1e15c26b1723afa9e81a8031cc555eda.bindPopup(popup_68d436bc5046071635e6b6260134fd28)
+        ;
+
+        
+    
+    
+                marker_1e15c26b1723afa9e81a8031cc555eda.setIcon(icon_f1302ed05cb93d0cdf9eeef256ba75fb);
+            
+    
+            var marker_f5f57feebcb59015bbdfc7fa72c27bcf = L.marker(
+                [-34.594307, -58.403782],
+                {
+}
+            ).addTo(marker_cluster_0b21bb7a910ea0aefcc1b9849c448d40);
+        
+    
+            var icon_02fd3d6256cd2f32fa66f8c327028673 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9bedc0ddfe212a133a38f5589c5124b4 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_76cdb55afbe0c3b7aa717ff74fdd6c27 = $(`<div id="html_76cdb55afbe0c3b7aa717ff74fdd6c27" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="S00420728" data-comuna="2">             <b>Dirección:</b> ECUADOR 1394<br>             <b>Comuna:</b> 2<br>             <b>OT:</b> 813113291<br>             <b>Observaciones:</b><br>NORMALIZAR CABLES FUERA DE NORMA<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Recoleta<br>             <b>Zona:</b> Capital Sur<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> S00420728<br>             <br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.594307,-58.403782" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('S00420728');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_9bedc0ddfe212a133a38f5589c5124b4.setContent(html_76cdb55afbe0c3b7aa717ff74fdd6c27);
+            
+        
+
+        marker_f5f57feebcb59015bbdfc7fa72c27bcf.bindPopup(popup_9bedc0ddfe212a133a38f5589c5124b4)
+        ;
+
+        
+    
+    
+                marker_f5f57feebcb59015bbdfc7fa72c27bcf.setIcon(icon_02fd3d6256cd2f32fa66f8c327028673);
+            
+    
+            var marker_a48856cc7e78e1b7cf934a1c0919f574 = L.marker(
+                [-34.552784, -58.481571],
+                {
+}
+            ).addTo(marker_cluster_0b21bb7a910ea0aefcc1b9849c448d40);
+        
+    
+            var icon_2968dce7910b4523866fa182d5f84dc5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_07dd8cee2b39cfdcea026e5429244f51 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_7d06cae322561ac0afc457793e183a49 = $(`<div id="html_7d06cae322561ac0afc457793e183a49" style="width: 100.0%; height: 100.0%;">         <div style='width: 200px; font: 12px Arial;' data-caso="M00002" data-comuna="12">             <b>Dirección:</b> MELIAN AV 3893<br>             <b>Comuna:</b> 12<br>             <b>OT:</b> PEDIDA APP<br>             <b>Observaciones:</b><br>DESPUES DE CORRIMIENTO DE COLUMNA NORMALIZAR NAP Y CDO.<br>             <hr style="margin: 3px 0;">             <b>Operación:</b> Saavedra<br>             <b>Zona:</b> Capital Norte<br>                          <hr style="margin: 3px 0;">             <b>Caso:</b> M00002<br>             <br>             <b>Ver en Google Maps:</b> <a href="https://www.google.com/maps?q=-34.552784,-58.481571" target="_blank">Abrir</a><br>             <br><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScuxwrARuhy8VBZMn7fNon_ThghC57SwZUb69NAphF7Bwn29g/viewform" target="_blank" onclick="window.cerrarReclamo('M00002');" style="font-size: 14px;">CERRAR RECLAMO</a></b>         </div>         </div>`)[0];
+                popup_07dd8cee2b39cfdcea026e5429244f51.setContent(html_7d06cae322561ac0afc457793e183a49);
+            
+        
+
+        marker_a48856cc7e78e1b7cf934a1c0919f574.bindPopup(popup_07dd8cee2b39cfdcea026e5429244f51)
+        ;
+
+        
+    
+    
+                marker_a48856cc7e78e1b7cf934a1c0919f574.setIcon(icon_2968dce7910b4523866fa182d5f84dc5);
+            
+    
+            marker_cluster_0b21bb7a910ea0aefcc1b9849c448d40.addTo(map_e15e450e00c04d275b6dd5f9df50d370);
         
 </script>
 </html>
